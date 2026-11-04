@@ -1,0 +1,12 @@
+# Which Claude Doc each file is synced from. Update rev and synced on every sync.
+docs:
+  - file: intent-spec.md
+    title: "Intent Spec v1"
+    source: https://claude.ai/artifact/Hjz4rG7TwwmsdjpX2UmRJ3
+    rev: 52
+    synced: 2026-11-04
+  - file: build-guide.md
+    title: "Pass 0 Build Guide"
+    source: https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9
+    rev: 8
+    synced: 2026-11-04
