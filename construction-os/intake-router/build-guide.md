@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Pass 0 Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 8 · synced 2026-11-04
+> Source: [Pass 0 Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 9 · synced 2026-11-04
 
 # Pass 0 Build Guide: Construction OS Intake Router
 
@@ -65,7 +65,7 @@ A wrong guess does not cost the same in each direction. Missing a safety\_incide
 
 ## Classifier prompt design
 
-The prompt is derived from the intent spec, and the spec stays the source of truth. This section records how the prompt is built and why; the prompt text itself lives in `spec_prompt.md` in the repo. Change the spec first, then the prompt.
+The prompt is derived from the intent spec, and the spec stays the source of truth. This section records how the prompt is built and why; the prompt text itself lives in the Classifier Prompt doc, and later as `spec_prompt.md` in the repo. Change the spec first, then the prompt.
 
 | Block | What it holds | Comes from |
 | --- | --- | --- |
