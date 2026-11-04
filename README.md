@@ -5,6 +5,7 @@ Design docs for Justin's projects, one folder per project.
 | Project | Folder | What it is |
 | --- | --- | --- |
 | Construction OS | [construction-os/](construction-os/) | A company-specific AI authoring system for residential builders. First slice: a priced potential change order. |
+| Intake router (Pass 0) | [intake-router/](intake-router/) | An intent classifier and router with evals: it reads inbound messages at a general contractor and says which workflow each should start. |
 
 ## How this repo works
 

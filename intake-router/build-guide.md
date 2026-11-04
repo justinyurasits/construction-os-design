@@ -1,5 +1,5 @@
-> Synced from Claude Docs: https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9
-> Edit there, not here. This copy is the last reviewed version and may lag the doc.
+> **Synced from Claude Docs. Edit there, not here.**
+> Source: [Pass 0 Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 8 · synced 2026-11-04
 
 # Pass 0 Build Guide: Construction OS Intake Router
 
