@@ -13,7 +13,7 @@ docs:
   - file: system-design.md
     title: "System Design"
     source: https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4
-    rev: 74
+    rev: 75
     synced: 2026-11-04
   - file: pco-technical-design.md
     title: "PCO Slice — Technical Design"
