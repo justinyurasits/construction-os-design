@@ -1,27 +1,35 @@
 # Construction OS
 
-Design docs for Construction OS: what the product is, how it's built, what we decided and why, and what we learned.
+A company-specific AI system for residential builders that understands how a company operates and produces the documents its PMs and superintendents need. First slice: a priced potential change order.
 
-## How these docs work
+This folder holds the product-level docs. Each component has its own folder.
 
-**The Claude Docs are the working copy. This folder is the reviewed, versioned record.**
-
-- Every design doc is written and edited in Claude Docs. Each file here starts with a link to its source doc.
-- When a doc changes in a way that matters (a decision, a principle, a design change, or the end of a working session), it's exported to Markdown and synced here in a pull request. The PR diff is the review of what changed.
-- Nobody edits these files by hand. If something here is wrong, fix the Claude Doc and re-sync. A PR that changes a design file without a matching Claude Docs change means the two copies have drifted.
-- Between syncs, this folder can be behind the Claude Docs. The Claude Doc is current; this folder is the last reviewed version.
-- `sync-manifest.yaml` records which Claude Doc each file comes from and the revision last synced.
-
-## The docs
+## Product-level docs
 
 | File | What it is |
 | --- | --- |
 | [product-brief.md](product-brief.md) | Who it's for, the painful moment, what it replaces, the wedge, what's out of scope. Every product and architecture decision is checked against it. |
-| [system-design.md](system-design.md) | The architecture and the decision log. Decisions are recorded once, here. |
-| [pco-technical-design.md](pco-technical-design.md) | The build design for the first vertical slice: a priced potential change order. |
-| [plan.md](plan.md) | The work: phases, what's done, what's next. Tracks work only; decisions live in the System Design. |
-| [build-log.md](build-log.md) | The story of the build, step by step. Raw material for the article. |
-| [principles.md](principles.md) | The ten principles for building a great document set, each with the rules that follow, the incidents that taught it, and where it's enforced. |
+| [principles.md](principles.md) | The ten principles for building company knowledge an AI can rely on, each with the rules that follow, the incidents that taught it, and where it's enforced. Applies to every component. |
+| `architecture.md` (planned) | The components and how a request moves through them. Written when the intake router and the document workbench first connect. |
+
+## Components
+
+| Component | Folder | What it is |
+| --- | --- | --- |
+| Document workbench | [document-workbench/](document-workbench/) | The knowledge and authoring component (the RAG part): governed company knowledge, retrieval, pricing, drafting and Word rendering. Builds the priced potential change order first. |
+| Intake router | [intake-router/](intake-router/) | Reads inbound messages and says which workflow each should start. Pass 0 is a classifier with evals. |
+
+## How these docs work
+
+**The Claude Docs are the working copy. These folders are the reviewed, versioned record.**
+
+- Every design doc is written and edited in Claude Docs. Each synced file starts with a link to its source doc.
+- When a doc changes in a way that matters (a decision, a principle, a design change, or the end of a working session), it's exported to Markdown and synced here in a pull request. The PR diff is the review of what changed.
+- Nobody edits synced files by hand. If something here is wrong, fix the Claude Doc and re-sync.
+- Between syncs, a folder can be behind the Claude Docs. The Claude Doc is current; the folder is the last reviewed version.
+- Each folder's `sync-manifest.yaml` records which Claude Doc each file comes from and the revision last synced.
+
+**Where decisions live:** the decision log is in the document workbench's [system-design.md](document-workbench/system-design.md) for now, including some product-level decisions. When `architecture.md` exists, product-level decisions move there.
 
 ## Related repositories
 
