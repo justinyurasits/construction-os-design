@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 32 · synced 2026-11-04
+> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 35 · synced 2026-11-05
 
 # PCO Slice — Technical Design
 
@@ -32,7 +32,7 @@ One modular application with two entry paths that meet at the same drafting pipe
 
 The advisor answers from rules loaded by ID plus search, then offers the PCO; asking directly for a PCO skips straight to drafting. Only the highlighted result reaches the PM, and every step reads from the published package, never from Git.
 
-**In plain terms:** the corpus repository is the company's binder (its rules, settings, rates, definitions and templates); the construction-os repository is the machine that reads the binder. For a request like "the owner wants six recessed lights, electrician quoted $2,850", the application:
+**In plain terms:** the corpus repository is the company's binder (its rules, settings, rates, definitions and templates); the document-workbench repository is the machine that reads the binder. For a request like "the owner wants six recessed lights, electrician quoted $2,850", the application:
 
 1. Loads the company's published package.
 2. Decides whether the PM wants advice or a draft.
@@ -54,7 +54,7 @@ The advisor answers from rules loaded by ID plus search, then offers the PCO; as
 | advisor | The "what do I do" path |
 | api | What a web page talks to |
 
-**Rule: the application repository holds no company content.** No company name, rate, rule or template lives in construction-os. Pointed at another company's package, the same code produces that company's documents.
+**Rule: the application repository holds no company content.** No company name, rate, rule or template lives in document-workbench. Pointed at another company's package, the same code produces that company's documents.
 
 ## 3. Customer package and the publish step
 
@@ -275,7 +275,7 @@ Justin confirmed Nov 2 that no rag-system repository exists (earlier notes descr
 **Repositories:**
 
 - `construction-os-corpus`: stays as is for now and becomes BHI's package. A clean starter library and a separate BHI repository split out when the second company arrives.
-- `construction-os` (new, private): the application. Modules: `package` (publish), `registry`, `definitions`, `retrieval`, `pricing`, `drafting`, `rendering`, `advisor`, `api`. Secrets only in `.env`, gitignored, never read by Claude Code.
+- `document-workbench` (private; created as construction-os, renamed Nov 5): the application. Modules: `package` (publish), `registry`, `definitions`, `retrieval`, `pricing`, `drafting`, `rendering`, `advisor`, `api`. Secrets only in `.env`, gitignored, never read by Claude Code.
 
 **Build order (each step testable on its own):**
 
