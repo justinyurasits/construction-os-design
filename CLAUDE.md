@@ -11,3 +11,4 @@ Design docs for several projects, one folder per project.
 - Within a project, product-level docs sit at the top of its folder and each component gets a subfolder with its own README and `sync-manifest.yaml`.
 - Don't rewrite git history.
 - No secrets, ever.
+- The document model — component file set, naming, front matter — is in `STANDARD.md`, synced from a Claude Doc. Read it before creating or restructuring any document.
