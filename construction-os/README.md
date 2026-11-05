@@ -13,7 +13,7 @@ This folder holds the product-level docs. Each component has its own folder.
 
 | File | What it is |
 | --- | --- |
-| [product-brief.md](product-brief.md) | Who it's for, the painful moment, what it replaces, the wedge, what's out of scope. Every product and architecture decision is checked against it. |
+| [brief.md](brief.md) | Who it's for, the painful moment, what it replaces, the wedge, what's out of scope. Every product and architecture decision is checked against it. |
 | [principles.md](principles.md) | The ten principles for building company knowledge an AI can rely on, each with the rules that follow, the incidents that taught it, and where it's enforced. Applies to every component. |
 | `architecture.md` (planned) | The components and how a request moves through them. Written when the intake router and the document workbench first connect. |
 
