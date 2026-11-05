@@ -1,3 +1,8 @@
+---
+type: readme
+status: current
+---
+
 # Intake router (Pass 0)
 
 Design docs for the Construction OS intake router: an intent classifier and router, built with an eval set so its accuracy can be measured. Pass 0 uses construction data only and stops at a label plus a simulated routing record.
@@ -11,7 +16,7 @@ Design docs for the Construction OS intake router: an intent classifier and rout
 | File | What it is |
 | --- | --- |
 | [build-guide.md](build-guide.md) | What we are building, the architecture, how it fits Construction OS, the classifier prompt design, build order and open decisions. |
-| [intent-spec.md](intent-spec.md) | The source of truth for the 14 intents, the pair rules, the hold rules and the labeled set. Still carries SOP IDs in its Handling lines, so keep this repo private until they are stripped. |
+| [spec.md](spec.md) | The source of truth for the 14 intents, the pair rules, the hold rules and the labeled set. Still carries SOP IDs in its Handling lines, so keep this repo private until they are stripped. |
 
 The diagrams in the build guide are static PNG snapshots in `images/`. Re-export them when the drawing changes.
 

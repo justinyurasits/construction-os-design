@@ -1,22 +1,30 @@
 # Which Claude Doc each file is synced from. Update rev and synced on every sync.
 docs:
-  - file: system-design.md
+  - file: design.md
     title: "System Design"
     source: https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4
     rev: 75
     synced: 2026-11-04
-  - file: pco-technical-design.md
+    type: design
+    status: current
+  - file: pco-design.md
     title: "PCO Slice — Technical Design"
     source: https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX
     rev: 32
     synced: 2026-11-04
+    type: slice-design
+    status: current
   - file: plan.md
     title: "Plan"
     source: https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42
     rev: 104
     synced: 2026-11-04
+    type: plan
+    status: current
   - file: build-log.md
     title: "Build Log"
     source: https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8
     rev: 20
     synced: 2026-11-04
+    type: build-log
+    status: current

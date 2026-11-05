@@ -1,3 +1,8 @@
+---
+type: readme
+status: current
+---
+
 # Construction OS
 
 A company-specific AI system for residential builders that understands how a company operates and produces the documents its PMs and superintendents need. First slice: a priced potential change order.
@@ -29,7 +34,7 @@ This folder holds the product-level docs. Each component has its own folder.
 - Between syncs, a folder can be behind the Claude Docs. The Claude Doc is current; the folder is the last reviewed version.
 - Each folder's `sync-manifest.yaml` records which Claude Doc each file comes from and the revision last synced.
 
-**Where decisions live:** the decision log is in the document workbench's [system-design.md](document-workbench/system-design.md) for now, including some product-level decisions. When `architecture.md` exists, product-level decisions move there.
+**Where decisions live:** the decision log is in the document workbench's [design.md](document-workbench/design.md) for now, including some product-level decisions. When `architecture.md` exists, product-level decisions move there.
 
 ## Related repositories
 

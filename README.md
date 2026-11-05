@@ -1,3 +1,8 @@
+---
+type: readme
+status: current
+---
+
 # Design docs
 
 Design docs for Justin's projects, one folder per project. A project with several components keeps its product-level docs at the top of its folder and gives each component a subfolder.
