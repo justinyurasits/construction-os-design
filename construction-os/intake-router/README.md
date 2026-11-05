@@ -7,6 +7,10 @@ status: current
 
 Design docs for the Construction OS intake router: an intent classifier and router, built with an eval set so its accuracy can be measured. Pass 0 uses construction data only and stops at a label plus a simulated routing record.
 
+## Where things stand
+
+Designed. Not built.
+
 ## How these docs work
 
 **The Claude Docs are the working copy. This folder is the reviewed, versioned record.** These files are exported from Claude Docs and synced here by pull request. Nobody edits them by hand. `sync-manifest.yaml` records the source doc and the revision last synced.

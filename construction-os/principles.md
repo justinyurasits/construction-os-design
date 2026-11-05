@@ -1,11 +1,8 @@
-> **Synced from Claude Docs. Edit there, not here.**
-> Source: [Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 42 · synced 2026-11-04
-
 # Construction OS — Principles
 
 Nov 3, 2026 · @Justin
 
-The rules for building a great construction document set and great generated documents, each one learned from a real mistake in this build. Living doc: add a row whenever a review teaches something.
+Principles for building organizational knowledge an AI can rely on — knowledge that can be identified, governed, retrieved and used without inventing. Learned in construction, where the documents are contracts and the mistakes cost money, but none of it is construction-specific. Each principle is anchored to a real failure in this build. Living doc: add a row whenever a review teaches something.
 
 ## How to use this doc
 

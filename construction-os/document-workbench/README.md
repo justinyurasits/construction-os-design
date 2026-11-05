@@ -9,6 +9,10 @@ The Construction OS component that holds a company's governed knowledge and turn
 
 Product-level docs (the Product Brief and the Principles) are one folder up, in [construction-os/](../).
 
+## Where things stand
+
+Corpus and governance built. PCO generation designed and built. Retrieval designed, not running — the evaluation set is written and has not been scored.
+
 ## The docs
 
 | File | What it is |
