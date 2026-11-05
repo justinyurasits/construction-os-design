@@ -9,6 +9,8 @@ The Construction OS component that holds a company's governed knowledge and turn
 
 Product-level docs (the Product Brief and the Principles) are one folder up, in [construction-os/](../).
 
+**Code:** the [`document-workbench`](https://github.com/justinyurasits/document-workbench) repository. **Domain:** the governed library it reads, in [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus).
+
 ## The docs
 
 | File | What it is |
