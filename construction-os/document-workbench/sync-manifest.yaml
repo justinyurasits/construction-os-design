@@ -10,8 +10,8 @@ docs:
   - file: pco-design.md
     title: "PCO Slice — Technical Design"
     source: https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX
-    rev: 32
-    synced: 2026-11-04
+    rev: 35
+    synced: 2026-11-05
     type: slice-design
     status: current
   - file: plan.md

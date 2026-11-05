@@ -12,6 +12,7 @@ Product-level docs (the Product Brief and the Principles) are one folder up, in 
 ## Where things stand
 
 Corpus and governance built. PCO generation designed and built. Retrieval designed, not running — the evaluation set is written and has not been scored.
+**Code:** the [`document-workbench`](https://github.com/justinyurasits/document-workbench) repository. **Domain:** the governed library it reads, in [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus).
 
 ## The docs
 
