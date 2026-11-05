@@ -4,7 +4,7 @@ Generated from the sync manifests. Do not edit.
 | --- | --- | --- | --- | --- |
 | Document Standard | [source](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) | STANDARD.md | 4 | 2026-11-05 |
 | Principles | [source](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) | construction-os/principles.md | 42 | 2026-11-04 |
-| Product Brief | [source](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) | construction-os/product-brief.md | 19 | 2026-11-04 |
+| Product Brief | [source](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) | construction-os/brief.md | 19 | 2026-11-04 |
 | System Design | [source](https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4) | construction-os/document-workbench/design.md | 75 | 2026-11-04 |
 | PCO Slice — Technical Design | [source](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) | construction-os/document-workbench/pco-design.md | 32 | 2026-11-04 |
 | Plan | [source](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) | construction-os/document-workbench/plan.md | 104 | 2026-11-04 |

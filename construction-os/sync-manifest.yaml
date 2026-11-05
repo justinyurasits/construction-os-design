@@ -7,7 +7,7 @@ docs:
     synced: 2026-11-04
     type: principles
     status: current
-  - file: product-brief.md
+  - file: brief.md
     title: "Product Brief"
     source: https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP
     rev: 19
