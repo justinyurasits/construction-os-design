@@ -17,8 +17,8 @@ docs:
   - file: plan.md
     title: "Plan"
     source: https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42
-    rev: 104
-    synced: 2026-11-04
+    rev: 105
+    synced: 2026-11-08
     type: plan
     status: current
   - file: build-log.md

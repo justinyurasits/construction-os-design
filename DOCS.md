@@ -7,7 +7,7 @@ Generated from the sync manifests. Do not edit.
 | Product Brief | [source](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) | construction-os/brief.md | 22 | 2026-11-08 |
 | System Design | [source](https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4) | construction-os/document-workbench/design.md | 76 | 2026-11-08 |
 | PCO Slice — Technical Design | [source](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) | construction-os/document-workbench/pco-design.md | 40 | 2026-11-08 |
-| Plan | [source](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) | construction-os/document-workbench/plan.md | 104 | 2026-11-04 |
+| Plan | [source](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) | construction-os/document-workbench/plan.md | 105 | 2026-11-08 |
 | Build Log | [source](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) | construction-os/document-workbench/build-log.md | 20 | 2026-11-05 |
 | Intent Spec v1 | [source](https://claude.ai/artifact/Hjz4rG7TwwmsdjpX2UmRJ3) | construction-os/intake-router/spec.md | 52 | 2026-11-04 |
 | Pass 0 Build Guide | [source](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) | construction-os/intake-router/build-guide.md | 9 | 2026-11-04 |

@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 104 · synced 2026-11-04
+> Source: [Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 105 · synced 2026-11-08
 
 # Construction OS Corpus Cleanup & Change Control Plan
 
@@ -173,10 +173,18 @@ Replaces the old Phases 5 to 7 below with one end-to-end slice, per the recommen
 
 - [x] **1. Change order family map** (read-only report): every document a potential change order touches, its type, its role (rule, control, steps, definition, template, contract term, example), its dependencies in both directions, and what's still wrong in it. Becomes the definition's dependency list, the slice's fix list, and the first chapter of the library overview. Done Nov 2 (draft PR #56): 73 documents, top 10 blockers, 29 definition items, 25 pricing inputs (10 with no source), 23 fixes. Decisions taken from it: not-to-exceed checkpoints 70% and 90%; no trade work before client authorization; CON-13 amended so a signed potential change order authorizes work.
 - [ ] **2. Fix list:** fix only the documents the map flags (includes AUTH-WRITTEN PRs 3 and 4, the change event clock in STG-D, CON-12 and CON-15, billing alignment to FCM-04). Batch 1 merged Nov 2 (PR #59): 17 documents, authorization wording, change event clock, SCH-72 48 hours, not-to-exceed checkpoints, FCM-14 trade work, billing sentence, WF-02 signature step; closes #15 Table 1 rows 15, 17, 20, 117. Remaining: items waiting on the attorney, the PCO definition (#57), and SUB-02 (Decisions 4 and 5).
-- [ ] **3. Pricing methodology** (the five questions in Phase 4b). Settled Nov 2 from Justin's practice, in the System Design decision log and GitHub #58; two small items open (when the 1% application fee applies; how actual permit fees pass through).
-- [ ] **4. Technical design:** PCO definition schema (CHG-53-DEF, extracted from CHG-53), registry entries the PCO uses, pricing functions, Word template and deterministic rendering, publish step. Drafted Nov 2 as the Claude Doc "PCO Slice — Technical Design", pending review. No rag-system exists; the app starts in a new repository, construction-os.
-- [ ] **5. Acceptance set:** about 20 realistic potential change order requests (incomplete, conflicting rules, different contract terms, subcontractor quotes, missing costs), graded on the generated document.
-- [ ] **6. Build:** the advisor path and direct drafting, end to end, for Beacon Hill Interiors' package; then a second customer fork.
+- [x] **3. Pricing methodology** (the five questions in Phase 4b). Settled Nov 2 from Justin's practice, in the System Design decision log and GitHub #58. The two small items are settled as defaults (PCO technical design section 11): the 1% application fee applies to every change order; actual permit fees pass through as their own line after markup.
+- [x] **4. Technical design:** PCO definition schema (CHG-53-DEF, extracted from CHG-53), registry entries the PCO uses, pricing functions, Word template and deterministic rendering, publish step. The Claude Doc "PCO Slice — Technical Design" is the build spec. The app lives in document-workbench (created Nov 2 as construction-os, renamed Nov 5).
+- [ ] **5. Acceptance set:** about 20 realistic potential change order requests (incomplete, conflicting rules, different contract terms, subcontractor quotes, missing costs), graded on the generated document. 5 written (corpus tests/acceptance/cases); none yet extends the schedule enough to add general conditions, so the next batch needs one.
+- [ ] **6. Build** (technical design section 10), for Beacon Hill Interiors' package, then a second company:
+  - [x] Step 1: examples and the approved pricing method (5 cases with expected totals)
+  - [x] Step 2: CHG-53-DEF, registry, company config and the structured draft schema (corpus #61, app #1)
+  - [x] Step 3: Word template and renderer, with the PM checklist (corpus #63, app #2)
+  - [ ] Step 4: pricing engine and evidence interface. Next; Claude Code prompt written Nov 8.
+  - [ ] Step 5: LLM drafting. Also decides where project context is stored, now that it's reused across a project's work (SYS-00 3.0 section 1.3).
+  - [ ] Step 6: retrieval and contract term extraction
+  - [ ] Step 7: advisor path
+  - [ ] Step 8: second-company regression
 
 ### Phase 5: Change-order slice (governance)
 
