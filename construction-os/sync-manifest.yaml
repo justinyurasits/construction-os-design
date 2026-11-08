@@ -3,8 +3,8 @@ docs:
   - file: principles.md
     title: "Principles"
     source: https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy
-    rev: 50
-    synced: 2026-11-05
+    rev: 53
+    synced: 2026-11-08
     type: principles
     status: current
   - file: brief.md

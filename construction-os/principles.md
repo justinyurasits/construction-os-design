@@ -1,3 +1,6 @@
+> **Synced from Claude Docs. Edit there, not here.**
+> Source: [Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 53 · synced 2026-11-08
+
 # Construction OS — Principles
 
 Nov 3, 2026 · @Justin
@@ -192,13 +195,13 @@ Governed knowledge, the evidence supplied for one request, and the documents the
 | Kind | Example | How it's treated |
 | --- | --- | --- |
 | Governed knowledge | Change order policy, contract templates, pricing rules | Maintained and versioned as the company's authority |
-| Request context | An executed project contract, PM notes, a subcontractor quote | Used for that request only; never absorbed into company knowledge |
+| Request context | An executed project contract, PM notes, a subcontractor quote | Used across that project's work; never absorbed into company knowledge or used for another project |
 | Generated output | A PCO drafted by the system | A draft artifact; never a source of policy or pricing unless deliberately reviewed and ingested |
 
 **Rules that follow:**
 
-- A term in a supplied contract applies to that request; it never changes the company's standard.
-- Uploaded documents are never indexed into the company's library or reused across requests.
+- A term in a supplied contract applies to that project; it never changes the company's standard.
+- Uploaded documents are never indexed into the company's library or used for another project. Within their project they're context, not knowledge: the contract supplied for the PCO serves the PCCO too.
 - Generated drafts don't feed future pricing or policy without a deliberate review and ingestion step.
 
 **Learned from:** Test 4's contract set 8% overhead and 5% profit; the system must price that PCO at 13%, and must not learn that the company's markup is 13%. The design kept request inputs ephemeral from the first day of the System Design.
