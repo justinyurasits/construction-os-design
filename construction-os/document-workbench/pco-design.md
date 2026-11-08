@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 40 · synced 2026-11-08
+> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 41 · synced 2026-11-08
 
 # PCO Slice — Technical Design
 
@@ -299,4 +299,6 @@ The Word document is the product's output, so it's validated early: steps 1 to 3
 - [x] **PCO numbering (default):** PCO-001, PCO-002 and so on per project, assigned by the PM in order.
 - [x] **Price validity (default):** 30 days from the PCO date, stated in the terms.
 - [x] **General conditions threshold (default):** added only when a change extends the duration by more than 10%, matching CON-13. BHI follows it; configurable per company.
+- [x] **General conditions weeks (Nov 8):** durations are calendar days; weeks are extension days / 7, rounded half up to two decimals, and the amount is the rounded weeks × the weekly rate, so the quantity, rate and amount printed on the PCO multiply out exactly (11 days at $1,800/week is 1.57 weeks, $2,826.00). Whole weeks print without decimals.
+- [x] **PCO length (Nov 8):** no page limit; a PCO is as long as it needs to be. The template keeps the signature block and its authorization text together, repeats the pricing table's header row on every page, and keeps the subtotal, markup and total with the last pricing line.
 - [ ] Justin's acceptance cases: about 20 situations, starting with 5.
