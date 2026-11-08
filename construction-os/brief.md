@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Product Brief](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) · doc revision 19 · synced 2026-11-04
+> Source: [Product Brief](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) · doc revision 22 · synced 2026-11-08
 
 # Construction OS — Product Brief
 
@@ -89,7 +89,7 @@ The advisor is how people arrive; the documents are what they leave with.
 
 | Construction OS does not | Because | What it does instead |
 | --- | --- | --- |
-| Keep project records or track jobs | Procore and Buildertrend already do | Reads project documents from them when needed |
+| Keep project records or track jobs | The company's system of record already does (Procore, Buildertrend or a job folder) | Reads project documents from them when needed |
 | Maintain the schedule | That's the PM's job | Drafts schedule documents (delay notices, time extension requests) |
 | Do accounting or payments | Accounting handles it | Drafts billing documents that follow the company's rules |
 | Ship a national cost database | Generic prices are confidently wrong | Uses cost data extracted from the client's own bids and contracts |
@@ -106,7 +106,7 @@ The advisor is how people arrive; the documents are what they leave with.
 2. **Build for the wedge first.** The registry, compiler and checks start with what a priced potential change order uses: AUTH-WRITTEN, the change event clock, the pricing method, labor rates, the markup structure and the contract override. The rest of the 249 parameters wait until a document needs them.
 3. **Onboarding is extraction, then confirmation.** Construction OS reads a company's recent bids, contracts and procedures, proposes the values it finds, and the Policy Owner confirms or corrects them. Questions are asked only for gaps. Each registry entry therefore records where the value is usually found, not only the question to ask.
 4. **The company layer is first-class, not an exception.** Pricing data, contracts, and often a company's own procedures will be its own. Core is a starter set and a standard to check against. Company content is tenant-isolated.
-5. **Procore and Buildertrend are the project record (integration is later, not in the first slice).** Construction OS reads project documents from them for context (the contract, earlier change orders, the schedule of values) and its drafts go back into them. No project database gets built.
+5. **The project record lives in the company's existing system: Procore, Buildertrend or a job folder (integration is later, not in the first slice).** Some companies keep the job folder as the record even when they use Procore; Beacon Hill Interiors' SYS-01 and SYS-02 say so. Construction OS reads project documents from whichever system holds the record for context (the contract, earlier change orders, the schedule of values), and its drafts go back there. No project database gets built.
 6. **Everything generated is a draft for a person to review.** Flags, missing-fact questions and validation matter more than polish.
 7. **One pricing method for changes and bids.** Design it once: change orders first, then bid and preconstruction estimates.
 
