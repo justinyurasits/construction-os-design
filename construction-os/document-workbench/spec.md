@@ -27,9 +27,9 @@ This spec names and bounds the domain and points to where each part is defined. 
 | --- | --- |
 | What kinds of document exist, and how each is used | `docs/SYS-00` §3 (nine document types) |
 | Which source governs when two disagree | `docs/SYS-00` §4 (authority order and conflicts) |
-| How a company configures the library | `docs/SYS-00` §5 (layers, defaults, overrides, company configuration and profile) |
-| What every document declares about itself | `docs/SYS-00` §6 (front matter, identifiers, writing rules) |
-| How a document changes | `docs/SYS-00` §7 (statuses, versions, releases, checks) |
+| How a company configures the library | `docs/SYS-00` §5 (its own copy of the library, layers as labels, configuration, onboarding, profile, structured data) |
+| What every document declares about itself | `docs/SYS-00` §6 (front matter, identifiers, writing rules; the planned `governs` field) |
+| How a document changes | `docs/SYS-00` §7 (statuses, versions, publishing, the checks that run today and the planned ones) |
 | The firm-wide rules (authorization, spending limits, billing and others) | `docs/POL-01`, 12 rules with permanent IDs |
 | What a PCO must contain and depend on | `definitions/CHG-53-DEF.yaml` and the registry entries it lists |
 
@@ -38,7 +38,7 @@ Why these rules are shaped the way they are is in [design.md](design.md) and its
 ## Boundaries
 
 - **In the domain:** knowledge the company governs and maintains: documents, registry values, definitions, templates.
-- **Not in the domain:** anything supplied for a single request, such as an executed project contract, PM notes or a subcontractor quote. These are used for that request and never stored as company knowledge (principle 10).
+- **Not in the domain:** project context, meaning anything supplied for a project (an executed contract, PM notes, a subcontractor quote) and the drafts generated for it. It can be reused across that project's work, but never becomes company knowledge, never reaches another project and never changes the company's configuration (SYS-00 1.3, principle 10).
 - **Not in the domain:** project records. They stay in Procore or Buildertrend (Product Brief, section 5).
 - **Not in the domain:** the application. Code lives in [`document-workbench`](https://github.com/justinyurasits/document-workbench) and holds no company content.
 
@@ -57,6 +57,5 @@ The library's measured state is in `reports/` in the corpus repository. Each rep
 
 ## Known gaps in the source
 
-- **SYS-00 §5.1 still describes merging three layers at runtime** ("company first, then jurisdiction, then core"). The adopted model gives each company a complete copy of the library and treats layers as labels only (design.md decision log, Nov 2; principle 6). SYS-00 needs a version update to match. Until it has one, the design decision governs.
 - **No document declares what it controls.** A planned `governs` front matter field would list the rule or decision IDs each document owns (plan.md, future work).
 - **Only one document definition exists.** Other document types are generated from procedures until their definitions are written.

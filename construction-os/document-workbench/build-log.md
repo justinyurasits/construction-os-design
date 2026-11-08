@@ -1,3 +1,6 @@
+> **Synced from Claude Docs. Edit there, not here.**
+> Source: [Build Log](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) · doc revision 20 · synced 2026-11-05
+
 # Construction OS Corpus Audit — Build Log
 
 Oct 31, 2026 · @Justin

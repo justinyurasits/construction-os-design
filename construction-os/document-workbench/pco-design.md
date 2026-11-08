@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 35 · synced 2026-11-05
+> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 40 · synced 2026-11-08
 
 # PCO Slice — Technical Design
 
@@ -18,7 +18,7 @@ The build design for the first vertical slice: a priced potential change order, 
 - One customer package: Beacon Hill Interiors, built from construction-os-corpus.
 - Two entry paths: the advisor ("here's what happened, what do I do?") and direct drafting ("draft a PCO").
 - One document type end to end: the potential change order, with pricing.
-- Request inputs: the PM's notes, subcontractor quotes, and a project contract if supplied, used for that request only.
+- Request inputs: the PM's notes, subcontractor quotes, and a project contract if supplied. They are project context: reusable across that project's work, never used for another project or added to company knowledge (SYS-00 1.3).
 
 **Out of scope for the slice:** other document types, a second customer (comes right after), Procore integration, speech input, pricing extraction from historical documents, any project records.
 
@@ -127,7 +127,7 @@ onboarding: {group: change_management, found_in: [contracts, change orders],
 | role.Executive, role.ProjectManager, role.Superintendent | role\_mapping | names from the profile, with fallbacks | SYS-00 §2 |
 | company.name, company.signatory, company.licenses | identity | profile | profile |
 
-Values marked BHI are the defaults set Nov 2 (section 11). MARKUP-STRUCTURE is an ordered list whose components each name the cost categories they apply to, which replaces MARKUP-ON-BILLING-LABOR and MARKUP-ON-SUBCONTRACTORS as separate flags. A clear, applicable term in a supplied contract replaces the company value for that request and is cited (section 6).
+Values marked BHI are the defaults set Nov 2 (section 11). MARKUP-STRUCTURE is an ordered list whose components each name the cost categories they apply to, which replaces MARKUP-ON-BILLING-LABOR and MARKUP-ON-SUBCONTRACTORS as separate flags. A clear, applicable term in a supplied contract replaces the company value for that project and is cited (section 6).
 
 ## 5. PCO definition (CHG-53-DEF)
 
@@ -206,7 +206,7 @@ markup_structure:          # Beacon Hill Interiors default
   - {name: Fee, rate: 10%, applies_to: [all]}
 ```
 
-**Contract terms apply in the calculation.** Before pricing, applicable terms are extracted from a supplied contract with their section references (markup caps, allowed categories, general conditions rules). A clear, applicable term replaces the company value for that request and is cited on the draft; an ambiguous one is shown as an assumption and flagged. This follows SYS-00 4.3: the contract governs what the client pays, and company policy still governs internal conduct.
+**Contract terms apply in the calculation.** Before pricing, applicable terms are extracted from a supplied contract with their section references (markup caps, allowed categories, general conditions rules). A clear, applicable term replaces the company value for that project and is cited on the draft; an ambiguous one is shown as an assumption and flagged. This follows SYS-00 4.3: the contract governs what the client pays, and company policy still governs internal conduct.
 
 **Functions:** `price_line`, `general_conditions`, `subtotal`, `apply_markup` (component by component, over each component's categories), `total`. Decimal arithmetic, rounded to cents per line and per component.
 
@@ -235,7 +235,7 @@ Mandatory knowledge is loaded by ID from the definition; search only adds suppor
 | The rules and controls a PCO must follow | Deterministic: the definition's `depends_on`, loaded by ID |
 | The company's values | Exact lookup in the published config |
 | "What do I do when..." questions | Hybrid search over the package's `docs/` |
-| A contract or quote the PM supplied | Facts and terms extracted for that request only, with section references, and used in pricing; never indexed |
+| A contract or quote the PM supplied | Facts and terms extracted with section references and used in pricing; kept as project context for that project's later work; never indexed into the company library or used for another project |
 
 **Hybrid search:** PostgreSQL full-text search plus pgvector embeddings, merged with reciprocal rank fusion (k = 60). Chunks follow the documents' numbered sections, so a citation is a document ID plus section. Each chunk carries its front matter as metadata.
 

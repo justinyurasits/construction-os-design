@@ -1,3 +1,6 @@
+> **Synced from Claude Docs. Edit there, not here.**
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 6 · synced 2026-11-05
+
 # Construction OS Design — Document Standard
 
 Nov 5, 2026 · @Justin
