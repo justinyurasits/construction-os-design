@@ -14,3 +14,10 @@ docs:
     synced: 2026-11-08
     type: brief
     status: current
+  - file: architecture.md
+    title: "Construction OS — Architecture"
+    source: https://claude.ai/artifact/6UZv2djagWrjbm4AM7MXt9
+    rev: 27
+    synced: 2026-11-09
+    type: architecture
+    status: draft
