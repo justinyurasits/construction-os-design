@@ -15,7 +15,7 @@ This folder holds the product-level docs. Each component has its own folder.
 | --- | --- |
 | [brief.md](brief.md) | Who it's for, the painful moment, what it replaces, the wedge, what's out of scope. Every product and architecture decision is checked against it. |
 | [principles.md](principles.md) | The ten principles for building company knowledge an AI can rely on, each with the rules that follow, the incidents that taught it, and where it's enforced. Applies to every component. |
-| `architecture.md` (planned) | The components and how a request moves through them. Written when the intake router and the document workbench first connect. |
+| [architecture.md](architecture.md) | The product's map: terms, how it works (onboarding, drafting, library changes), how company knowledge flows, every part and its responsibility, one PCO request start to finish, boundaries, authority, status, and product-level decisions. Draft: four proposals await review. |
 
 ## Components
 
@@ -34,7 +34,7 @@ This folder holds the product-level docs. Each component has its own folder.
 - Between syncs, a folder can be behind the Claude Docs. The Claude Doc is current; the folder is the last reviewed version.
 - Each folder's `sync-manifest.yaml` records which Claude Doc each file comes from and the revision last synced.
 
-**Where decisions live:** the decision log is in the document workbench's [design.md](document-workbench/design.md) for now, including some product-level decisions. When `architecture.md` exists, product-level decisions move there.
+**Where decisions live:** product-level decisions are on [architecture.md](architecture.md); until the docs are reorganized, most of them are still recorded in the document workbench's [design.md](document-workbench/design.md) decision log, which stays their source.
 
 ## Related repositories
 

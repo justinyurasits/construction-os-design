@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 105 · synced 2026-11-08
+> Source: [Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 108 · synced 2026-11-09
 
 # Construction OS Corpus Cleanup & Change Control Plan
 
@@ -180,11 +180,21 @@ Replaces the old Phases 5 to 7 below with one end-to-end slice, per the recommen
   - [x] Step 1: examples and the approved pricing method (5 cases with expected totals)
   - [x] Step 2: CHG-53-DEF, registry, company config and the structured draft schema (corpus #61, app #1)
   - [x] Step 3: Word template and renderer, with the PM checklist (corpus #63, app #2)
-  - [ ] Step 4: pricing engine and evidence interface. Next; Claude Code prompt written Nov 8.
-  - [ ] Step 5: LLM drafting. Also decides where project context is stored, now that it's reused across a project's work (SYS-00 3.0 section 1.3).
+  - [x] Step 4: pricing engine and evidence interface (app #4 to #6; corpus #69, #70)
+  - [ ] Step 5: LLM drafting. Built Nov 9, app PR #7 open (229 tests pass; recorded output gives case 1 at $5,614.40 and case 4 at $6,129.00); waiting on Justin's live run and review. Claude Code's plan reviewed Nov 9 and approved with changes: branch from main; skip advice cases 2, 3 and 5; case 4 prices at company standard with the contract\_terms\_not\_applied flag; architect\_signs may be unknown; amounts the model transcribes are checked word for word; project workspaces are one folder per project behind a ProjectStore interface. Done when cases 1 and 4 produce priced drafts through the CLI (case 1 at $5,614.40) and Justin runs the live script.
   - [ ] Step 6: retrieval and contract term extraction
   - [ ] Step 7: advisor path
   - [ ] Step 8: second-company regression
+
+**Open work from the Nov 8–9 architecture review:**
+
+- [ ] Review the four proposals on the [Construction OS — Architecture](https://claude.ai/artifact/6UZv2djagWrjbm4AM7MXt9) page, then sync it to the design repo as construction-os/architecture.md.
+- [ ] Reorganize the design docs once approved: the corpus gets its own component folder (this Plan, the System Design and the Build Log move there), and the workbench gets new design, plan and build log docs. A move only, with no rewording.
+- [ ] Then refresh the corpus design against SYS-00 3.0, and fix the stale registry table in PCO Technical Design section 4.
+- [ ] Document Standard: add the rule that product-level decisions live on the architecture page and a part's decisions in its design doc.
+- [ ] Starter split: the mechanical split after step 5; pull step 8 (the fictional second company) forward as the test of it.
+- [ ] Project workspaces: access control and retention, required before any customer.
+- [ ] Corpus follow-up after step 5: sample drafts cite supplied\_quote for quotes that appear only in the notes.
 
 ### Phase 5: Change-order slice (governance)
 
