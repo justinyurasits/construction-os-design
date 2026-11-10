@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 42 · synced 2026-11-10
+> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 44 · synced 2026-11-10
 
 # PCO Slice — Technical Design
 
@@ -286,7 +286,7 @@ Justin confirmed Nov 2 that no rag-system repository exists (earlier notes descr
 **Repositories:**
 
 - `construction-os-corpus`: stays as is for now and becomes BHI's package. A clean starter library and a separate BHI repository split out when the second company arrives.
-- `document-workbench` (private; created as construction-os, renamed Nov 5): the application. Modules: `package` (publish), `registry`, `definitions`, `retrieval`, `pricing`, `drafting`, `rendering`, `advisor`, `api`. Secrets only in `.env`, gitignored, never read by Claude Code.
+- `document-workbench` (public, decided Nov 10; created as construction-os, renamed Nov 5): the application. Modules: `package` (publish), `registry`, `definitions`, `retrieval`, `pricing`, `drafting`, `rendering`, `advisor`, `api`. Secrets only in `.env`, gitignored, never read by Claude Code.
 
 **Build order (each step testable on its own):**
 
@@ -296,7 +296,7 @@ Justin confirmed Nov 2 that no rag-system repository exists (earlier notes descr
 4. **Pricing functions and the evidence interface** (rate tables, supplied quotes). Done when known cases calculate exactly, including category rules and contract caps.
 5. **LLM drafting.** Done when rough PM notes become a priced Word draft.
 
-   Added Nov 10, between steps 5 and 6: **5a, layout v2** (the old system's format and organization, the PRICING-PRESENTATION setting, and every correctness rule kept); **5b, PM review and revision** (section 7); **5c, estimating from cost history** (SYS-09 as structured cost data, line items within each division mapped to cost-history items or labeled estimates, measurements and durations proposed by the model with area, waste and totals in code, a company setting for which point of a cost range to use, general conditions as hours and days at rate). Revision comes before estimating so every draft is useful even when its first pricing is rough.
+   Added Nov 10, between steps 5 and 6: **5a, layout v2** (the old system's format and organization, the PRICING-PRESENTATION setting, and every correctness rule kept); **5b, PM review and revision** (section 7); **5c, estimating from cost history** (SYS-09 as structured cost data, line items within each division mapped to cost-history items or labeled estimates, measurements and durations proposed by the model with area, waste and totals in code, a company setting for which point of a cost range to use, general conditions as hours and days at rate). Order revised the same day: 5c before 5b, so the PM's first review is of a fully estimated draft.
 6. **Retrieval and contract term extraction.** Done when drafts use the right governing sources and flag conflicts.
 7. **Advisor path.** Done when a described situation returns cited advice and can turn into a PCO.
 8. **Second-company regression.** Done when the same application produces different, correct company-specific pricing and documents.
