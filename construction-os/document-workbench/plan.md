@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 108 · synced 2026-11-09
+> Source: [Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 112 · synced 2026-11-10
 
 # Construction OS Corpus Cleanup & Change Control Plan
 
@@ -181,7 +181,10 @@ Replaces the old Phases 5 to 7 below with one end-to-end slice, per the recommen
   - [x] Step 2: CHG-53-DEF, registry, company config and the structured draft schema (corpus #61, app #1)
   - [x] Step 3: Word template and renderer, with the PM checklist (corpus #63, app #2)
   - [x] Step 4: pricing engine and evidence interface (app #4 to #6; corpus #69, #70)
-  - [ ] Step 5: LLM drafting. Built Nov 9, app PR #7 open (229 tests pass; recorded output gives case 1 at $5,614.40 and case 4 at $6,129.00); waiting on Justin's live run and review. Claude Code's plan reviewed Nov 9 and approved with changes: branch from main; skip advice cases 2, 3 and 5; case 4 prices at company standard with the contract\_terms\_not\_applied flag; architect\_signs may be unknown; amounts the model transcribes are checked word for word; project workspaces are one folder per project behind a ProjectStore interface. Done when cases 1 and 4 produce priced drafts through the CLI (case 1 at $5,614.40) and Justin runs the live script.
+  - [x] Step 5: LLM drafting. Built Nov 9 (app PR #7, 229 tests, case 1 at $5,614.40 and case 4 at $6,129.00). Done Nov 10: live runs pass and Justin judged the case 1 PCO good, after the standalone-PCO fixes (corpus #72, app #9 and #10). A cedar closet test from a transcript with no prices found a bug: day-rate roles (Demo Crew, Carpentry Crew (Finish)) are not priced from the rate table; fixed in step 5c. Claude Code's plan reviewed Nov 9 and approved with changes: branch from main; skip advice cases 2, 3 and 5; case 4 prices at company standard with the contract\_terms\_not\_applied flag; architect\_signs may be unknown; amounts the model transcribes are checked word for word; project workspaces are one folder per project behind a ProjectStore interface. Done when cases 1 and 4 produce priced drafts through the CLI (case 1 at $5,614.40) and Justin runs the live script.
+  - [ ] Step 5a: PCO layout v2 (added Nov 10). Adopt the old system's format and organization, from its cedar closet PCO, while keeping every correctness rule (notice box, Executive co-sign, no email approval, "Potential", "Owner", letter voice, no rounding of totals). Branded first page; Prepared by and Requested by in the header table; a description paragraph plus "The work includes:" bullets, with scope stated once; an optional basis of quantities block; a new registry entry PRICING-PRESENTATION (by\_division with division subtotals and a separate summary, flat, or summary\_only; BHI set to by\_division); no-wrap pricing columns; an optional schedule activity breakdown; assumptions grouped under subheads with job-specific "Not included" items; Contractor and Owner signatures side by side; new section order. Two PRs, corpus first; before-and-after PDFs on a review-only corpus branch. Prompt given Nov 10.
+  - [ ] Step 5b: PM review and revision (added Nov 10). The PM reads a draft and gives feedback in plain words ("super is 2 days, drop the dumpster, add a second coat of finish"); the app produces the next version (v002, v003) in the same project folder, with the feedback saved as an input and a change summary: what moved, from what to what, and the new total. Rules: an amount the PM gives is a sourced amount (source PM, dated); code computes every total; lines the feedback does not mention stay unchanged, and a test checks that every difference between versions traces to a feedback item; feedback that conflicts with company policy (for example, skipping the Executive co-sign) is flagged and policy holds. Done when acceptance case 6 passes: the cedar closet transcript gives a v001 with a complete, sourced line structure, and Justin's written feedback gives a v002 that changes exactly what he asked and nothing else. Waiting on Justin's feedback for case 6.
+  - [ ] Step 5c: estimating from cost history (added Nov 10). SYS-09 (1,258 items from 12+ projects) cleaned into structured cost data; the model breaks scope into line items within each division, each mapped to a cost-history item or labeled an estimate; it may propose measurements and durations, and code does the area, waste and totals; a company setting picks which point of a cost range to use; general conditions appear as hours and days at rate so the PM can adjust them. Fix the day-rate pricing bug first. The aim is a better starting point for the PM, not a final price.
   - [ ] Step 6: retrieval and contract term extraction
   - [ ] Step 7: advisor path
   - [ ] Step 8: second-company regression
@@ -195,6 +198,18 @@ Replaces the old Phases 5 to 7 below with one end-to-end slice, per the recommen
 - [ ] Starter split: the mechanical split after step 5; pull step 8 (the fictional second company) forward as the test of it.
 - [ ] Project workspaces: access control and retention, required before any customer.
 - [ ] Corpus follow-up after step 5: sample drafts cite supplied\_quote for quotes that appear only in the notes.
+
+**Added Nov 9, from the PCO polish:**
+
+- [ ] Step 6 scope: contract type (fixed price, cost-plus, GMP, T&M) becomes a project fact read from the executed contract; on cost-plus, the contract's fee replaces company markup and subcontract markup limits apply. PCO pricing assumes fixed price until then. Cost backup on cost-plus goes monthly with billing, not with the PCO.
+- [ ] Acceptance cases, next batch: a cost-plus change and a change that adds general conditions.
+- [ ] Build PRO-34's Selection Approval Form; PCOs now reference Owner selections by ID.
+- [ ] Later pass on documents that still say "attach backup": CHG-51, CHG-54 step 23, CHG-55 section 8, CHG-57, CHG-58, and CHG-53 step 15 (proposed SOV/SOB update).
+- [ ] Attorney packet (#30): the five standard clarification texts in CHG-53-DEF, including the revised owner upgrades and permits wording.
+
+* [ ] Contract type across the library (raised Nov 9): documents need to know whether a job is fixed price, cost-plus (with or without a GMP) or T&M, and work accordingly: PCO pricing and markup, billing support, time entry, change authorization (CHG-59 for T&M). The knowledge model already names contract type as an applicability dimension (applies\_to), but only stage is filled today. Fill applies\_to: contract\_type where a requirement differs, key CHG-53-DEF's rules on it, and store the contract type once per project in its workspace. Design it with step 6.
+
+- [ ] Before the second document type: move company-wide house style (defined terms "the Contractor" and "the Owner", number style "six (6)", writing as a letter to the Owner, nothing internal on Owner documents) out of CHG-53-DEF's presentation into one shared house-style file every definition uses. Then each new type adds only its own definition, template, standard language and acceptance cases. Suggested order by the brief's test: PCCO, the PRO-34 selection sheet, then the RFI.
 
 ### Phase 5: Change-order slice (governance)
 

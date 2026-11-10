@@ -3,22 +3,22 @@ docs:
   - file: design.md
     title: "System Design"
     source: https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4
-    rev: 76
-    synced: 2026-11-08
+    rev: 80
+    synced: 2026-11-10
     type: design
     status: current
   - file: pco-design.md
     title: "PCO Slice — Technical Design"
     source: https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX
-    rev: 41
-    synced: 2026-11-08
+    rev: 42
+    synced: 2026-11-10
     type: slice-design
     status: current
   - file: plan.md
     title: "Plan"
     source: https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42
-    rev: 108
-    synced: 2026-11-09
+    rev: 112
+    synced: 2026-11-10
     type: plan
     status: current
   - file: build-log.md

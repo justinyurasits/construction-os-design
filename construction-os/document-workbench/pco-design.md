@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 41 · synced 2026-11-08
+> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 42 · synced 2026-11-10
 
 # PCO Slice — Technical Design
 
@@ -226,6 +226,15 @@ The LLM never writes the Word file. It fills a structured draft that matches the
 
 The structured draft is independent of its destination: rendering is an output adapter. Word is the only adapter in the slice; a Procore or Buildertrend adapter can be added later without changing the draft schema. Revision happens by conversation ("add a day of carpentry"), which edits the structured draft and re-runs steps 2 to 5.
 
+**PM review and revision (decided Nov 10).** Pricing in a draft is a suggestion; the PM decides every price, and a human is always in the loop. A draft is reviewed and revised in rounds: the PM gives feedback in plain words ("super is 2 days, drop the dumpster, add a second coat of finish"), and the app produces the next version (v002, v003) in the same project folder, with the feedback saved as an input and a change summary listing what moved, from what to what, and the new total. The rules:
+
+- An amount the PM gives is a sourced amount (source: the PM, dated), shown as such on the PM checklist.
+- Code computes every total, in every version; the model never retypes one.
+- Lines the feedback does not mention stay unchanged, word for word and amount for amount; every difference between two versions traces to a feedback item.
+- Feedback that conflicts with company policy (for example, skipping the Executive co-sign) is flagged, and policy holds.
+
+**Presentation (decided Nov 10).** How pricing is shown to the Owner is a company setting, PRICING-PRESENTATION: by\_division (lines grouped by division, each with a subtotal, then a summary table with subtotal, general conditions when they apply, each markup component and the total), flat (one table), or summary\_only (the summary only; the line detail goes to the PM checklist). BHI uses by\_division.
+
 ## 8. Retrieval and dependency resolution
 
 Mandatory knowledge is loaded by ID from the definition; search only adds supporting context and powers the advisor.
@@ -266,6 +275,8 @@ The slice is graded on the documents it produces, using about 20 real situations
 
 Time saved is the headline measure. The Product Brief's story (three change orders, an RFI and two selections due tomorrow) is the real test. For the slice: time from rough notes to a usable PCO draft, against Justin's estimate of doing it by hand, and how much the PM had to fix. The retrieval eval stays as a unit test for search, not the acceptance bar.
 
+**Pricing is graded on structure, not a single right number (Nov 10).** For a draft priced without a quote or a PM figure, pass means a complete line structure that covers the scope, a source on every line (rate table, cost history, quote, the PM, or a labeled estimate), exact arithmetic, and general conditions the PM can adjust line by line. Acceptance case 6 (cedar closets) tests this and the revision loop: the transcript gives a v001 with that structure, and Justin's written feedback gives a v002 that changes exactly what he asked and nothing else.
+
 ## 10. Stack, repository and build order
 
 Justin confirmed Nov 2 that no rag-system repository exists (earlier notes describe one that was never built), so the slice starts in a new repository.
@@ -284,6 +295,8 @@ Justin confirmed Nov 2 that no rag-system repository exists (earlier notes descr
 3. **Word template and renderer.** Done when that sample draft produces a professional, editable PCO that looks like what PMs actually send.
 4. **Pricing functions and the evidence interface** (rate tables, supplied quotes). Done when known cases calculate exactly, including category rules and contract caps.
 5. **LLM drafting.** Done when rough PM notes become a priced Word draft.
+
+   Added Nov 10, between steps 5 and 6: **5a, layout v2** (the old system's format and organization, the PRICING-PRESENTATION setting, and every correctness rule kept); **5b, PM review and revision** (section 7); **5c, estimating from cost history** (SYS-09 as structured cost data, line items within each division mapped to cost-history items or labeled estimates, measurements and durations proposed by the model with area, waste and totals in code, a company setting for which point of a cost range to use, general conditions as hours and days at rate). Revision comes before estimating so every draft is useful even when its first pricing is rough.
 6. **Retrieval and contract term extraction.** Done when drafts use the right governing sources and flag conflicts.
 7. **Advisor path.** Done when a described situation returns cited advice and can turn into a PCO.
 8. **Second-company regression.** Done when the same application produces different, correct company-specific pricing and documents.
