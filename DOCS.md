@@ -3,7 +3,7 @@ Generated from the sync manifests. Do not edit.
 | Document | Claude Doc | Syncs to | Rev | Synced |
 | --- | --- | --- | --- | --- |
 | Document Standard | [source](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) | STANDARD.md | 6 | 2026-11-05 |
-| Principles | [source](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) | construction-os/principles.md | 53 | 2026-11-08 |
+| Principles | [source](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) | construction-os/principles.md | 55 | 2026-11-10 |
 | Product Brief | [source](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) | construction-os/brief.md | 22 | 2026-11-08 |
 | Construction OS — Architecture | [source](https://claude.ai/artifact/6UZv2djagWrjbm4AM7MXt9) | construction-os/architecture.md | 27 | 2026-11-09 |
 | System Design | [source](https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4) | construction-os/document-workbench/design.md | 80 | 2026-11-10 |

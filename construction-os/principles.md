@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 53 · synced 2026-11-08
+> Source: [Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 55 · synced 2026-11-10
 
 # Construction OS — Principles
 
@@ -164,9 +164,9 @@ A generated document states what's known, labels what's estimated and why, marks
 - Always propose the protective language a PM would add (exclusions, permit questions), for the PM to confirm.
 - Authorization names exactly who authorizes.
 - A draft is never blocked; its flags travel with it.
-- Marketing stays off contract documents.
+- Marketing stays off contract documents: no claims about quality, service or results in the description, terms, pricing or clarifications. The company's identity is not marketing: the logo, name and tagline on a cover page laid out by the brand guide may appear (decided Nov 10).
 
-**Learned from:** the old system's PCO cited "Markup per the Contract"; the first new draft put "Who is the client?" at the top of page 1 and left exclusions blank; neither draft asked whether six new lights needed an electrical permit until a review did.
+**Learned from:** the old system's PCO cited "Markup per the Contract"; the first new draft put "Who is the client?" at the top of page 1 and left exclusions blank; neither draft asked whether six new lights needed an electrical permit until a review did. On Nov 10 the old system's cedar closet PCO showed its branded cover was better, and Justin kept the brand guide's cover, tagline included, as identity.
 
 **Enforced by:** the pricing engine; the PM checklist file; the clarifications and exclusions section with prompts by trade; the permit check; fixed terms in the template.
 
