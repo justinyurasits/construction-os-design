@@ -1,9 +1,25 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Pass 0 Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 9 · synced 2026-11-04
+> Source: [Pass 0 Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 10 · synced 2026-11-16
 
 # Pass 0 Build Guide: Construction OS Intake Router
 
 Nov 4, 2026 · @Justin
+
+## Start here
+
+Pass 0 is the Construction OS intake router: it reads an inbound message and says which workflow it should start. The design is done; the first run is next.
+
+**Where things live**
+
+- Claude Docs are the working copies: the Intent Spec, this guide and the Classifier Prompt. Edit them there.
+- The design repo (`construction-os-design`, folder `construction-os/intake-router/`) holds the reviewed copies, synced by pull request. Never edit those by hand.
+- Your labeled set is a Numbers workbook with about 20 draft items. It is not in a repo yet.
+
+**Next three steps**
+
+1. Fix the first batch in the workbook: fill INTAKE-008 and 010, correct the label typos and the 009, 013 and 014 labels, change `ambiguous` to `boundary`, add `expected_hold`.
+2. Export the set to CSV.
+3. Write `classify.py` yourself, run about 20 dev items through the prompt, and bring the disagreements back.
 
 ## What we're building
 

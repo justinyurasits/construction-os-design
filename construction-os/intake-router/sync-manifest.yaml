@@ -10,8 +10,8 @@ docs:
   - file: build-guide.md
     title: "Pass 0 Build Guide"
     source: https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9
-    rev: 9
-    synced: 2026-11-04
+    rev: 10
+    synced: 2026-11-16
     type: plan
     status: current
   - file: classifier-prompt.md
