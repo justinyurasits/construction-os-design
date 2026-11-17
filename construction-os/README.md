@@ -15,6 +15,7 @@ This folder holds the product-level docs. Each component has its own folder.
 | --- | --- |
 | [brief.md](brief.md) | Who it's for, the painful moment, what it replaces, the wedge, what's out of scope. Every product and architecture decision is checked against it. |
 | [principles.md](principles.md) | The ten principles for building company knowledge an AI can rely on, each with the rules that follow, the incidents that taught it, and where it's enforced. Applies to every component. |
+| [product-spec.md](product-spec.md) | What the product must do for its users: capabilities with IDs (`COS-CAP-01`), journeys and acceptance criteria. **Placeholder, not yet written.** |
 | [architecture.md](architecture.md) | The product's map: terms, how it works (onboarding, drafting, library changes), how company knowledge flows, every part and its responsibility, one PCO request start to finish, boundaries, authority, status, and product-level decisions. Draft: four proposals await review. |
 
 ## Components
