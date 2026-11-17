@@ -13,7 +13,7 @@ An AI-generated protocol stays a draft until a named person approves it.
 **Code and docs:** [`fieldscope`](https://github.com/justinyurasits/fieldscope) ·
 [live demo](https://fieldscope-vm64.onrender.com/)
 
-This is a linked project. Its docs live in the code repository.
+Its docs still live in the code repository. [#26](https://github.com/justinyurasits/design/issues/26) moves them here, the same as every other project.
 
 ## Read in this order
 
