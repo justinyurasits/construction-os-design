@@ -15,13 +15,17 @@ Status: *active · prototype · archived*.
 The design docs for this repository are in the `design` repository, cloned next to this
 one, at `../design/<project>/<component>/`. Pull it before planning.
 
-Before proposing work, read in this order:
+Before proposing work, read in this order (skip any the project doesn't have yet):
 
 1. `../design/<project>/brief.md`: why it exists and for whom
 2. `../design/<project>/product-spec.md`: what the product must do, by capability ID
-3. `../design/<project>/<component>/spec.md`: what this component must do
-4. `../design/<project>/<component>/design.md`: how it works, and the decision log
-5. `../design/<project>/<component>/plan.md`: the milestones still ahead
+3. `../design/<project>/architecture.md` and `principles.md`: how the parts fit, and
+   the rules every design decision follows
+4. `../design/<project>/<component>/spec.md`: what this component must do
+5. `../design/<project>/<component>/design.md`: how it works, and the decision log
+6. `../design/<project>/<component>/<slice>-design.md`: the build design for the slice
+   the issue belongs to
+7. `../design/<project>/<component>/plan.md`: the milestones still ahead
 
 - **Design leads, code follows.** Never edit design docs from this repository. If the
   work needs a change to what the product does, to a requirement or to the architecture,
