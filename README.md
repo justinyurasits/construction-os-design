@@ -21,6 +21,8 @@ customer.
 | Project | Folder | What it is |
 | --- | --- | --- |
 | Construction OS | [construction-os/](construction-os/) | A company-specific AI system for residential builders. Components: the [document workbench](construction-os/document-workbench/) — knowledge, retrieval and drafting — and the [intake router](construction-os/intake-router/), which classifies inbound messages and routes them to a workflow. |
+| Agents | [agents/](agents/) | Small agents built to learn how agent loops work, starting with a job evaluator. Linked project: its docs live in the [`agents`](https://github.com/justinyurasits/agents) repo. |
+| Fieldscope | [fieldscope/](fieldscope/) | Subcontractor safety compliance prototype. Linked project: its docs live in the [`fieldscope`](https://github.com/justinyurasits/fieldscope) repo. |
 
 ## Where things stand
 
@@ -45,8 +47,15 @@ not an evaluation run.
   with its source, path and revision.
 - **[STANDARD.md](STANDARD.md)** is the document model: what each file in a
   component is for, and the rules that keep it that way.
+- **[_template/](_template/)** is the standard as files: a reference project
+  with every project-level file and one complete component, each saying what
+  belongs in it.
+- **Linked projects** keep their docs in their code repository, because those
+  docs change in the same pull request as the code. Their folder here holds
+  only a README that links to them and says what order to read them in.
 - **Every change is a branch and a pull request.** Never commit to main.
 
-To add a project: create a folder named for it, add a README describing it and
-its docs, and add a row to the table above. To add a component: create a
-subfolder, add its README, list it in the project README.
+To add a project: copy `_template/`, rename it, fill it in, and add a row to the
+table above. For a linked project, copy `_template/linked-project-readme.md` as
+the folder's README. To add a component: copy `_template/component/` into the
+project and list it in the project README.

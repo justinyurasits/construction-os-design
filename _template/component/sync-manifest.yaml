@@ -1,0 +1,17 @@
+# Which Claude Doc each file is synced from. Update rev and synced on every sync.
+# One entry per synced file in this folder. Repo-authored files are not listed.
+docs:
+  - file: design.md
+    title: "System Design"
+    source: https://claude.ai/artifact/<id>
+    rev: 1
+    synced: YYYY-MM-DD
+    type: design
+    status: draft
+  - file: plan.md
+    title: "Plan"
+    source: https://claude.ai/artifact/<id>
+    rev: 1
+    synced: YYYY-MM-DD
+    type: plan
+    status: draft

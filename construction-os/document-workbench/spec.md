@@ -40,7 +40,7 @@ Why these rules are shaped the way they are is in [design.md](design.md) and its
 - **In the domain:** knowledge the company governs and maintains: documents, registry values, definitions, templates.
 - **Not in the domain:** project context, meaning anything supplied for a project (an executed contract, PM notes, a subcontractor quote) and the drafts generated for it. It can be reused across that project's work, but never becomes company knowledge, never reaches another project and never changes the company's configuration (SYS-00 1.3, principle 10).
 - **Not in the domain:** project records. They stay in Procore or Buildertrend (Product Brief, section 5).
-- **Not in the domain:** the application. Code lives in [`document-workbench`](https://github.com/justinyurasits/document-workbench) and holds no company content.
+- **Not in the domain:** the application. Code lives in [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench) and holds no company content.
 
 ## What the audit found
 
