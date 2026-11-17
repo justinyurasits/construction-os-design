@@ -38,7 +38,7 @@ This folder holds the product-level docs. Each component has its own folder.
 
 ## Related repositories
 
-- `construction-os-corpus`: the company knowledge package (currently Beacon Hill Interiors').
-- `document-workbench`: the document workbench application (renamed from `construction-os` on Nov 5). Holds no company content.
+- [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus) (private): the company knowledge package (currently Beacon Hill Interiors').
+- [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench): the document workbench application (created as `construction-os`, renamed `document-workbench` on Nov 5, `construction-os-workbench` on Nov 17). Holds no company content.
 
 Product design docs live here, not in the corpus, because the corpus is one company's package and the template every company copy is forked from.

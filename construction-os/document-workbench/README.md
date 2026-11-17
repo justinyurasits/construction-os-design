@@ -13,7 +13,7 @@ Product-level docs (the Product Brief and the Principles) are one folder up, in 
 
 Corpus and governance built. PCO generation designed; the Word template and renderer are built, while the pricing engine (build step 4) and LLM drafting (step 5) are not. Retrieval designed, not running: the evaluation set is written and has not been scored.
 
-**Code:** the [`document-workbench`](https://github.com/justinyurasits/document-workbench) repository. **Domain:** the governed library it reads, in [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus).
+**Code:** the [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench) repository. **Domain:** the governed library it reads, in [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus).
 
 ## The docs
 
