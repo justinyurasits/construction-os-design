@@ -6,9 +6,8 @@ status: draft
 # Project name
 
 > **Linked-project README.** For a project whose docs live in its code repository,
-> because they change in the same pull request as the code. Copy this file as
-> `README.md` into a new folder named for the project; it is the only file that
-> folder holds. Delete this box in the copy.
+> because they change in the same pull request as the code. Copy this folder, rename it
+> for the project, and delete this box; this README is the only file it holds.
 
 *One or two sentences: what this is and who it's for.*
 
