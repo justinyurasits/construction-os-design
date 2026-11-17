@@ -16,13 +16,14 @@ This folder holds the product-level docs. Each component has its own folder.
 | [brief.md](brief.md) | Who it's for, the painful moment, what it replaces, the wedge, what's out of scope. Every product and architecture decision is checked against it. |
 | [principles.md](principles.md) | The ten principles for building company knowledge an AI can rely on, each with the rules that follow, the incidents that taught it, and where it's enforced. Applies to every component. |
 | [product-spec.md](product-spec.md) | What the product must do for its users: capabilities with IDs (`COS-CAP-01`), journeys and acceptance criteria. **Placeholder, not yet written.** |
-| [architecture.md](architecture.md) | The product's map: terms, how it works (onboarding, drafting, library changes), how company knowledge flows, every part and its responsibility, one PCO request start to finish, boundaries, authority, status, and product-level decisions. Draft: four proposals await review. |
+| [architecture.md](architecture.md) | The product's map: terms, how it works (onboarding, drafting, library changes), how company knowledge flows, every part and its responsibility, one PCO request start to finish, boundaries, authority, status, and the product-level decision log. Draft: three proposals await review. |
 
 ## Components
 
 | Component | Folder | What it is |
 | --- | --- | --- |
-| Document workbench | [document-workbench/](document-workbench/) | The knowledge and authoring component (the RAG part): governed company knowledge, retrieval, pricing, drafting and Word rendering. Builds the priced potential change order first. |
+| Corpus | [corpus/](corpus/) | The company's governed knowledge: documents, registry, company values and rate tables, definitions and templates. Every other part reads it through the published package. |
+| Document workbench | [document-workbench/](document-workbench/) | The authoring component (the RAG part): retrieval, pricing, drafting, Word rendering and PM revision, reading the corpus. Builds the priced potential change order first. |
 | Intake router | [intake-router/](intake-router/) | Reads inbound messages and says which workflow each should start. Pass 0 is a classifier with evals. |
 
 ## How these docs work
@@ -35,11 +36,11 @@ This folder holds the product-level docs. Each component has its own folder.
 - Between syncs, a folder can be behind the Claude Docs. The Claude Doc is current; the folder is the last reviewed version.
 - Each folder's `sync-manifest.yaml` records which Claude Doc each file comes from and the revision last synced.
 
-**Where decisions live:** product-level decisions are on [architecture.md](architecture.md); until the docs are reorganized, most of them are still recorded in the document workbench's [design.md](document-workbench/design.md) decision log, which stays their source.
+**Where decisions live:** product-level decisions are on [architecture.md](architecture.md). A component's own decisions are in its design.md: the [corpus](corpus/design.md) and the [document workbench](document-workbench/design.md). Each decision is recorded once.
 
 ## Related repositories
 
-- [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus) (private): the company knowledge package (currently Beacon Hill Interiors').
-- [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench): the document workbench application (created as `construction-os`, renamed `document-workbench` on Nov 5, `construction-os-workbench` on Nov 17). Holds no company content.
+- [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus) (private): the corpus, the company knowledge package (currently Beacon Hill Interiors'). Its docs are in [corpus/](corpus/).
+- [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench): the document workbench application (created as `construction-os`, renamed `document-workbench` on Nov 5, `construction-os-workbench` on Nov 17). Holds no company content. Public.
 
 Product design docs live here, not in the corpus, because the corpus is one company's package and the template every company copy is forked from.
