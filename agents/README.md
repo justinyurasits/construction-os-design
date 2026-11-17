@@ -12,9 +12,7 @@ the tools, applies the hard rules in code, and keeps the conversation.
 **Status:** active, learning project  
 **Code and docs:** [`agents`](https://github.com/justinyurasits/agents)
 
-This is a linked project. Its docs live next to its code, because every pull request
-updates them: the design doc has to match `agent.py` on `main`, and each PR writes its
-own build-log and decision-log entries.
+Its docs still live in the code repository. [#26](https://github.com/justinyurasits/design/issues/26) moves them here, the same as every other project.
 
 ## Job evaluator — read in this order
 
