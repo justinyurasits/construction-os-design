@@ -9,7 +9,7 @@ status: draft
 
 This will say what Construction OS must do for its users, capability by capability,
 with acceptance criteria and user journeys, following
-[`_template/product-spec.md`](../_template/product-spec.md). It will be written as a
+[`_template/project/product-spec.md`](../_template/project/product-spec.md). It will be written as a
 Claude Doc and synced here, replacing this file.
 
 Until then, what the product does is spread across three docs:

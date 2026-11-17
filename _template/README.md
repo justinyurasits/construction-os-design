@@ -1,59 +1,20 @@
 ---
 type: readme
-status: draft
+status: current
 ---
 
-# Project name
+# Templates
 
-> **This is the reference project.** It is [STANDARD.md](../STANDARD.md) as files:
-> every project-level file, and one [component/](component/) with the full component
-> set. Each file says what belongs in it. To start a project, copy this folder, rename
-> it, and replace every line in italics or `<angle brackets>`. To start a component,
-> copy `component/` into the project. Where this folder and the standard differ, the
-> standard wins and this folder is fixed in the same pull request.
->
-> A project whose docs live in its code repository uses
-> [linked-project-readme.md](linked-project-readme.md) instead.
->
-> Delete this box in the copy.
+[STANDARD.md](../STANDARD.md) as files. Every file says what belongs in it; replace
+each line in italics or `<angle brackets>`. Where these templates and the standard
+differ, the standard wins and the template is fixed in the same pull request.
 
-*One or two sentences: what this is, who it's for, and the first thing it does.*
-
-This folder holds the product-level docs. Each component has its own folder.
-
-## Where things stand
-
-| | Designed | Built | Validated |
-| --- | --- | --- | --- |
-| *<capability>* | *✓ / —* | *✓ / —* | *✓ / Partial — what was checked / —* |
-
-Nothing here is claimed as working until it is. An evaluation set written is not
-an evaluation run.
-
-## Product-level docs
-
-| File | What it is |
-| --- | --- |
-| [brief.md](brief.md) | Who it's for, the painful moment, what it replaces, what's out of scope. Every decision is checked against it. Required. |
-| [principles.md](principles.md) | *Optional.* What building this taught, each principle tied to the incident behind it and where it's enforced. |
-| [product-spec.md](product-spec.md) | *Optional, needed once there are two or more components.* What the product must do for its users: capabilities with stable IDs (`PRJ-CAP-01`), journeys, acceptance criteria. |
-| [architecture.md](architecture.md) | *Optional, once there are two or more components.* How the components fit together and how a request moves through them. |
-
-## Components
-
-| Component | Folder | What it is |
+| Folder | Copy it to | What it is |
 | --- | --- | --- |
-| *<Component name>* | [component/](component/) | *One sentence: its job, and the first slice it builds.* |
+| [project/](project/) | `<project-name>/` at the repo root | Product-level docs: README, brief, product spec, architecture, principles, manifest. README, brief and manifest are required; the rest are optional by type. |
+| [component/](component/) | `<project-name>/<component-name>/` | The full component set: README, brief, spec, design, slice design, plan, build log, manifest, images. Every component has all of them. |
+| [linked-project/](linked-project/) | `<project-name>/` at the repo root | The only file a linked project keeps here: a README pointing to docs that live in its code repository. |
 
-## Repositories
-
-| Repository | What it holds |
-| --- | --- |
-| *[`<product>-<part>`](https://github.com/justinyurasits/<product>-<part>)* | *Code, content or data, and whether it's public. Its README links back here.* |
-
-## How these docs work
-
-Synced files are written in Claude Docs and synced here by pull request; each starts
-with a link to its source and is never edited by hand. `sync-manifest.yaml` records
-the source and revision of each. Files without a sync header, like this README, are
-written in the repo.
+Links inside the templates are written for where the files end up once copied, so a
+component's `../` reaches its project folder, and a project's `component/` links
+point at its component folders.

@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 35 · synced 2026-11-17
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 38 · synced 2026-11-17
 
 # Design — Document Standard
 
@@ -54,7 +54,7 @@ A new project gets a folder, a README, a brief, and a row in the root README's i
 
 ## The reference project
 
-`_template/` at the repo root is this standard as files: a project folder with every required and optional project-level file, and one component subfolder with the full component set. Each file says what belongs in it. To start a project or a component, copy the folder and fill it in.
+`_template/` at the repo root is this standard as files: three folders. `project/` holds every required and optional project-level file; `component/` holds the full component set; `linked-project/` holds the README a linked project keeps here. A README at `_template/` says which to copy where. Each file says what belongs in it. To start a project, copy `project/` and rename it; to add a component, copy `component/` into the project. Real projects keep their product-level docs at the top of their folder; the `project/` subfolder exists only in the template, to keep it apart from the components.
 
 The template shows the standard; it adds nothing to it. Where the two differ, this document wins and the template is fixed in the same pull request. `_template/` is repo-authored: edited by hand, never synced.
 
@@ -98,6 +98,7 @@ It does two jobs at once. It is the list of every working document, so no bookma
 
 | Date | Change |
 | --- | --- |
+| 2026-11-17 | `_template/` split into `project/`, `component/` and `linked-project/`, with its own README, because project-level files at the template root sat beside the component folder and the project README doubled as the instructions. Real projects are unchanged. |
 | 2026-11-17 | Added `product-spec.md` as a named optional project type, after a review found no single place that said what the product must do for its users: it was split across the brief's wedge, the architecture's walkthrough and a slice design's acceptance tests. Each of those should point to it once a project has one. |
 | 2026-11-17 | Renamed for the `design` repository, which now indexes every project. Added the `_template/` reference project, linked projects for docs that change with their code, and repository conventions, after a cleanup found the same document concepts under different names across repositories. |
 | 2026-11-05 | Project level given a required set (README, brief, manifest) and a table of named optional types, after `principles.md` was found to match no row in the standard. Components stay fixed because they repeat; projects vary structurally, so the project level is required-plus-named-optional rather than fixed. |
