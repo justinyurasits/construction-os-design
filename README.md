@@ -47,15 +47,15 @@ not an evaluation run.
   with its source, path and revision.
 - **[STANDARD.md](STANDARD.md)** is the document model: what each file in a
   component is for, and the rules that keep it that way.
-- **[_template/](_template/)** is the standard as files: a reference project
-  with every project-level file and one complete component, each saying what
-  belongs in it.
+- **[_template/](_template/)** is the standard as files: `project/` with every
+  project-level file, `component/` with the full component set, and
+  `linked-project/`, each file saying what belongs in it.
 - **Linked projects** keep their docs in their code repository, because those
   docs change in the same pull request as the code. Their folder here holds
   only a README that links to them and says what order to read them in.
 - **Every change is a branch and a pull request.** Never commit to main.
 
-To add a project: copy `_template/`, rename it, fill it in, and add a row to the
-table above. For a linked project, copy `_template/linked-project-readme.md` as
-the folder's README. To add a component: copy `_template/component/` into the
-project and list it in the project README.
+To add a project: copy `_template/project/`, rename it, fill it in, and add a row
+to the table above. For a linked project, copy `_template/linked-project/`
+instead. To add a component: copy `_template/component/` into the project and
+list it in the project README.

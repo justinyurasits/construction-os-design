@@ -1,11 +1,11 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 6 · synced 2026-11-05
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 38 · synced 2026-11-17
 
-# Construction OS Design — Document Standard
+# Design — Document Standard
 
 Nov 5, 2026 · @Justin
 
-The document model for the `construction-os-design` repository. This doc is the working copy; the repo holds a synced snapshot at `STANDARD.md`. Anything that needs the standard — a Claude Code session, a project doing design-document work — reads it from here or from that snapshot, never from a second copy.
+The document model for the `design` repository. This doc is the working copy; the repo holds a synced snapshot at `STANDARD.md`. Anything that needs the standard — a Claude Code session, a project doing design-document work — reads it from here or from that snapshot, never from a second copy.
 
 Repo operation rules stay in `CLAUDE.md`: no direct commits to main, synced files are never hand-edited, no history rewrites, no secrets. Those are guardrails against damage and have to be read rather than followed to. This document holds the model, which is the part that grows.
 
@@ -45,11 +45,34 @@ A project is a folder under the repo root holding one product's documents, with 
 | File | Its one job |
 | --- | --- |
 | `principles.md` | Craft knowledge — what building this taught, each principle anchored to the incident that taught it and to where it is enforced |
+| `product-spec.md` | What the product must do for its users, independent of implementation: capabilities, each with a stable ID in its heading (`<PROJECT>-CAP-<nn>`) and acceptance criteria; user journeys, including incomplete input and failures; and product-wide requirements. Needed once a project has two or more components. A capability moves to its own spec when it is big enough to manage on its own: several journeys, complicated rules, or its own acceptance-test suite. |
 | `architecture.md` | How the components fit together and how a request moves through them |
 
 The project level is deliberately not a fixed file set the way a component is, and the difference is structural rather than a matter of judgment. Components repeat: each does the same job, so fixing the set removes decisions that would otherwise get made differently each time. Projects do not repeat — as one with two components needs an architecture document and one with a single component does not. New optional types are added to the table above as they appear, so a document has a name and a stated job rather than arriving ad hoc.
 
 A new project gets a folder, a README, a brief, and a row in the root README's index table.
+
+## The reference project
+
+`_template/` at the repo root is this standard as files: three folders. `project/` holds every required and optional project-level file; `component/` holds the full component set; `linked-project/` holds the README a linked project keeps here. A README at `_template/` says which to copy where. Each file says what belongs in it. To start a project, copy `project/` and rename it; to add a component, copy `component/` into the project. Real projects keep their product-level docs at the top of their folder; the `project/` subfolder exists only in the template, to keep it apart from the components.
+
+The template shows the standard; it adds nothing to it. Where the two differ, this document wins and the template is fixed in the same pull request. `_template/` is repo-authored: edited by hand, never synced.
+
+## Linked projects
+
+Some projects keep their docs in their code repository, because the docs change in the same pull request as the code — a design doc that must match the code on `main`, a build log every pull request writes to. Moving those docs here would split every change across two repositories.
+
+Such a project gets a folder here holding only `README.md`: what it is, its status, a link to its docs folder, and the order to read them in. It has no brief or manifest here. Its docs cover the same concepts as the component file set — brief, spec, design, plan, build log — under the names its repository uses. It gets a row in the root README's index table like any other project.
+
+## Repositories
+
+Every repository a project here describes follows the same conventions, so a person or a Claude Code session can find its way around any of them.
+
+- **Naming.** A product built across several repositories names them `<product>-<part>`: `construction-os-corpus`, `construction-os-workbench`. A product in one repository takes its plain name: `fieldscope`, `agents`.
+- **README.** What it is, its status (`active`, `prototype` or `archived`), how to run it, and a link to its design folder here.
+- **Sidebar.** A one-line description and topics on GitHub.
+- **CLAUDE.md.** In every repository a Claude Code session works in: where its design lives, which docs to read before proposing work, and its branch and pull-request rules.
+- **Links both ways.** A code repository links to its design folder; the design folder's README links to the code.
 
 ## Maintaining this document
 
@@ -75,6 +98,9 @@ It does two jobs at once. It is the list of every working document, so no bookma
 
 | Date | Change |
 | --- | --- |
+| 2026-11-17 | `_template/` split into `project/`, `component/` and `linked-project/`, with its own README, because project-level files at the template root sat beside the component folder and the project README doubled as the instructions. Real projects are unchanged. |
+| 2026-11-17 | Added `product-spec.md` as a named optional project type, after a review found no single place that said what the product must do for its users: it was split across the brief's wedge, the architecture's walkthrough and a slice design's acceptance tests. Each of those should point to it once a project has one. |
+| 2026-11-17 | Renamed for the `design` repository, which now indexes every project. Added the `_template/` reference project, linked projects for docs that change with their code, and repository conventions, after a cleanup found the same document concepts under different names across repositories. |
 | 2026-11-05 | Project level given a required set (README, brief, manifest) and a table of named optional types, after `principles.md` was found to match no row in the standard. Components stay fixed because they repeat; projects vary structurally, so the project level is required-plus-named-optional rather than fixed. |
 | 2026-11-05 | Added `DOCS.md`, a generated index of every synced document and its Claude Doc URL, so working documents are reachable from the repo rather than from bookmarks. |
 | 2026-11-05 | Front matter rule corrected: for synced files `type` and `status` live in the manifest and the sync writes them, because a hand-added block is wiped on the next sync. |
