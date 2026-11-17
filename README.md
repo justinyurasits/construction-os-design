@@ -20,7 +20,7 @@ customer.
 
 | Project | Folder | What it is |
 | --- | --- | --- |
-| Construction OS | [construction-os/](construction-os/) | A company-specific AI system for residential builders. Components: the [document workbench](construction-os/document-workbench/) — knowledge, retrieval and drafting — and the [intake router](construction-os/intake-router/), which classifies inbound messages and routes them to a workflow. |
+| Construction OS | [construction-os/](construction-os/) | A company-specific AI system for residential builders. Components: the [corpus](construction-os/corpus/) — the company's governed knowledge — the [document workbench](construction-os/document-workbench/) — retrieval, pricing and drafting — and the [intake router](construction-os/intake-router/), which classifies inbound messages and routes them to a workflow. |
 | Agents | [agents/](agents/) | Small agents built to learn how agent loops work, starting with a job evaluator. Linked project: its docs live in the [`agents`](https://github.com/justinyurasits/agents) repo. |
 | Fieldscope | [fieldscope/](fieldscope/) | Subcontractor safety compliance prototype. Linked project: its docs live in the [`fieldscope`](https://github.com/justinyurasits/fieldscope) repo. |
 

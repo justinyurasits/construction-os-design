@@ -3,9 +3,9 @@ type: spec
 status: current
 ---
 
-# Document workbench — Spec
+# Corpus — Spec
 
-The workbench's domain is a company's **governed document library**: its policies, procedures, controls, contracts, forms and the structured data that drives generation. The library lives in [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus). Today that repository is Beacon Hill Interiors' package, and it's the starting point every later company copy will be forked from.
+The corpus is a company's **governed document library**: its policies, procedures, controls, contracts, forms and the structured data that drives generation. The library lives in [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus). Today that repository is Beacon Hill Interiors' package, and it's the starting point every later company copy will be forked from. The [document workbench](../document-workbench/) and any other part that needs the company's knowledge read it through its published package.
 
 This spec names and bounds the domain and points to where each part is defined. It doesn't restate the library's rules. They are written once, in the library, and this file only says where.
 
@@ -40,7 +40,7 @@ Why these rules are shaped the way they are is in [design.md](design.md) and its
 - **In the domain:** knowledge the company governs and maintains: documents, registry values, definitions, templates.
 - **Not in the domain:** project context, meaning anything supplied for a project (an executed contract, PM notes, a subcontractor quote) and the drafts generated for it. It can be reused across that project's work, but never becomes company knowledge, never reaches another project and never changes the company's configuration (SYS-00 1.3, principle 10).
 - **Not in the domain:** project records. They stay in Procore or Buildertrend (Product Brief, section 5).
-- **Not in the domain:** the application. Code lives in [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench) and holds no company content.
+- **Not in the domain:** the applications that use it. The document workbench's code lives in [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench) and holds no company content.
 
 ## What the audit found
 
