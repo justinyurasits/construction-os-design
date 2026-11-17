@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 38 · synced 2026-11-17
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 39 · synced 2026-11-17
 
 # Design — Document Standard
 
@@ -54,25 +54,30 @@ A new project gets a folder, a README, a brief, and a row in the root README's i
 
 ## The reference project
 
-`_template/` at the repo root is this standard as files: three folders. `project/` holds every required and optional project-level file; `component/` holds the full component set; `linked-project/` holds the README a linked project keeps here. A README at `_template/` says which to copy where. Each file says what belongs in it. To start a project, copy `project/` and rename it; to add a component, copy `component/` into the project. Real projects keep their product-level docs at the top of their folder; the `project/` subfolder exists only in the template, to keep it apart from the components.
+`_template/` at the repo root is this standard as files, in three folders. `project/` holds every required and optional project-level file; `component/` holds the full component set; `repo/` holds the files every code repository starts with. A README at `_template/` says which to copy where. Each file says what belongs in it. To start a project, copy `project/` and rename it; to add a component, copy `component/` into the project; to start a code repository, copy `repo/` into it. Real projects keep their product-level docs at the top of their folder; the `project/` subfolder exists only in the template, to keep it apart from the components.
 
 The template shows the standard; it adds nothing to it. Where the two differ, this document wins and the template is fixed in the same pull request. `_template/` is repo-authored: edited by hand, never synced.
-
-## Linked projects
-
-Some projects keep their docs in their code repository, because the docs change in the same pull request as the code — a design doc that must match the code on `main`, a build log every pull request writes to. Moving those docs here would split every change across two repositories.
-
-Such a project gets a folder here holding only `README.md`: what it is, its status, a link to its docs folder, and the order to read them in. It has no brief or manifest here. Its docs cover the same concepts as the component file set — brief, spec, design, plan, build log — under the names its repository uses. It gets a row in the root README's index table like any other project.
 
 ## Repositories
 
 Every repository a project here describes follows the same conventions, so a person or a Claude Code session can find its way around any of them.
 
 - **Naming.** A product built across several repositories names them `<product>-<part>`: `construction-os-corpus`, `construction-os-workbench`. A product in one repository takes its plain name: `fieldscope`, `agents`.
+- **Starting files.** Every code repository starts from `_template/repo/`: `CLAUDE.md`, a pull request template, `README.md`, `.gitignore`, and `.env.example` when it uses secrets.
+- **CLAUDE.md.** The standard sections are copied from `_template/repo/CLAUDE.md` and marked with the template version they came from, so drift shows. One section is the repository's own: its layout, conventions and domain language. A repository may override a standard rule only by saying so in that section, with the reason.
 - **README.** What it is, its status (`active`, `prototype` or `archived`), how to run it, and a link to its design folder here.
 - **Sidebar.** A one-line description and topics on GitHub.
-- **CLAUDE.md.** In every repository a Claude Code session works in: where its design lives, which docs to read before proposing work, and its branch and pull-request rules.
 - **Links both ways.** A code repository links to its design folder; the design folder's README links to the code.
+
+## How design and code work together
+
+Every project works the same way.
+
+- **Every design doc lives here.** No project keeps design docs in its code repository. Files generated from code, such as a page built from recorded runs, stay with the code.
+- **Design leads, code follows.** A change to what the product does, to a requirement or to the architecture is made in the design docs first, and the code pull request cites it. Code pull requests never edit design docs.
+- **The issue is the plan.** An approved GitHub issue authorizes the work; the spec and design constrain how it is done. If they conflict, or the work needs a change the design doesn't cover, stop and say so.
+- **Pull requests capture the small stuff.** Decisions made while coding and what the work taught go in the pull request under the template's *Decisions (proposed)* and *Build notes* headings. Merging the pull request approves its decisions.
+- **Roll-up.** Claude Code asks "Roll up to design?" when a pull request it opened is merged, when an issue or milestone is done, and about every ten turns of work since it last asked. On yes, it gathers Decisions and Build notes from pull requests merged since the last roll-up and proposes them: decisions for the component's `design.md` log, findings for `build-log.md`. For synced files they go in as suggestions in the Claude Doc; for repo-authored files, as a pull request here. Nothing enters the record until Justin approves it. The build log notes each roll-up ("Roll-up: construction-os-workbench #16–#22"), which marks where the next one starts.
 
 ## Maintaining this document
 
@@ -98,6 +103,7 @@ It does two jobs at once. It is the list of every working document, so no bookma
 
 | Date | Change |
 | --- | --- |
+| 2026-11-17 | One model for every project: linked projects removed, every design doc lives here. Added How design and code work together (design leads, the issue is the plan, pull requests capture decisions and build notes, the roll-up) and `_template/repo/` with a standard CLAUDE.md, after the CLAUDE.md files across eight repositories were found to contradict each other on planning, merging and secrets. |
 | 2026-11-17 | `_template/` split into `project/`, `component/` and `linked-project/`, with its own README, because project-level files at the template root sat beside the component folder and the project README doubled as the instructions. Real projects are unchanged. |
 | 2026-11-17 | Added `product-spec.md` as a named optional project type, after a review found no single place that said what the product must do for its users: it was split across the brief's wedge, the architecture's walkthrough and a slice design's acceptance tests. Each of those should point to it once a project has one. |
 | 2026-11-17 | Renamed for the `design` repository, which now indexes every project. Added the `_template/` reference project, linked projects for docs that change with their code, and repository conventions, after a cleanup found the same document concepts under different names across repositories. |

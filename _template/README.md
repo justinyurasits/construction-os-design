@@ -13,7 +13,7 @@ differ, the standard wins and the template is fixed in the same pull request.
 | --- | --- | --- |
 | [project/](project/) | `<project-name>/` at the repo root | Product-level docs: README, brief, product spec, architecture, principles, manifest. README, brief and manifest are required; the rest are optional by type. |
 | [component/](component/) | `<project-name>/<component-name>/` | The full component set: README, brief, spec, design, slice design, plan, build log, manifest, images. Every component has all of them. |
-| [linked-project/](linked-project/) | `<project-name>/` at the repo root | The only file a linked project keeps here: a README pointing to docs that live in its code repository. |
+| [repo/](repo/) | the root of a new code repository | `CLAUDE.md` (sections 1–6 standard, section 7 the repo's own), `.github/pull_request_template.md`, `README.md`, `.gitignore`, `.env.example`. |
 
 Links inside the templates are written for where the files end up once copied, so a
 component's `../` reaches its project folder, and a project's `component/` links
