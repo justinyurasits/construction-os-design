@@ -18,7 +18,7 @@ work.*
 
 - **Exit criterion:** *the check that says it's done: a test passing, an evaluation
   score, a person's sign-off.*
-- **Covers:** *links to the spec requirements it delivers.*
+- **Covers:** *the product capabilities (by ID) and spec requirements it delivers.*
 - **Depends on:** *milestones or decisions that must land first.*
 - **GitHub:** *the milestone in the code repository, once created.*
 

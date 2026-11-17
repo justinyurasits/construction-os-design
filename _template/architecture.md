@@ -23,6 +23,12 @@ crosses component boundaries.*
 
 *A diagram of the parts and what calls what, exported to images/ when it changes.*
 
+## How each capability is delivered
+
+| Capability | Parts involved | Hand-offs |
+| --- | --- | --- |
+| *[PRJ-CAP-01](product-spec.md#prj-cap-01-capability-name)* | *<components>* | *<what passes between them>* |
+
 ## One request, start to finish
 
 1. *<what arrives, and where>*

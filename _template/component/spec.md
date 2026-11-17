@@ -20,6 +20,8 @@ defined.*
 
 *What the system must do, in one or two sentences.*
 
+**Serves:** *the product capability it delivers, by ID: [PRJ-CAP-01](../product-spec.md#prj-cap-01-capability-name).*
+
 **Acceptance criteria**
 - *Given <situation>, when <action>, then <observable result>.*
 - *A failure case: what it must refuse or flag.*
