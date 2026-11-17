@@ -31,8 +31,9 @@ that stops working.*
 | --- | --- | --- |
 | *<outcome, not a feature>* | *<what gets counted or checked>* | *<number and date>* |
 
-*Goals are outcomes. Every milestone in a component's plan.md traces to one of these
-rows; work that traces to none is out of scope for now.*
+*Goals are outcomes. Every capability in product-spec.md and every milestone in a
+component's plan.md traces to one of these rows; work that traces to none is out of
+scope for now.*
 
 ## 5. The wedge
 

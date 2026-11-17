@@ -36,6 +36,7 @@ an evaluation run.
 | --- | --- |
 | [brief.md](brief.md) | Who it's for, the painful moment, what it replaces, what's out of scope. Every decision is checked against it. Required. |
 | [principles.md](principles.md) | *Optional.* What building this taught, each principle tied to the incident behind it and where it's enforced. |
+| [product-spec.md](product-spec.md) | *Optional, needed once there are two or more components.* What the product must do for its users: capabilities with stable IDs (`PRJ-CAP-01`), journeys, acceptance criteria. |
 | [architecture.md](architecture.md) | *Optional, once there are two or more components.* How the components fit together and how a request moves through them. |
 
 ## Components
