@@ -5,7 +5,7 @@ Design docs for several projects, one folder per project.
 ## Rules
 
 - Never commit or push directly to main. Every change goes on a branch and through a pull request.
-- A synced file (one that starts with the "Synced from Claude Docs" header) is never edited by hand. Change the Claude Doc, export it, and replace the file in a sync PR. Keep the two-line header, and update that file's `rev` and `synced` in the folder's `sync-manifest.yaml`.
+- A synced file (one that starts with the "Synced from Claude Docs" header) is never edited by hand. Change the Claude Doc, export it, and replace the file in a sync PR. Keep the two-line header, update that file's `rev` and `synced` in the folder's `sync-manifest.yaml`, then run `python tools/build_docs.py` to rebuild DOCS.md. Never edit DOCS.md by hand.
 - One sync PR per project unless asked otherwise.
 - A new project starts as a copy of `_template/project/` and gets a row in the root README table. A new component starts as a copy of `_template/component/`.
 - Every project's design docs live here; no project keeps them in its code repository. The one exception is visual design, which lives in `brand-system`. Claude and Claude Code make design changes here too, once Justin approves them; they just never arrive inside a code repository's pull request. A new code repository starts as a copy of `_template/repo/`.
