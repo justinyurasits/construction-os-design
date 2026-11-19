@@ -1347,3 +1347,57 @@ and keeps a pasted run readable line by line.
 - If showing `send_to_claude`'s line on a `claude_decides` line confuses,
   label it `[claude_decides (no code) ...]` instead, or give
   `claude_decides` a marker of its own, together with the page.
+
+## D47 — The design repo is found by one lookup, `design_path()`, beside the main checkout
+
+**Status:** **Approved** (agents #126, merged 2026-11-19; issue #125)
+**Date:** 2026-11-19
+**Decision:**
+- The agents tests and `build_numbers.py` read this doc, `brief.md` and the
+  decision log from the design repo, never from copies in agents. One helper,
+  `design_path()` in `job-evaluator/design_repo.py`, finds it: `$DESIGN_DIR`
+  if set, else `design/` next to the main checkout of agents, found with
+  `git rev-parse --git-common-dir`.
+- It lives in its own module, not in `build_numbers.py` or a tests helper.
+
+**Reasoning:** Claude Code works in `~/code/agents-worktrees/<branch>`, which
+has no `design` beside it, so a plain `../design` would fail in every
+session. The common git dir names the main checkout's `.git` from any
+worktree. A module named for the lookup is used by `build_numbers.py` and
+three test files, and is easy to find from CLAUDE.md.
+**What would change it:**
+- A second agent that needs the lookup: move it to the agents repo root.
+
+## D48 — Without the design repo, the doc tests fail; they never skip
+
+**Status:** **Approved** (agents #126, merged 2026-11-19; issue #125)
+**Date:** 2026-11-19
+**Decision:**
+- If `design_path()` finds no design repo, it raises
+  `FileNotFoundError("clone justinyurasits/design next to agents …")`, and
+  every test that reads a design doc fails with that message.
+- Reads happen as late as is cheap: `test_site`'s principles tests read
+  design.md in `setUpClass`, so the rest of that module still runs.
+  `test_docs` reads at import, since every test in it is a doc test.
+
+**Reasoning:** a missing design repo is a broken setup, not an optional
+extra. A skip would let the docs and code drift apart with a green run.
+**What would change it:**
+- CI that runs the agents tests: it gets a step that checks out `design`,
+  not a skip.
+
+## D49 — The replay page's doc links: at least 3 into agents, at least 2 into design
+
+**Status:** **Approved** (agents #126, merged 2026-11-19; issue #125)
+**Date:** 2026-11-19
+**Decision:**
+- The decision log and principles links on the page's How it was built list
+  now point at the design repo. The test floor on links into agents drops
+  from 5 to 3, and a new test requires at least 2 links into design. It
+  checks that each one's file exists, and that an anchor such as
+  `#decision-log` matches a heading.
+
+**Reasoning:** two of the five checked links moved repos, not away. The
+page still has five checked doc links, split by where they point.
+**What would change it:**
+- More doc links on the page: raise the floors with them.
