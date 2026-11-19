@@ -12,6 +12,7 @@ What it checks
     in their sync header matches the manifest
   - every manifest entry points to a file that exists
   - DOCS.md lists exactly the manifest entries, with the same revision and date
+    (tools/build_docs.py writes it)
   - relative links between files resolve
   - the root README links every project
 
@@ -195,12 +196,12 @@ def main():
             rows[cells[2]] = (cells[3], cells[4])
     for path, val in expected.items():
         if path not in rows:
-            err("DOCS.md", f"missing a row for {path}")
+            err("DOCS.md", f"missing a row for {path} (run python tools/build_docs.py)")
         elif rows[path] != val:
-            err("DOCS.md", f"{path} shows rev {rows[path][0]} / {rows[path][1]}, manifest says {val[0]} / {val[1]}")
+            err("DOCS.md", f"{path} shows rev {rows[path][0]} / {rows[path][1]}, manifest says {val[0]} / {val[1]} (run python tools/build_docs.py)")
     for path in rows:
         if path not in expected:
-            err("DOCS.md", f"lists {path}, which no manifest has")
+            err("DOCS.md", f"lists {path}, which no manifest has (run python tools/build_docs.py)")
 
     # root README links every project
     readme = read(os.path.join(ROOT, "README.md"))

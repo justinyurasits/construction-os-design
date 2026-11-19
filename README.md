@@ -55,10 +55,11 @@ and fails if a project or component is missing a file or a sync record is wrong.
 | `README.md` | This page: what the repo is and how it works. |
 | [`STANDARD.md`](STANDARD.md) | The rulebook. Every file type and its job, naming, front matter, and the rules for how design and code work together. When this page and the standard differ, the standard is right. |
 | [`CLAUDE.md`](CLAUDE.md) | Instructions for Claude Code working in this repository. |
-| [`DOCS.md`](DOCS.md) | An index of every synced doc: its Claude Doc link, where it syncs to, revision and date. Generated; never edited. |
+| [`DOCS.md`](DOCS.md) | An index of every synced doc: its Claude Doc link, where it syncs to, revision and date. Rebuilt from the manifests by `python tools/build_docs.py`; never edited by hand. |
 | `sync-manifest.yaml` | The sync record for the files at the top (today, `STANDARD.md`). Every folder with synced files has one. |
 | [`_template/`](_template/) | The standard as files: `project/`, `component/`, and `repo/` (what every code repository starts with). |
 | `tools/validate.py` | The structure check. |
+| `tools/build_docs.py` | Rebuilds DOCS.md from the sync manifests. Run it after any sync. |
 
 ## Adding something
 

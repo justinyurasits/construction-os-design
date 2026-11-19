@@ -1,6 +1,6 @@
 # Synced document index
 
-Every document synced from a Claude Doc: its source, where it syncs to, and the revision last synced. Generated from the sync manifests. Do not edit.
+Every document synced from a Claude Doc: its source, where it syncs to, and the revision last synced. Generated from the sync manifests by `python tools/build_docs.py`. Do not edit by hand.
 
 Repo-authored docs (written here directly, such as the agents docs) aren't listed; find them through each project's README.
 
