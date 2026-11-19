@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 44 · synced 2026-11-10
+> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 45 · synced 2026-11-19
 
 # PCO Slice — Technical Design
 
@@ -105,29 +105,9 @@ onboarding: {group: change_management, found_in: [contracts, change orders],
              question: At what share of a not-to-exceed amount do you warn the client and stop?}
 ```
 
-**Entries the PCO slice needs (about 20):**
+**The PCO's entries.** The definition's `depends_on` list (`definitions/CHG-53-DEF.yaml` in the corpus, section 5) names every registry entry the PCO loads, alongside the rules it depends on. Each entry is defined in `registry/<ID>.yaml`, and the company's values are in `company/config.yaml`. This doc doesn't copy the list, because a copy goes stale: the table that used to be here listed about 20 entries after the registry had grown to 28.
 
-| ID | Kind | Default or BHI value | Owning document |
-| --- | --- | --- | --- |
-| AUTH-WRITTEN.accepted\_forms | parameter (list) | signed PCO, change order, CCD, T&M authorization | POL-01 |
-| AUTH-WRITTEN.exec\_cosign | parameter | required | POL-01 |
-| AUTH-WRITTEN.email\_approval | parameter | not accepted | POL-01 |
-| CE-OPEN-WINDOW | parameter (duration) | 48 hours | FCM-03 7.1 |
-| CE-EMERGENCY-WINDOW | parameter (duration) | 24 hours | FCM-03 10.1 |
-| NTE-CHECKPOINTS | parameter (object) | 70% notify, 90% stop | CHG-60 9 |
-| LABOR-BILLING-RATES | parameter (table) | carpenter about $90/hour (BHI) | company pricing |
-| GC-WEEKLY-RATES | parameter (table) | PM, APM, superintendent weekly | company pricing |
-| GC-EXTENSION-THRESHOLD | parameter | more than 10% of duration (default; BHI) | pricing method |
-| MARKUP-STRUCTURE | parameter (ordered list) | 1% application fee + 10% overhead + 10% fee (BHI) | pricing method |
-| MARKUP-ON-BILLING-LABOR | parameter | yes (BHI) | pricing method |
-| MARKUP-ON-SUBCONTRACTORS | parameter | yes (BHI) | pricing method |
-| TAX-TREATMENT | parameter | included in material estimates | pricing method |
-| REPEAT-CLIENT-DISCOUNT | parameter (optional) | off | pricing method |
-| BILLING-GATE | parameter | executed prime contract change order | FCM-04 |
-| role.Executive, role.ProjectManager, role.Superintendent | role\_mapping | names from the profile, with fallbacks | SYS-00 §2 |
-| company.name, company.signatory, company.licenses | identity | profile | profile |
-
-Values marked BHI are the defaults set Nov 2 (section 11). MARKUP-STRUCTURE is an ordered list whose components each name the cost categories they apply to, which replaces MARKUP-ON-BILLING-LABOR and MARKUP-ON-SUBCONTRACTORS as separate flags. A clear, applicable term in a supplied contract replaces the company value for that project and is cited (section 6).
+Two design points the list doesn't show. MARKUP-STRUCTURE is an ordered list whose components each name the cost categories they apply to, which replaced separate markup-on-labor and markup-on-subcontractors flags. A clear, applicable term in a supplied contract replaces the company value for that project and is cited (section 6).
 
 ## 5. PCO definition (CHG-53-DEF)
 
