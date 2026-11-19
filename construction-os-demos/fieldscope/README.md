@@ -9,9 +9,12 @@ Subcontractor safety compliance for general contractors: OSHA-grounded protocols
 specific tasks, training and review tracking, and PPE checks against daily site photos.
 An AI-generated protocol stays a draft until a named person approves it.
 
-**Status:** prototype, pilot scope  
-**Code:** [`fieldscope`](https://github.com/justinyurasits/fieldscope) ·
-[live demo](https://fieldscope-vm64.onrender.com/)
+## Where things stand
+
+Prototype, pilot scope, with a [live demo](https://fieldscope-vm64.onrender.com/). Only
+the brief is written; spec, design, plan and build log are drafts.
+
+**Code:** [`fieldscope`](https://github.com/justinyurasits/fieldscope)
 
 The prototype's limits and deliberate gaps are in the code repo's
 [README](https://github.com/justinyurasits/fieldscope/blob/main/README.md). The brief

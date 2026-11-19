@@ -11,9 +11,7 @@ Design docs for the Construction OS intake router: an intent classifier and rout
 
 Designed. Not built.
 
-## How these docs work
-
-**The Claude Docs are the working copy. This folder is the reviewed, versioned record.** These files are exported from Claude Docs and synced here by pull request. Nobody edits them by hand. `sync-manifest.yaml` records the source doc and the revision last synced.
+**Code:** none yet. The labeled set and the code will live in a separate `intake-router` code repo once the build starts.
 
 ## The docs
 
@@ -25,7 +23,3 @@ Designed. Not built.
 | [classifier-prompt.md](classifier-prompt.md) | The full prompt the router sends to the model, with a version log. Derived from the spec; change the spec first. |
 
 The diagrams in the build guide are static PNG snapshots in `images/`. Re-export them when the drawing changes.
-
-## Related
-
-The labeled set and the code will live in a separate `intake-router` code repo, once the build starts.

@@ -51,7 +51,7 @@ Most docs here are synced from Claude Docs; each synced file starts with a link 
 
 **Where decisions live:** product-level decisions are on [architecture.md](architecture.md). A component's own decisions are in its design.md: the [corpus](corpus/design.md) and the [document workbench](document-workbench/design.md). Each decision is recorded once.
 
-## Related repositories
+## Repositories
 
 - [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus) (private): the corpus, the company knowledge package (currently Beacon Hill Interiors'). Its docs are in [corpus/](corpus/).
 - [`construction-os-workbench`](https://github.com/justinyurasits/construction-os-workbench): the document workbench application (created as `construction-os`, renamed `document-workbench` on Nov 5, `construction-os-workbench` on Nov 17). Holds no company content. Public.

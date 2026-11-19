@@ -15,6 +15,7 @@ What it checks
     (tools/build_docs.py writes it)
   - relative links between files resolve
   - the root README links every project
+  - every project and component README has the sections its template's README has
 
 What it can't check: whether a Claude Doc has moved ahead of its synced snapshot.
 That needs Claude Docs access, so it belongs to the sync and roll-up steps, not CI.
@@ -140,6 +141,23 @@ def check_links(path):
             err(rel(path), f"link to {target} doesn't resolve")
 
 
+def headings(path):
+    return [l[3:].strip() for l in read(path).splitlines() if l.startswith("## ")]
+
+
+TEMPLATE_DIR = os.path.join(ROOT, "_template")
+
+
+def check_readme_sections(readme, template):
+    """A README has every section its template has (extra sections are fine)."""
+    if not os.path.exists(readme):
+        return
+    have = set(headings(readme))
+    for h in headings(os.path.join(TEMPLATE_DIR, template, "README.md")):
+        if h not in have:
+            err(rel(readme), f"missing the '## {h}' section from _template/{template}/README.md")
+
+
 def is_component(path):
     return os.path.isdir(path) and os.path.basename(path) != "images"
 
@@ -154,6 +172,7 @@ def main():
         for req in PROJECT_REQUIRED:
             if not os.path.exists(os.path.join(pdir, req)):
                 err(proj, f"project is missing {req}")
+        check_readme_sections(os.path.join(pdir, "README.md"), "project")
         manifest = load_manifest(pdir)
         all_manifests.append((pdir, manifest or {}))
         check_markdown(pdir, manifest)
@@ -168,6 +187,7 @@ def main():
             for req in COMPONENT_REQUIRED:
                 if not os.path.exists(os.path.join(cdir, req)):
                     err(rel(cdir), f"component is missing {req}")
+            check_readme_sections(os.path.join(cdir, "README.md"), "component")
             cmanifest = load_manifest(cdir)
             all_manifests.append((cdir, cmanifest or {}))
             check_markdown(cdir, cmanifest)

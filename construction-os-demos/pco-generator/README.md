@@ -9,7 +9,11 @@ Turns a description of a change into a formatted construction change order (scop
 language, pricing, and the structure a general contractor actually issues) as a Word
 document and a PDF.
 
-**Status:** active, live at [draftconstructionchangeorder.com](https://draftconstructionchangeorder.com/)  
+## Where things stand
+
+Live at [draftconstructionchangeorder.com](https://draftconstructionchangeorder.com/).
+Only the brief is written; spec, design, plan and build log are drafts.
+
 **Code:** [`pco-generator`](https://github.com/justinyurasits/pco-generator)
 
 The free, standalone version of the job. Construction OS builds the same document as

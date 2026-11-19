@@ -10,6 +10,15 @@ approach to general contractors, subcontractors and clients. Each one solves one
 problem end to end. None of them shares code or data with the Construction OS product
 (the corpus and workbench in [`construction-os/`](../construction-os/)).
 
+A collection, not one product: each demo stands on its own, so there's no product spec
+or architecture doc. The brief says what the demos are for.
+
+## Where things stand
+
+The PCO Generator is live at [draftconstructionchangeorder.com](https://draftconstructionchangeorder.com/).
+Fieldscope is a prototype with a live demo. Each demo's brief is written; its spec,
+design, plan and build log are still drafts.
+
 ## Product-level docs
 
 | File | What it is |
