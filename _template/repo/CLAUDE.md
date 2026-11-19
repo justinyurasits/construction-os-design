@@ -1,6 +1,6 @@
 # <repo-name>
 
-<!-- standard: design/_template/repo/CLAUDE.md v1
+<!-- standard: design/_template/repo/CLAUDE.md v1.1
      Sections 1–6 are the standard: copy them unchanged, filling in only the <angle brackets>.
      Section 7 is this repository's own. To change a standard rule here, say so under
      "Overrides" in section 7, with the reason. -->
@@ -13,7 +13,8 @@ Status: *active · prototype · archived*.
 ## 2. Design
 
 The design docs for this repository are in the `design` repository, cloned next to this
-one, at `../design/<project>/<component>/`. Pull it before planning.
+one, at `../design/<project>/<component>/`. Pull it before planning. In a git worktree,
+`../design` means next to the main checkout, not next to the worktree.
 
 Before proposing work, read in this order (skip any the project doesn't have yet):
 
