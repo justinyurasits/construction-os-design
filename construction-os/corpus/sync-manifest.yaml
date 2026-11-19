@@ -11,14 +11,14 @@ docs:
   - file: plan.md
     title: "Corpus Plan"
     source: https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42
-    rev: 118
-    synced: 2026-11-17
+    rev: 178
+    synced: 2026-11-19
     type: plan
     status: current
   - file: build-log.md
     title: "Corpus Build Log"
     source: https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8
-    rev: 23
+    rev: 28
     synced: 2026-11-19
     type: build-log
     status: current

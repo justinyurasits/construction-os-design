@@ -22,7 +22,7 @@ Inventoried, converted to Markdown and under change control: 173 documents, the 
 | [brief.md](brief.md) | Who relies on the corpus and what it must make possible, where that narrows the product brief. |
 | [spec.md](spec.md) | The domain: what the library holds, where each of its rules is defined (SYS-00, POL-01, definitions, registry), its boundaries, the audit findings, and known gaps in the source. |
 | [design.md](design.md) | The corpus architecture: knowledge model, document types, configuration and registry, the publish step, authority order. Holds the corpus decision log; decisions are recorded once, there. |
-| [plan.md](plan.md) | The corpus work: phases, what's done, what's next, future work. Tracks work only. |
+| [plan.md](plan.md) | The corpus work still ahead: milestones, each with an exit criterion. Finished work is in the build log; bugs and small tasks are GitHub issues. |
 | [build-log.md](build-log.md) | The story of the corpus build, step by step, with the numbers. Raw material for the article. |
 
 `README.md`, `brief.md` and `spec.md` are written in this repo. The other three are synced from Claude Docs; `sync-manifest.yaml` records the source doc and revision for each. Edit the Claude Doc, not these files.
