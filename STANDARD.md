@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 46 · synced 2026-11-19
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 49 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -81,8 +81,8 @@ Every repository a project here describes follows the same conventions, so a per
 
 Every project works the same way.
 
-- **Every design doc lives here.** No project keeps design docs in its code repository. Files generated from code, such as a page built from recorded runs, stay with the code.
-- **Design leads, code follows.** A change to what the product does, to a requirement or to the architecture is made in the design docs first, and the code pull request cites it. Code pull requests never edit design docs.
+- **Every design doc lives here.** No project keeps design docs in its code repository. The one exception is visual design: colors, type, marks and components live in the brand-system repository, with their own rules and change control. Files generated from code, such as a page built from recorded runs, stay with the code.
+- **Design leads, code follows.** A change to what the product does, to a requirement or to the architecture is made in the design docs first, and the code pull request cites it. Code pull requests never edit design docs. Claude and Claude Code still make design changes: when the work needs one, they stop and propose it, and once Justin approves, they make it in the Claude Doc (synced files) or in a pull request here (repo-authored files). The code pull request follows and cites it.
 - **The issue is the plan.** An approved GitHub issue authorizes the work; the spec and design constrain how it is done. If they conflict, or the work needs a change the design doesn't cover, stop and say so.
 - **Pull requests capture the small stuff.** Decisions made while coding and what the work taught go in the pull request under the template's *Decisions (proposed)* and *Build notes* headings. Merging the pull request approves its decisions.
 - **Roll-up.** Claude Code asks "Roll up to design?" when a pull request it opened is merged, when an issue or milestone is done, and about every ten turns of work since it last asked. On yes, it gathers Decisions and Build notes from pull requests merged since the last roll-up and proposes them: decisions for the component's `design.md` log, findings for `build-log.md`. For synced files they go in as suggestions in the Claude Doc; for repo-authored files, as a pull request here. Nothing enters the record until Justin approves it. The roll-up also checks for drift: for each synced file in the component and its project, it compares the revision in the manifest with the Claude Doc's current revision, and offers a sync pull request for any doc that has moved ahead. A session without Claude Docs access lists those docs from DOCS.md and asks Justin to check them. The build log notes each roll-up ("Roll-up: construction-os-workbench #16–#22"), which marks where the next one starts.
@@ -115,6 +115,7 @@ It does two jobs at once. It is the list of every working document, so no bookma
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | Every design doc lives here, with visual design in brand-system as the one exception. Design leads, code follows now says Claude and Claude Code do make design changes, once approved, in the Claude Doc or a design pull request, never inside a code pull request, after the old wording read as a ban on using Claude for design docs at all. |
 | 2026-11-19 | The roll-up also checks for drift between each Claude Doc and its synced snapshot, and offers a sync for any that moved ahead, after two build logs were found a revision behind with nothing to flag it. |
 | 2026-11-19 | Components get a table of named optional types, like projects: `<slice>-design.md` moved there and `<name>-prompt.md` added, after the intake router's classifier prompt had no legal home. `plan.md`'s job now says it holds only work still ahead, a rule the template already had. |
 | 2026-11-19 | Added `tools/validate.py`, run on every pull request, and corrected the front matter rule to match practice: synced files carry the sync header, not front matter, with type and status in the manifest. |
