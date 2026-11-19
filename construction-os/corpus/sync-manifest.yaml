@@ -18,7 +18,7 @@ docs:
   - file: build-log.md
     title: "Corpus Build Log"
     source: https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8
-    rev: 22
-    synced: 2026-11-17
+    rev: 23
+    synced: 2026-11-19
     type: build-log
     status: current
