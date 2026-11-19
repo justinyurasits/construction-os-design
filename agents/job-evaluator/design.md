@@ -1385,19 +1385,3 @@ extra. A skip would let the docs and code drift apart with a green run.
 **What would change it:**
 - CI that runs the agents tests: it gets a step that checks out `design`,
   not a skip.
-
-## D49 — The replay page's doc links: at least 3 into agents, at least 2 into design
-
-**Status:** **Approved** (agents #126, merged 2026-11-19; issue #125)
-**Date:** 2026-11-19
-**Decision:**
-- The decision log and principles links on the page's How it was built list
-  now point at the design repo. The test floor on links into agents drops
-  from 5 to 3, and a new test requires at least 2 links into design. It
-  checks that each one's file exists, and that an anchor such as
-  `#decision-log` matches a heading.
-
-**Reasoning:** two of the five checked links moved repos, not away. The
-page still has five checked doc links, split by where they point.
-**What would change it:**
-- More doc links on the page: raise the floors with them.
