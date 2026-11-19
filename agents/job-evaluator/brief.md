@@ -155,3 +155,6 @@ The page shows what actually happened and labels everything else.
 - Every number in How it was built is counted from the repo by `build_numbers.py`, never typed; the page links to this repo on GitHub (D41).
 - Tool precedence goes in the description of the tool that should wait: `flag_for_review` says to try `research_company` first when pay is missing (D42).
 - Browser tests check the page's rules in Chromium (Playwright, a dev-only requirement) and skip when it isn't installed. Claude's words are searched in every tab but its own; the only exemption is tool_result content in Payload (D38).
+- The design docs live only in the design repo; agents finds it with one lookup, `design_path()`, beside the main checkout, so worktrees find it too (D47).
+- Without the design repo, the doc tests fail with "clone justinyurasits/design next to agents"; they never skip (D48).
+- The page's doc links are checked where they point: at least 3 into agents, at least 2 into design (D49).

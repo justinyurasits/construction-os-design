@@ -354,3 +354,33 @@ Dated working log. What I did, what broke, what I learned. Entries come from the
 - Reading the terminal output can teach the code, if each line says where
   it came from. The marker that anchors the page's Code tab can anchor the
   terminal too, from the same lookup.
+
+## 2026-11-19 — Design docs read from the design repo (#125)
+
+**Did**
+
+- The agents repo stopped keeping its own design docs. Tests and
+  `build_numbers.py` read `design.md` and `brief.md` from the design repo
+  through one lookup, `design_path()` (D47). The old BRIEF, SPEC, DECISIONS,
+  BUILD_LOG and LEARNINGS copies were deleted, and a test fails if any file
+  names them again (agents #126).
+- CLAUDE.md became the standard v1 template plus a section 7 for the agents
+  repo. A PR template's Decisions and Build notes replaced "every PR edits
+  the docs", with roll-ups like this one carrying them here. `.vscode/` was
+  untracked (#124).
+
+**Broke**
+
+- The first version of the moved-docs test passed without checking anything.
+  `git grep -E` on macOS has no `\b`, so its pattern matched no file. It
+  showed up when a hand grep found CLAUDE.md still naming SPEC.md and the
+  test didn't flag it. It now uses a plain POSIX pattern.
+
+**Learned**
+
+- A guard test needs a check that it can fail. A vacuous pass looks just
+  like a working guard.
+- Worktrees break any path that's relative to the checkout.
+  `git rev-parse --git-common-dir` finds the main checkout from anywhere.
+
+Roll-up: agents #126–#126
