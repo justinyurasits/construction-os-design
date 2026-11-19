@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 53 · synced 2026-11-08
+> Source: [Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 66 · synced 2026-11-19
 
 # Construction OS — Principles
 
@@ -9,7 +9,7 @@ Principles for building organizational knowledge an AI can rely on — knowledge
 
 ## How to use this doc
 
-Ten universal principles, each with three layers under it: the rules that follow from it, the incidents in this build that taught it, and where it's enforced. A rule belongs under exactly one principle; a lesson is evidence, not a principle of its own.
+Ten universal principles, each with three layers under it: the rules that follow from it, the incidents in this build that taught it, and where it's enforced. A rule belongs under exactly one principle; a lesson is evidence, not a principle of its own. "Enforced by" names only what exists today; anything not yet built is marked planned. The checks named are run before every pull request, as each repository's CLAUDE.md requires; none runs automatically in CI yet.
 
 - **Add to it** whenever a review, a failed test or a PM's reaction teaches something: find the principle it serves, then add the rule or the incident.
 - **A new principle is rare.** If a lesson doesn't fit any of the ten, that's worth a conversation.
@@ -32,7 +32,7 @@ Before anyone reads a word of the body, a document answers five questions about 
 
 **Learned from:** version stamps in 139 document bodies contradicted their front matter; 2,526 old references like "#51" pointed at nothing (and GitHub turned them into links to pull requests); the old cross-reference index matched none of the current files.
 
-**Enforced by:** front matter validation; ID checks; body stamps removed; references rewritten to IDs.
+**Enforced by:** front matter validation (planned, corpus #45); definition dependencies checked against document IDs by the workbench validator, with full ID, heading and link checks planned (corpus #45); body stamps removed and references rewritten to IDs (one-time cleanups; the planned structure check keeps them from coming back).
 
 ### 2. One decision, one source
 
@@ -47,7 +47,7 @@ Every business decision (a limit, a deadline, a required signature, a rate) is s
 
 **Learned from:** the 10 core rules lived in five documents and an AI prompt, drifting apart; 47 report rows were nothing but restated rules; the carpenter rate was $89 in one source and $90 in another, so two systems priced the same change $7.26 apart; FCM and PM procedures set different deadlines for the same step.
 
-**Enforced by:** POL-01; the registry and company config; the restated-value check; Decision 3 (FCM owns the control).
+**Enforced by:** POL-01; the registry and company config; the restated-value check (planned, corpus #45); Decision 3 (FCM owns the control).
 
 ### 3. Authority is explicit, contextual and never inferred from retrieval
 
@@ -79,7 +79,7 @@ Which source governs depends on the decision being made and the situation it app
 
 **Learned from:** the core rules were "non-negotiable" but lived only in an AI prompt; policy accepted a signed PCO while BHI's own contract recognized only a change order; the old system's PCO said "Markup per the Contract" when no contract states one.
 
-**Enforced by:** SYS-00 4.3 and 4.4; definitions with declared dependencies; applies\_when conditions; the publish finding when a contract doesn't recognize the policy's accepted forms; document types.
+**Enforced by:** SYS-00 4.3 and 4.4; definitions with declared dependencies; applies\_when conditions; the publish finding when a contract doesn't recognize the policy's accepted forms (planned: the publish step isn't built); document types.
 
 ### 4. One document, one job
 
@@ -130,7 +130,7 @@ Each company gets a complete copy of the starter library, tailored to how it wor
 
 **Learned from:** BHI's identity and Boston market language sat in core documents; SYS-09's pricing was one company's Boston condo data; an AI fix banned email for allowance selections that aren't changes; BHI sample drafts slipped into the application repository.
 
-**Enforced by:** the layer field; the company folder; the app test that fails on company names; the three configuration mechanisms; the pricing evidence interface.
+**Enforced by:** the layer field; the company folder; the app test that fails on company names; the three configuration mechanisms (parameters in use; no module switch exists yet); the pricing evidence interface.
 
 ### 7. Every change is deliberate, reviewed and traceable
 
@@ -149,7 +149,7 @@ Nothing changes silently and nothing is lost. Anyone can answer who changed what
 
 **Learned from:** tagging the raw corpus first made every later fix reversible; 2,526 reference rewrites could only be trusted with a line check; a note about a repository that never existed misled planning twice; two sessions on the same project left one always out of date.
 
-**Enforced by:** the v0-raw tag; CLAUDE.md rules; the scope check and its allow list; GitHub issues; design snapshots and "Before planning".
+**Enforced by:** the v0-raw tag; CLAUDE.md rules; the scope check and its allow list; GitHub issues; design snapshots and the design reading order in each repository's CLAUDE.md.
 
 ### 8. Never invent
 
@@ -168,7 +168,7 @@ A generated document states what's known, labels what's estimated and why, marks
 
 **Learned from:** the old system's PCO cited "Markup per the Contract"; the first new draft put "Who is the client?" at the top of page 1 and left exclusions blank; neither draft asked whether six new lights needed an electrical permit until a review did.
 
-**Enforced by:** the pricing engine; the PM checklist file; the clarifications and exclusions section with prompts by trade; the permit check; fixed terms in the template.
+**Enforced by:** the pricing engine; the PM checklist in the PCO definition; the clarifications and exclusions section with prompts by trade; the permit check; fixed terms in the template.
 
 ### 9. Judge the work by how much it reduces the work
 
@@ -186,7 +186,7 @@ Validation depth must match actual capability: a document that only had general 
 
 **Learned from:** the eval questions exposed the documents before any code ran; four days of governance work without a stated customer nearly led into a hole; of three "most serious" findings, one was real, one misclassified and one not a conflict; the pricing method came from asking how Justin actually priced change orders.
 
-**Enforced by:** acceptance tests graded on documents and time saved; the Product Brief; the vertical slice; review of every content PR.
+**Enforced by:** acceptance tests graded on the documents (grading time saved is planned); the Product Brief; the vertical slice; review of every content PR.
 
 ### 10. Keep knowledge, request context and generated output separate
 
@@ -206,7 +206,7 @@ Governed knowledge, the evidence supplied for one request, and the documents the
 
 **Learned from:** Test 4's contract set 8% overhead and 5% profit; the system must price that PCO at 13%, and must not learn that the company's markup is 13%. The design kept request inputs ephemeral from the first day of the System Design.
 
-**Enforced by:** request inputs never indexed (technical design section 8); onboarding extraction as the only reviewed route from documents into company data; the package as the only source of governed knowledge.
+**Enforced by:** request inputs never indexed (technical design section 8; planned with retrieval, build step 6); onboarding extraction as the only reviewed route from documents into company data (planned: onboarding isn't built); the package as the only source of governed knowledge.
 
 ## How Git and GitHub make it a real corpus
 
