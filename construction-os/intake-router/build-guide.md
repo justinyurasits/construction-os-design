@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Pass 0 Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 10 · synced 2026-11-16
+> Source: [Pass 0 Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 12 · synced 2026-11-19
 
 # Pass 0 Build Guide: Construction OS Intake Router
 
@@ -152,5 +152,4 @@ At about an hour a day, the aim is a first scored run, not a finished system.
 - Keep published material at architecture level: no colleague names, SYSIDs or internal URLs, and no real customer utterances.
 - Nothing from Citizens goes into Pass 0, and no distinctive Citizens workbook names are reused.
 - Strip SOP IDs from the spec's Handling lines before the spec leaves your workspace.
-- Describe the employer as a "major U.S. bank", and check the separation agreement's confidentiality terms first.
 - The spec is the source of truth. Change the spec, then the prompt, never the reverse.

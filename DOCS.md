@@ -14,5 +14,5 @@ Generated from the sync manifests. Do not edit.
 | Workbench Plan | [source](https://claude.ai/artifact/XLGhnNkJU17qqeLQThboPP) | construction-os/document-workbench/plan.md | 3 | 2026-11-17 |
 | Workbench Build Log | [source](https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp) | construction-os/document-workbench/build-log.md | 2 | 2026-11-19 |
 | Intent Spec v1 | [source](https://claude.ai/artifact/Hjz4rG7TwwmsdjpX2UmRJ3) | construction-os/intake-router/spec.md | 52 | 2026-11-04 |
-| Pass 0 Build Guide | [source](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) | construction-os/intake-router/build-guide.md | 10 | 2026-11-16 |
+| Pass 0 Build Guide | [source](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) | construction-os/intake-router/build-guide.md | 12 | 2026-11-19 |
 | Classifier Prompt | [source](https://claude.ai/artifact/5kNPD1Vo9Zi1J3ucKWnZAN) | construction-os/intake-router/classifier-prompt.md | 3 | 2026-11-04 |
