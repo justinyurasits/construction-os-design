@@ -5,25 +5,30 @@ status: current
 
 # Agents
 
-Small agents built to learn, and to show, how agent loops work. The first is the job
-evaluator: Claude reads a job posting and decides which tool to use, and Python runs
+Small agents built to learn, and to show, how agent loops work. One component per
+agent. The first is the job evaluator: Claude decides which tool to use, and Python runs
 the tools, applies the hard rules in code, and keeps the conversation.
 
 **Status:** active, learning project  
-**Code and docs:** [`agents`](https://github.com/justinyurasits/agents)
+**Code:** [`agents`](https://github.com/justinyurasits/agents) ·
+[replay page](https://justinyurasits.github.io/agents/job-evaluator/site/)
 
-Its docs still live in the code repository. [#26](https://github.com/justinyurasits/design/issues/26) moves them here, the same as every other project.
+## Product-level docs
 
-## Job evaluator — read in this order
+| File | What it is |
+| --- | --- |
+| [brief.md](brief.md) | Why this repo of agents exists and what it's for. Draft. |
+| [principles.md](principles.md) | What building these agents has taught, each lesson tied to where it came from (was `LEARNINGS.md` in the agents repo). |
 
-| Concept | File | What it answers |
+## Components
+
+| Component | Folder | What it is |
 | --- | --- | --- |
-| Brief | [`docs/BRIEF.md`](https://github.com/justinyurasits/agents/blob/main/job-evaluator/docs/BRIEF.md) | What it does, for whom, and what v1 covers |
-| Design | [`docs/SPEC.md`](https://github.com/justinyurasits/agents/blob/main/job-evaluator/docs/SPEC.md) | How the agent works and why; kept in step with the code |
-| Decisions | [`docs/DECISIONS.md`](https://github.com/justinyurasits/agents/blob/main/job-evaluator/docs/DECISIONS.md) | Every design decision, with the options and the reasoning |
-| Plan | [GitHub issues](https://github.com/justinyurasits/agents/issues) | What's left; each change starts as an issue |
-| Build log | [`docs/BUILD_LOG.md`](https://github.com/justinyurasits/agents/blob/main/job-evaluator/docs/BUILD_LOG.md) | What happened, what broke, and what it taught |
-| Learnings | [`LEARNINGS.md`](https://github.com/justinyurasits/agents/blob/main/LEARNINGS.md) | What building these agents has taught, across agents |
+| Job evaluator | [job-evaluator/](job-evaluator/) | Reads a job posting and rates it, looks up the company, or flags it for a person. Nine recorded scenarios replay step by step. |
 
-`SCENARIOS.md` and `STEPS.md` in the same folder are generated from code and drive the
-replay page. They aren't design docs.
+## How these docs work
+
+All files here are written in this repo and edited by pull request; none is synced from
+Claude Docs yet. The agents tests read `job-evaluator/design.md` (the error table, the
+design principles and the decision log), so a change there can make agents CI fail until
+the code matches. That's on purpose: design leads, code follows.
