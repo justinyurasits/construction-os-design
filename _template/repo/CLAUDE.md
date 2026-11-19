@@ -1,6 +1,6 @@
 # <repo-name>
 
-<!-- standard: design/_template/repo/CLAUDE.md v1.1
+<!-- standard: design/_template/repo/CLAUDE.md v1.2
      Sections 1–6 are the standard: copy them unchanged, filling in only the <angle brackets>.
      Section 7 is this repository's own. To change a standard rule here, say so under
      "Overrides" in section 7, with the reason. -->
@@ -22,7 +22,8 @@ Before proposing work, read in this order (skip any the project doesn't have yet
 2. `../design/<project>/product-spec.md`: what the product must do, by capability ID
 3. `../design/<project>/architecture.md` and `principles.md`: how the parts fit, and
    the rules every design decision follows
-4. `../design/<project>/<component>/spec.md`: what this component must do
+4. `../design/<project>/<component>/brief.md` and `spec.md`: who this component is for,
+   and what it must do
 5. `../design/<project>/<component>/design.md`: how it works, and the decision log
 6. `../design/<project>/<component>/<slice>-design.md`: the build design for the slice
    the issue belongs to
