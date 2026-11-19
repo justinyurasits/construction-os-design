@@ -3,7 +3,7 @@ type: plan
 status: draft
 ---
 
-# Job evaluator — Plan
+# Agents — Job Evaluator Plan
 
 **Draft.** Open work is tracked as
 [issues in the agents repo](https://github.com/justinyurasits/agents/issues). This file

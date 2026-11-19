@@ -1,7 +1,7 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Construction OS — Brief](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) · doc revision 22 · synced 2026-11-08
+> Source: [Construction OS — Brief](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) · doc revision 23 · synced 2026-11-19
 
-# Construction OS — Product Brief
+# Construction OS — Brief
 
 Nov 2, 2026 · @Justin
 

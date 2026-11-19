@@ -3,7 +3,7 @@ type: design
 status: draft
 ---
 
-# Component name — Design
+# Project name — Component name Design
 
 *How it works and why. The living record: update it when a decision is made, not
 afterward.*

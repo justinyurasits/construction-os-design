@@ -3,7 +3,7 @@ type: brief
 status: draft
 ---
 
-# Project name — Product Brief
+# Project name — Brief
 
 *Date · owner*
 

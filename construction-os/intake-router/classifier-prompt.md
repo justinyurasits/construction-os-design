@@ -1,7 +1,7 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Construction OS — Intake Router Classifier Prompt](https://claude.ai/artifact/5kNPD1Vo9Zi1J3ucKWnZAN) · doc revision 3 · synced 2026-11-04
+> Source: [Construction OS — Intake Router Classifier Prompt](https://claude.ai/artifact/5kNPD1Vo9Zi1J3ucKWnZAN) · doc revision 4 · synced 2026-11-19
 
-# Classifier Prompt: Construction OS Intake Router
+# Construction OS — Intake Router Classifier Prompt
 
 Nov 4, 2026 · @Justin
 

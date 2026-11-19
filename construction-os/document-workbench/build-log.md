@@ -1,7 +1,7 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Construction OS — Document Workbench Build Log](https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp) · doc revision 26 · synced 2026-11-19
+> Source: [Construction OS — Document Workbench Build Log](https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp) · doc revision 27 · synced 2026-11-19
 
-# Construction OS Document Workbench — Build Log
+# Construction OS — Document Workbench Build Log
 
 Nov 17, 2026 · @Justin
 

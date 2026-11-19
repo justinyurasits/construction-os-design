@@ -3,7 +3,7 @@ type: slice-design
 status: draft
 ---
 
-# Component name — <Slice> Technical Design
+# Project name — Component name <Slice> Design
 
 *The build design for one vertical slice: enough that someone can build it without
 asking. Name the file `<slice>-design.md`. One file per slice.*

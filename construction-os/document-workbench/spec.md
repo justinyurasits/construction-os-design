@@ -3,7 +3,7 @@ type: spec
 status: draft
 ---
 
-# Document workbench — Spec
+# Construction OS — Document Workbench Spec
 
 The workbench's domain is the company's governed knowledge, and that is defined by the corpus, not here: see the [corpus spec](../corpus/spec.md). The workbench reads it only through the published package.
 

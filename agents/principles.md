@@ -3,7 +3,7 @@ type: principles
 status: current
 ---
 
-# Learnings
+# Agents — Principles
 
 What building these agents has taught me, kept as I go. Each entry says where it came from, so it can be checked against the code, issues and PRs.
 

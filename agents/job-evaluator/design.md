@@ -3,7 +3,7 @@ type: design
 status: current
 ---
 
-# job-evaluator — Design doc
+# Agents — Job Evaluator Design
 
 How the agent works and why. Every statement here should match [`agent.py`](https://github.com/justinyurasits/agents/blob/main/job-evaluator/agent.py) as it is on `main`, and the agents tests check parts of it (the error table, the design principles, the decisions the replay page cites). Design leads: a change to behavior, tools or prompts is made here first, then in the code. If the two disagree, say so; one of them has a bug.
 

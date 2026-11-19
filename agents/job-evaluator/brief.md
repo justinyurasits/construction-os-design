@@ -3,7 +3,7 @@ type: brief
 status: current
 ---
 
-# job-evaluator — Product brief
+# Agents — Job Evaluator Brief
 
 One page. Every milestone and issue should trace back to a line here. If it doesn't, it's post-v1.
 

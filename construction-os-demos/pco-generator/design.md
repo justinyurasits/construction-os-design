@@ -3,7 +3,7 @@ type: design
 status: draft
 ---
 
-# PCO Generator — Design
+# Construction OS Demos — PCO Generator Design
 
 **Draft.** Section 2 describes v3 as it runs today. Section 2b is the pricing design
 decided on 2026-11-19. It isn't built, and no code change is scheduled: the live app

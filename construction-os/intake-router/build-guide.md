@@ -1,7 +1,7 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Construction OS — Intake Router Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 12 · synced 2026-11-19
+> Source: [Construction OS — Intake Router Build Guide](https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9) · doc revision 13 · synced 2026-11-19
 
-# Pass 0 Build Guide: Construction OS Intake Router
+# Construction OS — Intake Router Build Guide
 
 Nov 4, 2026 · @Justin
 

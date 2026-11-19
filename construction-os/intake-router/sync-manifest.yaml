@@ -3,21 +3,21 @@ docs:
   - file: spec.md
     title: "Construction OS — Intake Router Spec"
     source: https://claude.ai/artifact/Hjz4rG7TwwmsdjpX2UmRJ3
-    rev: 52
-    synced: 2026-11-04
+    rev: 53
+    synced: 2026-11-19
     type: spec
     status: current
   - file: build-guide.md
     title: "Construction OS — Intake Router Build Guide"
     source: https://claude.ai/artifact/16CiqWUjxtzLMNw9B7pVM9
-    rev: 12
+    rev: 13
     synced: 2026-11-19
     type: plan
     status: current
   - file: classifier-prompt.md
     title: "Construction OS — Intake Router Classifier Prompt"
     source: https://claude.ai/artifact/5kNPD1Vo9Zi1J3ucKWnZAN
-    rev: 3
-    synced: 2026-11-04
+    rev: 4
+    synced: 2026-11-19
     type: plan
     status: current

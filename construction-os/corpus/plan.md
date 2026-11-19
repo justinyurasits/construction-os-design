@@ -1,7 +1,7 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Construction OS — Corpus Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 178 · synced 2026-11-19
+> Source: [Construction OS — Corpus Plan](https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42) · doc revision 179 · synced 2026-11-19
 
-# Construction OS Corpus — Plan
+# Construction OS — Corpus Plan
 
 Oct 30, 2026 · @Justin
 

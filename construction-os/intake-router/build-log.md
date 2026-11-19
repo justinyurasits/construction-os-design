@@ -3,6 +3,6 @@ type: build-log
 status: draft
 ---
 
-# Intake router — Build log
+# Construction OS — Intake Router Build Log
 
 Entries begin once Pass 0 ships.
