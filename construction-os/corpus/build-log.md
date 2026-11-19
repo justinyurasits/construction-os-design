@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Corpus Build Log](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) · doc revision 22 · synced 2026-11-17
+> Source: [Corpus Build Log](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) · doc revision 23 · synced 2026-11-19
 
 # Construction OS Corpus Audit — Build Log
 
@@ -8,6 +8,8 @@ Oct 31, 2026 · @Justin
 A running record of building a hybrid-search RAG system over the Construction OS library, and the corpus audit that turned out to matter more than the code. Raw material for an article.
 
 **Nov 17, 2026:** the corpus became its own component, and this is its Build Log. Steps 28, 29 and 34 are also the document workbench's first steps and stay here so the story reads whole; the workbench's story continues in its own [Build Log](https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp).
+
+Roll-up: construction-os-corpus #1–#79 (baseline, Nov 17, 2026). Every corpus pull request through #79 is already told in the steps below or needs no entry; the first roll-up starts at #80.
 
 ## Steps so far
 

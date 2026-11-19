@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Workbench Build Log](https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp) · doc revision 1 · synced 2026-11-17
+> Source: [Workbench Build Log](https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp) · doc revision 2 · synced 2026-11-19
 
 # Construction OS Document Workbench — Build Log
 
@@ -18,3 +18,5 @@ The workbench's first steps are told in the [corpus Build Log](https://claude.ai
 ## Steps
 
 Not yet written. The steps from Nov 8 on (LLM drafting, layout v2 and day rates, estimating from cost history, the wording fix) are an open item in the [workbench Plan](https://claude.ai/artifact/XLGhnNkJU17qqeLQThboPP).
+
+Roll-up: construction-os-workbench #1–#16 (baseline, Nov 17, 2026). Pull requests through #16 are covered by the steps in the corpus Build Log or by the open item to write the steps from Nov 8 on; the first roll-up starts at #17.

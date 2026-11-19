@@ -25,7 +25,7 @@ docs:
   - file: build-log.md
     title: "Workbench Build Log"
     source: https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp
-    rev: 1
-    synced: 2026-11-17
+    rev: 2
+    synced: 2026-11-19
     type: build-log
     status: current
