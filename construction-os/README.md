@@ -9,6 +9,25 @@ A company-specific AI system for residential builders that understands how a com
 
 This folder holds the product-level docs. Each component has its own folder.
 
+**Start with [principles.md](principles.md).** Ten principles for building
+organizational knowledge an AI can rely on, each one anchored to a specific failure in
+this build: a carpenter rate recorded as $89 in one source and $90 in another, so two
+systems priced the same change $7.26 apart. 2,526 stale document references that GitHub
+turned into links to unrelated pull requests. Four days of governance work before anyone
+had named a customer.
+
+## Where things stand
+
+| | Designed | Built | Validated |
+| --- | --- | --- | --- |
+| Document corpus and governance | ✓ | ✓ | Partial — policy verified against procedures |
+| PCO generation | ✓ | ✓ | — |
+| Retrieval | Partial — in scope; lookup, search and authority resolution not yet designed | — | — |
+| Intake router | Partial — spec and classifier prompt written; brief, design and plan still in the build guide | — | — |
+
+Nothing here is claimed as working until it is. An evaluation set written is not an
+evaluation run.
+
 ## Product-level docs
 
 | File | What it is |
