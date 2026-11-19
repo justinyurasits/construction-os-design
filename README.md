@@ -6,9 +6,10 @@ status: current
 # Design records
 
 How the systems get designed, written while they're being built rather than
-reconstructed afterward. Every document is drafted in a Claude Doc, reviewed,
-and synced here through a pull request — so the history shows what changed,
-when, and what it said before.
+reconstructed afterward. Most documents are drafted in a Claude Doc, reviewed,
+and synced here through a pull request; the rest are written here directly, also
+by pull request. Either way the history shows what changed, when, and what it
+said before.
 
 **Start with [principles.md](construction-os/principles.md).** Ten principles
 for building organizational knowledge an AI can rely on, each one anchored to
@@ -40,9 +41,11 @@ not an evaluation run.
 
 - **Each project gets its own folder**, with its own README listing its docs.
   Each folder of synced files has a `sync-manifest.yaml`.
-- **The Claude Doc is the working copy; the folder is the reviewed, versioned
-  record.** Changes sync here by pull request and the files are never edited
-  by hand. Each synced file starts with a link to its source.
+- **Synced documents:** the Claude Doc is the working copy and the folder is the
+  reviewed, versioned record. Changes sync here by pull request and the files
+  are never edited by hand. Each synced file starts with a link to its source.
+- **Repo-authored documents** (no sync header, such as the agents docs) are
+  edited here by pull request and follow the same standard.
 - **[DOCS.md](DOCS.md)** lists every synced document across all manifests,
   with its source, path and revision.
 - **[STANDARD.md](STANDARD.md)** is the document model: what each file in a
@@ -51,7 +54,10 @@ not an evaluation run.
   project-level file, `component/` with the full component set, and `repo/`
   with the files every code repository starts with (CLAUDE.md, pull request
   template, README, .gitignore).
-- **Design leads, code follows.** Every design doc lives here. Code pull
+- **Design leads, code follows.** Every design doc lives here, except visual
+  design: colors, type, marks and components are in
+  [`brand-system`](https://github.com/justinyurasits/brand-system), and product
+  docs that need a visual rule point there. Code pull
   requests capture small decisions and build notes; Claude Code asks to roll
   them up into the design docs, and nothing goes in without approval.
 - **Every change is a branch and a pull request.** Never commit to main.
