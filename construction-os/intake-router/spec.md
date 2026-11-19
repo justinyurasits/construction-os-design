@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Intent Spec v1](https://claude.ai/artifact/Hjz4rG7TwwmsdjpX2UmRJ3) · doc revision 52 · synced 2026-11-04
+> Source: [Construction OS — Intake Router Spec](https://claude.ai/artifact/Hjz4rG7TwwmsdjpX2UmRJ3) · doc revision 52 · synced 2026-11-04
 
 # Construction OS Intake Router — Intent Spec v1
 

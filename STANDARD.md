@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 54 · synced 2026-11-19
+> Source: [Design — Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 56 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -39,6 +39,8 @@ As at the project level, a new optional type is added to this table when a real 
 - **One document, one job.** If a file matches two rows above, it is two files.
 - **Front matter: `type` and `status`** (`draft | current | superseded`) on every `.md`. For a **synced** file those two values live in the manifest beside `source` and `rev`, and the file carries the two-line sync header instead of front matter — a block added by hand is wiped the next time that file syncs. For a **repo-authored** file, the READMEs included, the front matter is written in the file itself.
 - Filenames are lowercase-kebab `.md`. No version numbers in filenames.
+- **Claude Doc or repo-authored.** A doc is a Claude Doc when Justin writes it with Claude in chat. It is repo-authored when Claude Code writes it through pull requests, when it is still a placeholder, or when it is a README. A placeholder moves to a Claude Doc the first time real content is written in it.
+- **Claude Doc titles** follow `<Project> — <Component> <doc type>`, with the doc type taken from the file name: "Construction OS — Corpus Design", "Construction OS — Intake Router Classifier Prompt". Project-level docs drop the component ("Construction OS — Brief"); docs for this repository itself use "Design" as the project ("Design — Document Standard"). The manifest's `title` matches the Claude Doc's title.
 - Restructuring happens in the Claude Docs first. The repo follows via sync; synced files are never hand-edited.
 - A new component is this file set, not a decision about which files to make.
 
@@ -115,6 +117,7 @@ It does two jobs at once. It is the list of every synced working document, so no
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | Added which docs are Claude Docs (written with Claude in chat) and which are repo-authored (written by Claude Code, placeholders, READMEs), and a title pattern for Claude Docs, after DOCS.md showed fourteen titles in six styles and no rule for which docs were synced. |
 | 2026-11-19 | DOCS.md described as the list of every synced working document, not every working document, to match the index's own scope. |
 | 2026-11-19 | Opening reworded so it reads correctly from the repo copy: the Claude Doc is the editable source, STANDARD.md its reviewed snapshot. Pull requests capture the small stuff now bounds what merging a code pull request approves: implementation choices inside an approved issue, never a change to a requirement, the architecture, a security boundary or documented behavior, after a review found the line between the two left room for an agent to slip an architecture decision into a code pull request. |
 | 2026-11-19 | Every design doc lives here, with visual design in brand-system as the one exception. Design leads, code follows now says Claude and Claude Code do make design changes, once approved, in the Claude Doc or a design pull request, never inside a code pull request, after the old wording read as a ban on using Claude for design docs at all. |

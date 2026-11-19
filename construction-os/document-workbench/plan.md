@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Workbench Plan](https://claude.ai/artifact/XLGhnNkJU17qqeLQThboPP) · doc revision 34 · synced 2026-11-19
+> Source: [Construction OS — Document Workbench Plan](https://claude.ai/artifact/XLGhnNkJU17qqeLQThboPP) · doc revision 34 · synced 2026-11-19
 
 # Construction OS Document Workbench — Plan
 

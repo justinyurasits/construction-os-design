@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Workbench System Design](https://claude.ai/artifact/NcfkMXfG83Tg4NQpkh77TN) · doc revision 3 · synced 2026-11-17
+> Source: [Construction OS — Document Workbench Design](https://claude.ai/artifact/NcfkMXfG83Tg4NQpkh77TN) · doc revision 3 · synced 2026-11-17
 
 # Construction OS Document Workbench — System Design
 

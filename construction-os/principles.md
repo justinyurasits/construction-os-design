@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 66 · synced 2026-11-19
+> Source: [Construction OS — Principles](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) · doc revision 66 · synced 2026-11-19
 
 # Construction OS — Principles
 

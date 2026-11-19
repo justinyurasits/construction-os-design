@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [PCO Slice — Technical Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 45 · synced 2026-11-19
+> Source: [Construction OS — Document Workbench PCO Design](https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX) · doc revision 45 · synced 2026-11-19
 
 # PCO Slice — Technical Design
 
