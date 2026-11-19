@@ -1,0 +1,3 @@
+# Which Claude Doc each file is synced from. Update rev and synced on every sync.
+# None yet: every file in this project is repo-authored.
+docs: []
