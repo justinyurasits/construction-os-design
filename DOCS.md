@@ -6,7 +6,7 @@ Repo-authored docs (written here directly, such as the agents docs) aren't liste
 
 | Document | Claude Doc | Syncs to | Rev | Synced |
 | --- | --- | --- | --- | --- |
-| Design — Document Standard | [source](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) | STANDARD.md | 56 | 2026-11-19 |
+| Design — Document Standard | [source](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) | STANDARD.md | 57 | 2026-11-19 |
 | Construction OS — Principles | [source](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) | construction-os/principles.md | 66 | 2026-11-19 |
 | Construction OS — Brief | [source](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) | construction-os/brief.md | 22 | 2026-11-08 |
 | Construction OS — Architecture | [source](https://claude.ai/artifact/6UZv2djagWrjbm4AM7MXt9) | construction-os/architecture.md | 29 | 2026-11-17 |

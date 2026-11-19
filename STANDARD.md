@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Design — Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 56 · synced 2026-11-19
+> Source: [Design — Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 57 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -55,7 +55,7 @@ A project is a folder under the repo root holding one product's documents, with 
 | File | Its one job |
 | --- | --- |
 | `principles.md` | Craft knowledge — what building this taught, each principle anchored to the incident that taught it and to where it is enforced |
-| `product-spec.md` | What the product must do for its users, independent of implementation: capabilities, each with a stable ID in its heading (`<PROJECT>-CAP-<nn>`) and acceptance criteria; user journeys, including incomplete input and failures; and product-wide requirements. Needed once a project has two or more components. A capability moves to its own spec when it is big enough to manage on its own: several journeys, complicated rules, or its own acceptance-test suite. |
+| `product-spec.md` | What the product must do for its users, independent of implementation: capabilities, each with a stable ID in its heading (`<PROJECT>-CAP-<nn>`) and acceptance criteria; user journeys, including incomplete input and failures; and product-wide requirements. Needed once a project's components make up one product. A project that groups independent builds, such as a set of demos, has no product spec or architecture: its brief says what's in the folder and why it's grouped, and each component's own brief and spec say what it must do. A capability moves to its own spec when it is big enough to manage on its own: several journeys, complicated rules, or its own acceptance-test suite. |
 | `architecture.md` | How the components fit together and how a request moves through them |
 
 The project level is deliberately not a fixed file set the way a component is, and the difference is structural rather than a matter of judgment. Components repeat: each does the same job, so fixing the set removes decisions that would otherwise get made differently each time. Projects do not repeat — as one with two components needs an architecture document and one with a single component does not. New optional types are added to the table above as they appear, so a document has a name and a stated job rather than arriving ad hoc.
@@ -117,6 +117,7 @@ It does two jobs at once. It is the list of every synced working document, so no
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | A product spec is needed once a project's components make up one product, not once it has two components. A project that groups independent builds (agents, the demos) keeps only its brief, after the old rule would have required a product spec for two unrelated demos. |
 | 2026-11-19 | Added which docs are Claude Docs (written with Claude in chat) and which are repo-authored (written by Claude Code, placeholders, READMEs), and a title pattern for Claude Docs, after DOCS.md showed fourteen titles in six styles and no rule for which docs were synced. |
 | 2026-11-19 | DOCS.md described as the list of every synced working document, not every working document, to match the index's own scope. |
 | 2026-11-19 | Opening reworded so it reads correctly from the repo copy: the Claude Doc is the editable source, STANDARD.md its reviewed snapshot. Pull requests capture the small stuff now bounds what merging a code pull request approves: implementation choices inside an approved issue, never a change to a requirement, the architecture, a security boundary or documented behavior, after a review found the line between the two left room for an agent to slip an architecture decision into a code pull request. |
