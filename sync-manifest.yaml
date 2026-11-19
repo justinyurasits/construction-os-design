@@ -3,7 +3,7 @@ docs:
   - file: STANDARD.md
     title: "Document Standard"
     source: https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN
-    rev: 44
+    rev: 46
     synced: 2026-11-19
     type: standard
     status: current
