@@ -23,6 +23,36 @@ need a visual rule point there.
 
 ## How it works
 
+```mermaid
+flowchart LR
+    CD["Claude Docs<br/>Editable design sources"]
+
+    subgraph DESIGN["Design repository"]
+        P["Project<br/>Brief · Product spec · Architecture"]
+        C["Component<br/>Spec · Design · Plan · Build log"]
+        G["STANDARD.md<br/>Templates · Validator"]
+        P --> C
+        G -. governs .-> P
+        G -. governs .-> C
+    end
+
+    subgraph CODE["Code repository"]
+        I["Approved GitHub issue"]
+        PR["Code · Tests · Pull request"]
+        I --> PR
+    end
+
+    H["Human review<br/>Decisions · Merge"]
+
+    CD -->|"Sync by PR"| P
+    CD -->|"Sync by PR"| C
+    C -->|"Requirements & constraints"| I
+    PR --> H
+    H -.->|"Roll-up: synced docs<br/>(+ drift check)"| CD
+    H -.->|"Roll-up: repo-authored docs<br/>(design PR)"| C
+    G -. starts new .-> CODE
+```
+
 **1. A project is a folder; a component is a subfolder.** Every component has the same
 files from the day it's created: README, brief, spec, design, plan, build log, sync
 manifest, images. A project adds a brief and, as it grows, principles, a product spec and
@@ -47,6 +77,8 @@ Justin's approval.
 
 **5. The structure is checked.** `python tools/validate.py` runs on every pull request
 and fails if a project or component is missing a file or a sync record is wrong.
+
+The rules behind all of this are in [STANDARD.md](STANDARD.md). Where this page and the standard differ, the standard is right.
 
 ## The files at the top
 
