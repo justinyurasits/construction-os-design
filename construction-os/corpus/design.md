@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Corpus System Design](https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4) · doc revision 86 · synced 2026-11-19
+> Source: [Corpus System Design](https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4) · doc revision 92 · synced 2026-11-19
 
 # Construction OS Corpus — System Design
 
@@ -27,18 +27,21 @@ Every governed document, and eventually every rule, answers five questions. Auth
 
 ### Document types
 
-Eight types. They describe what is inside the system, not what it produces.
+Nine types. SYS-00 §3 owns the list; this table adds examples from the corpus. They describe what is inside the system, not what it produces.
 
-| Type | What it is | How generation uses it | Examples |
+| Type | What it is | How the workbench uses it | Examples |
 | --- | --- | --- | --- |
-| Policy | What must always be true, and who has authority | Retrieved as evidence; rules enforced by validation | Core rules, EXEC-01, FCM-19, SYS-03 |
-| Procedure | When and how a document is created, reviewed, or issued | Retrieved as evidence | FCM-03, process steps in CHG-53 |
-| Document definition | What a document needs and must contain | Loaded directly by ID | SUB-A06, PRE-01t, template parts inside SOPs |
-| Work instruction | How to do a step in a specific tool | Retrieved when the user asks how | WF-01, WF-02 (Procore) |
-| Guide | Training and explanation | Retrieved for questions, not generation | SUB-T01, SYS-08 |
-| Reference example | A sample of good output | Guides style only; never supplies facts or overrides rules | None yet |
-| Navigation | Maps of the system | Not searched as evidence | SYS-01, SYS-04, STG-A to E |
-| AI configuration | How the engine behaves toward policy | Not searched; enforces policy, never originates it | SYS-05, SYS-06, SYS-07 |
+| Policy | What must always be true, and who has authority | Enforces its rules | POL-01, EXEC-01, FCM-19, SYS-03 |
+| Procedure | When and how a document is created, reviewed, or issued | Retrieves it as evidence | FCM-03, process steps in CHG-53 |
+| Document definition | What a document needs and must contain: inputs, sections, required language, approvals, validation | Loads it directly by ID when generating that document | CHG-53-DEF |
+| Template | The form, contract, or layout that is filled in to produce a document | Renders the output from it | templates/pco.docx |
+| Work instruction | How to do a step in a specific software tool | Retrieves it when asked how | WF-01, WF-02 (Procore) |
+| Guide | Training and explanation | Retrieves it for questions, not for generation | SUB-T01, SYS-08 |
+| Reference example | A sample of good output | Style only; never a source of facts or rules | None yet |
+| Navigation | A map of the library | Not treated as evidence | SYS-01, SYS-04, STG-A to E |
+| System instruction | How the workbench behaves toward the library | Follows it; it never states policy | SYS-05, SYS-06, SYS-07 |
+
+A definition says what a document must contain; a template supplies its layout and approved language. Since this table was first written, Template became its own type (SYS-00 2.0) and System instruction replaced AI configuration.
 
 ## 3. Document definitions
 
@@ -73,33 +76,30 @@ SOPs mix all three, so sorting happens at the sentence level, not the document l
 
 ## 4. Layers, ownership, and overrides
 
-**Policy is owned by the company.** For BHI that is Justin; for a customer, the person the company designates as **Policy Owner**. What Construction OS ships is a default the company adopts or changes, not the company's policy until adopted.
+**Policy is owned by the company.** For BHI that is Justin; for a customer, its **Policy Owner** (the Executive unless the company designates someone else). Construction OS ships a starter library; what a company adopts becomes its own. Changes to the starter library itself are approved by the Product Owner (SYS-00 §2).
 
-**Core ships opinionated defaults.** The product works with no configuration on day one, using best-practice values (BHI's as the starting point).
+**Each company has its own copy** (SYS-00 §5.1). A company gets a complete copy of the starter library as its own repository, and its `STARTER_RELEASE` file records which release it came from. The company changes its copy through change control, and adopts a new starter release by reviewing it; nothing merges automatically. The workbench reads one company's library at a time and never combines libraries. The copy works on day one with no changes, because the starter library ships opinionated defaults (BHI's as the starting point).
 
-| Layer | Maintained by | Holds |
+| Layer | Comes from | Holds |
 | --- | --- | --- |
-| Core | Construction OS (vendor) | Default policies, procedures, definitions |
-| Jurisdiction | Construction OS (vendor) | State-specific requirements, e.g. Massachusetts HIC terms and lien law. Tagged now, built as a layer later. |
-| Company | The company's Policy Owner | Adopted defaults plus the company's changes |
+| Core | The starter library | Default policies, procedures and definitions, written as best practice |
+| Jurisdiction | The starter library | State-specific requirements, such as Massachusetts home improvement contract terms |
+| Company | The company | Documents the company wrote or replaced |
 
-At generation time the system resolves **company, then jurisdiction, then core.** The current corpus is mostly core-quality content with BHI-specific pieces (brand, letterhead, some Massachusetts terms) mixed in; BHI becomes the first company layer.
+**The layer is a label, not a runtime rule** (SYS-00 §5.2). It says where a document's content came from; the workbench doesn't resolve one layer over another. This replaced the earlier design, in which generation resolved company, then jurisdiction, then core at runtime, when SYS-00 3.0 gave each company its own copy (Nov 8). The current corpus is BHI's copy, and also the original the starter library will be cut from.
 
-### Rules and overrides
+### Values and changes
 
-Rules become objects with stable IDs. Companies override **at the rule level, not the document level**: BHI changes one parameter, not its own copy of FCM-11.
+**Values are configured, not written into prose** (SYS-00 §5.3). Each configurable item is a registry entry with a stable ID; the company's value is in `company/config.yaml`; the owning document explains what the value means and refers to it. Example: `NTE-CHECKPOINTS` defaults to notify at 70% and stop at 90% of a not-to-exceed amount and is owned by CHG-60 §9. A company changes those numbers in its configuration without rewriting CHG-60, and every document that refers to the entry uses the configured value. A company that works differently in structure, not only in value, edits the document in its own copy.
 
-- Core: `TIME-ENTRY-001` max delay = 48 hours
-- BHI: `TIME-ENTRY-001` max delay = next day 9 AM
+| Kind of rule | Can a company change it? |
+| --- | --- |
+| Values (limits, windows, approvers) | Yes, in its configuration |
+| Process choices | Yes, with a warning |
+| Legal requirements | No (locked) |
+| Required document structure | Only through a Construction OS change, because the workbench depends on it |
 
-Every document that references the rule picks up the company's value.
-
-| Kind of rule | Overridable? | Examples |
-| --- | --- | --- |
-| Parameters | Yes | Thresholds, time limits, approvers, reminder schedules |
-| Process choices | Yes, with a warning | Skipping an optional review step |
-| Legal requirements | No, locked | Massachusetts HIC contract terms, statutory lien waiver language |
-| Structural requirements | Only by vendor change | Removing a required section from a definition |
+**When sources disagree.** SYS-00 §4.3 sets the order of authority for the same decision: law, then an executed contract for its project, then company policy, then financial controls, procedures and definitions, which share a level with one owner per decision. Conflicts are flagged on the draft and reported to the Policy Owner; they never block the draft (§4.4).
 
 ### Roles
 
@@ -107,31 +107,33 @@ Rules reference **roles, not people**. The company profile maps each role to a p
 
 ## 5. Company configuration profile
 
-A company configures the workbench by answering the decisions its policies require, through an AI interview or a fillable document it uploads. Both are **generated from the rule registry**, never written by hand, so adding a rule automatically adds its question to onboarding.
+A company configures Construction OS at onboarding by **confirming values, not filling in a blank form** (SYS-00 §5.5). Construction OS reads the company's recent contracts, change orders, bids and procedures, proposes the values it finds, and asks only about what it couldn't find. The Policy Owner confirms or corrects every value and signs off; after that, every change to a value goes through change control. The questions come from the registry, never written by hand, so adding an entry adds its question to onboarding.
 
-**Each overridable rule carries:**
+**Each registry entry carries** (one file per entry in `registry/`; the example is `NTE-CHECKPOINTS`):
 
-| Field | Example |
+| Field | What it holds | Example |
+| --- | --- | --- |
+| `id` | Stable ID | `NTE-CHECKPOINTS` |
+| `kind` | parameter, identity, role mapping or module switch | parameter |
+| `value_type`, `schema` | The shape of the value | object: notify at, stop at (percent) |
+| `default` | The starter value | notify at 70%, stop at 90% |
+| `constraints` | Allowed values | notify between 50% and 95%, and below stop |
+| `stricter_is` | Which direction is stricter, declared, never inferred | lower |
+| `authority` | The document and section that own its meaning | CHG-60 §9 |
+| `change_approver` | Who approves a change | Policy Owner |
+| `onboarding` | Its group, where it's usually found, and the question | change management; contracts, change orders; "At what share of a not-to-exceed amount do you warn the client and stop?" |
+
+**Where the confirmed answers go** (SYS-00 §5.6, §5.7):
+
+| File | Holds |
 | --- | --- |
-| Rule ID | `TIME-ENTRY-001` |
-| Plain-language question | "How soon after a shift must crew enter their time?" |
-| Default | 48 hours |
-| Allowed values | 24 hours, next day 9 AM, 48 hours, 72 hours |
-| Why it matters | "Late entries break job cost reporting and certified payroll" |
-| Overridable | Yes / with warning / locked |
-| Jurisdiction | Any / MA |
+| `company/config.yaml` | The company's value for each registry entry |
+| `company/<company>/profile.yaml` | Identity: legal name, signatory, address, license numbers, logo. Documents refer to it with variables such as `{{company.name}}`; core documents never contain a company's identity. |
+| `company/pricing/` | Rate tables and cost history |
 
-**The interview:**
+Locked rules, such as Massachusetts contract terms, are shown during onboarding, not asked.
 
-1. Company identity: name, license numbers, letterhead, and who fills each role
-2. Policy decisions, one business area at a time (money, changes, subcontractors, schedule, safety, closeout), with every default shown
-3. The owner may accept all defaults for an area, but must confirm explicitly
-4. Locked rules are shown, not asked: "Massachusetts requires these contract terms"
-5. The Policy Owner signs off; the profile is versioned and every later change is logged
-
-The answers become the company profile file, the company layer the generator reads at runtime.
-
-**Consequence for the corpus cleanup:** every rule extracted from an SOP feeds both validation and onboarding. Extracting CHG-54's 75% rule also writes its interview question. The cleanup builds the onboarding product.
+**Consequence for the corpus cleanup:** every value extracted from an SOP becomes a registry entry, which feeds validation, the workbench and onboarding at once. Extracting the not-to-exceed checkpoints from CHG-60 gives `NTE-CHECKPOINTS` and its onboarding question in one entry. The cleanup builds the onboarding product.
 
 ## 6. Quality assurance
 

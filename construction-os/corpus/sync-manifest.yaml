@@ -4,7 +4,7 @@ docs:
   - file: design.md
     title: "Corpus System Design"
     source: https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4
-    rev: 86
+    rev: 92
     synced: 2026-11-19
     type: design
     status: current
