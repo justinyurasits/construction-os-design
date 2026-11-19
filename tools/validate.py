@@ -31,7 +31,7 @@ PROJECT_REQUIRED = ["README.md", "brief.md", "sync-manifest.yaml"]
 COMPONENT_REQUIRED = ["README.md", "brief.md", "spec.md", "design.md", "plan.md",
                       "build-log.md", "sync-manifest.yaml", "images"]
 PROJECT_OPTIONAL = {"principles.md", "architecture.md", "product-spec.md"}
-COMPONENT_OPTIONAL_RE = re.compile(r"^[a-z0-9-]+-design\.md$")
+COMPONENT_OPTIONAL_RE = re.compile(r"^[a-z0-9-]+-(design|prompt)\.md$")
 SYNC_HEADER = re.compile(r"^> \*\*Synced from Claude Docs")
 SYNC_REV = re.compile(r"doc revision (\d+) · synced (\d{4}-\d{2}-\d{2})")
 LINK = re.compile(r"\]\(([^)\s]+)\)")
@@ -172,7 +172,7 @@ def main():
             check_markdown(cdir, cmanifest)
             for f in sorted(os.listdir(cdir)):
                 if f.endswith(".md") and f not in COMPONENT_REQUIRED and not COMPONENT_OPTIONAL_RE.match(f):
-                    warn(rel(os.path.join(cdir, f)), "not in the component file set (README, brief, spec, design, plan, build-log, <slice>-design)")
+                    warn(rel(os.path.join(cdir, f)), "not a required or named optional component type in STANDARD.md")
 
     # root-level synced files (STANDARD.md)
     root_manifest = load_manifest(ROOT) or {}
