@@ -16,8 +16,8 @@ or architecture doc. The brief says what the demos are for.
 ## Where things stand
 
 The PCO Generator is live at [draftconstructionchangeorder.com](https://draftconstructionchangeorder.com/).
-Fieldscope is a prototype with a live demo. Each demo's brief is written; its spec,
-design, plan and build log are still drafts.
+Fieldscope is a prototype with a live demo. Fieldscope's brief and the PCO Generator's
+build log are written; the rest of both demos' docs are drafts.
 
 ## Product-level docs
 
