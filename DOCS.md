@@ -1,8 +1,12 @@
-Generated from the sync manifests. Do not edit.
+# Synced document index
+
+Every document synced from a Claude Doc: its source, where it syncs to, and the revision last synced. Generated from the sync manifests. Do not edit.
+
+Repo-authored docs (written here directly, such as the agents docs) aren't listed; find them through each project's README.
 
 | Document | Claude Doc | Syncs to | Rev | Synced |
 | --- | --- | --- | --- | --- |
-| Document Standard | [source](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) | STANDARD.md | 49 | 2026-11-19 |
+| Document Standard | [source](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) | STANDARD.md | 52 | 2026-11-19 |
 | Principles | [source](https://claude.ai/artifact/5cYmZCVFyZYrdjFeor3uRy) | construction-os/principles.md | 53 | 2026-11-08 |
 | Product Brief | [source](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) | construction-os/brief.md | 22 | 2026-11-08 |
 | Construction OS — Architecture | [source](https://claude.ai/artifact/6UZv2djagWrjbm4AM7MXt9) | construction-os/architecture.md | 29 | 2026-11-17 |

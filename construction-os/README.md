@@ -47,13 +47,7 @@ evaluation run.
 
 ## How these docs work
 
-**The Claude Docs are the working copy. These folders are the reviewed, versioned record.**
-
-- Every design doc is written and edited in Claude Docs. Each synced file starts with a link to its source doc.
-- When a doc changes in a way that matters (a decision, a principle, a design change, or the end of a working session), it's exported to Markdown and synced here in a pull request. The PR diff is the review of what changed.
-- Nobody edits synced files by hand. If something here is wrong, fix the Claude Doc and re-sync.
-- Between syncs, a folder can be behind the Claude Docs. The Claude Doc is current; the folder is the last reviewed version.
-- Each folder's `sync-manifest.yaml` records which Claude Doc each file comes from and the revision last synced.
+Most docs here are synced from Claude Docs; each synced file starts with a link to its source, and the folder's `sync-manifest.yaml` records the revision. How syncing, roll-ups and the rest work is in the [root README](../README.md); the rules are in [STANDARD.md](../STANDARD.md).
 
 **Where decisions live:** product-level decisions are on [architecture.md](architecture.md). A component's own decisions are in its design.md: the [corpus](corpus/design.md) and the [document workbench](document-workbench/design.md). Each decision is recorded once.
 

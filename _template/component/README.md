@@ -25,7 +25,7 @@ CLAUDE.md points back to this folder.
 | [brief.md](brief.md) | This component's customer, painful moment and scope, where they narrow the product brief. |
 | [spec.md](spec.md) | What it must do: requirements, each with acceptance criteria. |
 | [design.md](design.md) | How it works, its boundaries, and the decision log. Decisions are recorded once, here. |
-| [slice-design.md](slice-design.md) | Build design for one vertical slice. One file per slice, named `<slice>-design.md`. |
+| [slice-design.md](slice-design.md) | Optional. Build design for one vertical slice. One file per slice, named `<slice>-design.md`. |
 | [name-prompt.md](name-prompt.md) | Optional. A prompt the component sends to a model, with its version log. One file per prompt, named `<name>-prompt.md`. |
 | [plan.md](plan.md) | Milestones still ahead, each with its exit criterion. Work only. |
 | [build-log.md](build-log.md) | What happened, in order, and what each finding changed. |
