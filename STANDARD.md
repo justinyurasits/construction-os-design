@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 41 · synced 2026-11-19
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 44 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -19,11 +19,19 @@ Every component has the same files from the day it is created. A file with nothi
 | `brief.md` | Who it's for, the painful moment, what it replaces, what's out of scope |
 | `spec.md` | The domain, named and bounded. A pointer if the domain lives elsewhere. |
 | `design.md` | Architecture, boundaries, and the decision log |
-| `plan.md` | Phased work. Work only. |
+| `plan.md` | Work still ahead: milestones, each with an exit criterion. Finished work moves to the build log; bugs and small tasks are GitHub issues. |
 | `build-log.md` | What happened, in order, and what each finding changed |
 | `sync-manifest.yaml` | Source Claude Doc, rev, sync date, per synced file |
 | `images/` | Static exports, re-exported when the drawing changes |
+
+**Optional, by named type** — any number per component:
+
+| File | Its one job |
+| --- | --- |
 | `<slice>-design.md` | Technical design for one vertical slice |
+| `<name>-prompt.md` | A prompt the component sends to a model, with its version log. The code repository holds the copy that runs, and a test there checks the two match. |
+
+As at the project level, a new optional type is added to this table when a real document needs one, so every document has a name and a stated job. A file that fits no row is a reason to add a row, not to keep an unnamed file.
 
 ## Rules
 
@@ -107,6 +115,7 @@ It does two jobs at once. It is the list of every working document, so no bookma
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | Components get a table of named optional types, like projects: `<slice>-design.md` moved there and `<name>-prompt.md` added, after the intake router's classifier prompt had no legal home. `plan.md`'s job now says it holds only work still ahead, a rule the template already had. |
 | 2026-11-19 | Added `tools/validate.py`, run on every pull request, and corrected the front matter rule to match practice: synced files carry the sync header, not front matter, with type and status in the manifest. |
 | 2026-11-19 | Added two rules to How design and code work together, after moving the agents docs: design docs that a repository's tests read are sync-sensitive, and `../design` resolves from the main checkout, because a git worktree has no sibling design folder. |
 | 2026-11-17 | One model for every project: linked projects removed, every design doc lives here. Added How design and code work together (design leads, the issue is the plan, pull requests capture decisions and build notes, the roll-up) and `_template/repo/` with a standard CLAUDE.md, after the CLAUDE.md files across eight repositories were found to contradict each other on planning, merging and secrets. |
