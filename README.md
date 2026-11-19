@@ -56,6 +56,8 @@ not an evaluation run.
   them up into the design docs, and nothing goes in without approval.
 - **Every change is a branch and a pull request.** Never commit to main.
 
+`python tools/validate.py` checks the structure (required files, front matter, manifests, DOCS.md, links) and runs on every pull request.
+
 To add a project: copy `_template/project/`, rename it, fill it in, and add a row
 to the table above. To add a component: copy `_template/component/` into the
 project and list it in the project README. To start a code repository: copy

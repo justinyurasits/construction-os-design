@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 40 · synced 2026-11-19
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 41 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -29,7 +29,7 @@ Every component has the same files from the day it is created. A file with nothi
 
 - **One decision, one source.** Decisions live in that component's `design.md` log. A plan or build log may reference a decision; neither records one.
 - **One document, one job.** If a file matches two rows above, it is two files.
-- **Front matter: `type` and `status`** (`draft | current | superseded`) on every `.md`. For a **synced** file those two values live in the manifest beside `source` and `rev`, and the sync writes the front matter into the file — a block added by hand is wiped the next time that file syncs. For a **repo-authored** file, the READMEs included, the front matter is written in the file itself.
+- **Front matter: `type` and `status`** (`draft | current | superseded`) on every `.md`. For a **synced** file those two values live in the manifest beside `source` and `rev`, and the file carries the two-line sync header instead of front matter — a block added by hand is wiped the next time that file syncs. For a **repo-authored** file, the READMEs included, the front matter is written in the file itself.
 - Filenames are lowercase-kebab `.md`. No version numbers in filenames.
 - Restructuring happens in the Claude Docs first. The repo follows via sync; synced files are never hand-edited.
 - A new component is this file set, not a decision about which files to make.
@@ -89,6 +89,8 @@ Every project works the same way.
 
 **Every change gets a dated line in the history below.** One line, what changed and why. This is what makes a convention trustworthy to someone reading it six months later, including a Claude Code session that has never seen the conversation it came from.
 
+**The structure is checked automatically.** `tools/validate.py` checks every project and component against this standard: required files, front matter, manifests and sync headers, the document index and links. It runs on every pull request, and an error fails the check. It can't see Claude Docs, so whether a doc has moved ahead of its synced snapshot is checked at sync and roll-up time.
+
 **A component that doesn't fit is evidence about the standard, not an exception to it.** Either the shape is wrong and this document changes, or the component is wrong and it changes. No component is exempted. Exemptions are how a convention stops being one.
 
 ## The document index
@@ -105,6 +107,7 @@ It does two jobs at once. It is the list of every working document, so no bookma
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | Added `tools/validate.py`, run on every pull request, and corrected the front matter rule to match practice: synced files carry the sync header, not front matter, with type and status in the manifest. |
 | 2026-11-19 | Added two rules to How design and code work together, after moving the agents docs: design docs that a repository's tests read are sync-sensitive, and `../design` resolves from the main checkout, because a git worktree has no sibling design folder. |
 | 2026-11-17 | One model for every project: linked projects removed, every design doc lives here. Added How design and code work together (design leads, the issue is the plan, pull requests capture decisions and build notes, the roll-up) and `_template/repo/` with a standard CLAUDE.md, after the CLAUDE.md files across eight repositories were found to contradict each other on planning, merging and secrets. |
 | 2026-11-17 | `_template/` split into `project/`, `component/` and `linked-project/`, with its own README, because project-level files at the template root sat beside the component folder and the project README doubled as the instructions. Real projects are unchanged. |
