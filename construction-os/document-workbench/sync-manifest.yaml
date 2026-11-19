@@ -2,28 +2,28 @@
 # One entry per synced file in this folder. Repo-authored files are not listed.
 docs:
   - file: design.md
-    title: "Workbench System Design"
+    title: "Construction OS — Document Workbench Design"
     source: https://claude.ai/artifact/NcfkMXfG83Tg4NQpkh77TN
     rev: 3
     synced: 2026-11-17
     type: design
     status: current
   - file: pco-design.md
-    title: "PCO Slice — Technical Design"
+    title: "Construction OS — Document Workbench PCO Design"
     source: https://claude.ai/artifact/1xt5wM378qNBtHhy85osmX
     rev: 45
     synced: 2026-11-19
     type: slice-design
     status: current
   - file: plan.md
-    title: "Workbench Plan"
+    title: "Construction OS — Document Workbench Plan"
     source: https://claude.ai/artifact/XLGhnNkJU17qqeLQThboPP
     rev: 34
     synced: 2026-11-19
     type: plan
     status: current
   - file: build-log.md
-    title: "Workbench Build Log"
+    title: "Construction OS — Document Workbench Build Log"
     source: https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp
     rev: 26
     synced: 2026-11-19

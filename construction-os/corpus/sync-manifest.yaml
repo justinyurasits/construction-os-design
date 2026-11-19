@@ -2,21 +2,21 @@
 # One entry per synced file in this folder. Repo-authored files are not listed.
 docs:
   - file: design.md
-    title: "Corpus System Design"
+    title: "Construction OS — Corpus Design"
     source: https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4
     rev: 92
     synced: 2026-11-19
     type: design
     status: current
   - file: plan.md
-    title: "Corpus Plan"
+    title: "Construction OS — Corpus Plan"
     source: https://claude.ai/artifact/6FvtBWB9bFMVdzMMTrwi42
     rev: 178
     synced: 2026-11-19
     type: plan
     status: current
   - file: build-log.md
-    title: "Corpus Build Log"
+    title: "Construction OS — Corpus Build Log"
     source: https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8
     rev: 34
     synced: 2026-11-19

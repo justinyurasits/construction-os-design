@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Product Brief](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) · doc revision 22 · synced 2026-11-08
+> Source: [Construction OS — Brief](https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP) · doc revision 22 · synced 2026-11-08
 
 # Construction OS — Product Brief
 
