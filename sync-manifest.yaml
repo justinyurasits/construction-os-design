@@ -3,7 +3,7 @@ docs:
   - file: STANDARD.md
     title: "Design — Document Standard"
     source: https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN
-    rev: 57
+    rev: 58
     synced: 2026-11-19
     type: standard
     status: current
