@@ -3,21 +3,13 @@ type: readme
 status: current
 ---
 
-# Design records
+# Design
 
-How the systems get designed, written while they're being built rather than
-reconstructed afterward. Most documents are drafted in a Claude Doc, reviewed,
-and synced here through a pull request; the rest are written here directly, also
-by pull request. Either way the history shows what changed, when, and what it
-said before.
+The design docs for everything Justin builds: one folder per project, written while the
+work is being built rather than reconstructed afterward. Code repositories don't keep
+design docs; they read them from here.
 
-**Start with [principles.md](construction-os/principles.md).** Ten principles
-for building organizational knowledge an AI can rely on, each one anchored to
-a specific failure in this build: a carpenter rate recorded as $89 in one
-source and $90 in another, so two systems priced the same change $7.26 apart.
-2,526 stale document references that GitHub turned into links to unrelated
-pull requests. Four days of governance work before anyone had named a
-customer.
+## Projects
 
 | Project | Folder | What it is |
 | --- | --- | --- |
@@ -25,46 +17,56 @@ customer.
 | Agents | [agents/](agents/) | Small agents built to learn how agent loops work, starting with a job evaluator. Component: the job evaluator. Code in [`agents`](https://github.com/justinyurasits/agents). |
 | Construction OS demos | [construction-os-demos/](construction-os-demos/) | Standalone tools in the same domain: Fieldscope (subcontractor safety compliance) and the PCO Generator (live at draftconstructionchangeorder.com). |
 
-## Where things stand
+Visual design (colors, type, marks, components) is the one exception. It lives in
+[`brand-system`](https://github.com/justinyurasits/brand-system), and design docs that
+need a visual rule point there.
 
-| | Designed | Built | Validated |
-| --- | --- | --- | --- |
-| Document corpus and governance | ✓ | ✓ | Partial — policy verified against procedures |
-| PCO generation | ✓ | ✓ | — |
-| Retrieval | ✓ | — | — |
-| Intake router | ✓ | — | — |
+## How it works
 
-Nothing here is claimed as working until it is. An evaluation set written is
-not an evaluation run.
+**1. A project is a folder; a component is a subfolder.** Every component has the same
+files from the day it's created: README, brief, spec, design, plan, build log, sync
+manifest, images. A project adds a brief and, as it grows, principles, a product spec and
+an architecture doc. Every file has one job.
 
-## How this repo works
+**2. Docs are written in Claude Docs or here.** Most are drafted in a Claude Doc and
+synced into this repo by pull request, so the history shows what changed and when. The
+Claude Doc is the working copy; the file here is the reviewed record and is never edited
+by hand. A few docs, like the agents docs, are written here directly, also by pull
+request.
 
-- **Each project gets its own folder**, with its own README listing its docs.
-  Each folder of synced files has a `sync-manifest.yaml`.
-- **Synced documents:** the Claude Doc is the working copy and the folder is the
-  reviewed, versioned record. Changes sync here by pull request and the files
-  are never edited by hand. Each synced file starts with a link to its source.
-- **Repo-authored documents** (no sync header, such as the agents docs) are
-  edited here by pull request and follow the same standard.
-- **[DOCS.md](DOCS.md)** lists every synced document across all manifests,
-  with its source, path and revision.
-- **[STANDARD.md](STANDARD.md)** is the document model: what each file in a
-  component is for, and the rules that keep it that way.
-- **[_template/](_template/)** is the standard as files: `project/` with every
-  project-level file, `component/` with the full component set, and `repo/`
-  with the files every code repository starts with (CLAUDE.md, pull request
-  template, README, .gitignore).
-- **Design leads, code follows.** Every design doc lives here, except visual
-  design: colors, type, marks and components are in
-  [`brand-system`](https://github.com/justinyurasits/brand-system), and product
-  docs that need a visual rule point there. Code pull
-  requests capture small decisions and build notes; Claude Code asks to roll
-  them up into the design docs, and nothing goes in without approval.
-- **Every change is a branch and a pull request.** Never commit to main.
+**3. Code repos read from here.** Each code repository's `CLAUDE.md` points Claude Code
+at its project and component folder and says what to read first. Design leads, code
+follows: a change to what the product does is made here (or in its Claude Doc) first,
+and the code pull request cites it.
 
-`python tools/validate.py` checks the structure (required files, front matter, manifests, DOCS.md, links) and runs on every pull request.
+**4. Work runs through GitHub.** The issue is the plan. Each pull request records the
+small decisions made while coding and what the work taught. Every so often, Claude Code
+asks to roll those up into the component's design log and build log, and checks whether
+any Claude Doc has moved ahead of its synced copy. Nothing enters the record without
+Justin's approval.
 
-To add a project: copy `_template/project/`, rename it, fill it in, and add a row
-to the table above. To add a component: copy `_template/component/` into the
-project and list it in the project README. To start a code repository: copy
-`_template/repo/` into it and fill in section 7 of its CLAUDE.md.
+**5. The structure is checked.** `python tools/validate.py` runs on every pull request
+and fails if a project or component is missing a file or a sync record is wrong.
+
+## The files at the top
+
+| File | Its one job |
+| --- | --- |
+| `README.md` | This page: what the repo is and how it works. |
+| [`STANDARD.md`](STANDARD.md) | The rulebook. Every file type and its job, naming, front matter, and the rules for how design and code work together. When this page and the standard differ, the standard is right. |
+| [`CLAUDE.md`](CLAUDE.md) | Instructions for Claude Code working in this repository. |
+| [`DOCS.md`](DOCS.md) | An index of every synced doc: its Claude Doc link, where it syncs to, revision and date. Generated; never edited. |
+| `sync-manifest.yaml` | The sync record for the files at the top (today, `STANDARD.md`). Every folder with synced files has one. |
+| [`_template/`](_template/) | The standard as files: `project/`, `component/`, and `repo/` (what every code repository starts with). |
+| `tools/validate.py` | The structure check. |
+
+## Adding something
+
+- **A project:** copy `_template/project/`, rename it, fill it in, and add a row to the
+  table above.
+- **A component:** copy `_template/component/` into the project and list it in the
+  project README.
+- **A code repository:** copy `_template/repo/` into it and fill in section 7 of its
+  `CLAUDE.md`.
+
+Every change is a branch and a pull request. Never commit to main.
