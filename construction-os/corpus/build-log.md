@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Corpus Build Log](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) · doc revision 28 · synced 2026-11-19
+> Source: [Corpus Build Log](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) · doc revision 34 · synced 2026-11-19
 
 # Construction OS Corpus Audit — Build Log
 
@@ -10,6 +10,8 @@ A running record of building a hybrid-search RAG system over the Construction OS
 **Nov 17, 2026:** the corpus became its own component, and this is its Build Log. Steps 28, 29 and 34 are also the document workbench's first steps and stay here so the story reads whole; the workbench's story continues in its own [Build Log](https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp).
 
 Roll-up: construction-os-corpus #1–#79 (baseline, Nov 17, 2026). Every corpus pull request through #79 is already told in the steps below or needs no entry; the first roll-up starts at #80.
+
+Roll-up: construction-os-corpus #80–#95 (Nov 19, 2026).
 
 ## Steps so far
 
@@ -62,6 +64,7 @@ Two days, Oct 30–31, 2026. The plan started as a code project and became a doc
 32) **Checked the documents against the design, and the design against the business.** The corpus got a README. SYS-01 turned out to be typed as navigation, which carries no authority, while half of it stated rules; its filing map also duplicated SYS-02 and disagreed with it on unlisted documents (issue #66). The Product Brief said Procore is the project record, but Beacon Hill Interiors' own procedures keep the job folder as the record even when Procore is used. Writing the workbench spec found SYS-00 still describing a runtime that merges layers.
 33) **Rewrote SYS-00 to match what was decided, and loosened a rule written too strictly.** SYS-00 3.0 caught the governing document up with the Nov 2 architecture: each company has its own copy, layers are labels, values live in configuration, drafts are never blocked, and the checks section lists only the two that actually run. Justin pushed back on one line: request information "used for that request only" would make a PM re-supply the contract for the change order that follows its PCO. The real boundary is project versus company, so project context is now reusable within its project and never crosses into another project or into company knowledge (corpus #67).
 34) **Built the pricing engine; the code asked the right questions.** Build step 4 moved pricing into its own module. Rates come from the company table, general conditions apply only past the 10% threshold, the contract replaces the company markup when it says so, permits pass through, and a price with no source is left blank. Given the spec, Claude Code stopped to ask instead of guessing: it wouldn't match a carpenter by parsing a description (lines now carry a role), and it asked whether general conditions run on calendar days or workdays. Review caught a contract-document problem the tests couldn't: 11/7 weeks charged as $2,828.57 printed as 1.57 × $1,800 = $2,826.00, so weeks now round first and the page multiplies out. A two-page limit on the PCO came out too, replaced by rules that keep the signatures, the pricing header and the total from being stranded. Case 1 prices at $5,614.40; case 4 at $5,737.00 under its contract and $6,129.00 at company pricing (app #4 to #6; corpus #69, #70).
+35) **Gave the acceptance cases their model recordings (Nov 19).** The workbench now grades its drafting pipeline offline by replaying a recorded model proposal for each case. The recordings for cases 1 and 4 moved here from the workbench, unchanged, next to their cases, because they are model output for requests written from this company's jobs (#83). Until now the package's cases were only text and expected results; they now carry a model artifact that has to be refreshed when the drafting prompt changes. Alongside it, CLAUDE.md recorded its template overrides and moved to template v1.3 (#81, #95).
 
 ## Smaller finished work
 
