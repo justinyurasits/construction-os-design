@@ -4,8 +4,8 @@ docs:
   - file: design.md
     title: "Corpus System Design"
     source: https://claude.ai/artifact/3iEBRhf5uJpBXwf8TsCjG4
-    rev: 83
-    synced: 2026-11-17
+    rev: 86
+    synced: 2026-11-19
     type: design
     status: current
   - file: plan.md
@@ -18,7 +18,7 @@ docs:
   - file: build-log.md
     title: "Corpus Build Log"
     source: https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8
-    rev: 28
+    rev: 34
     synced: 2026-11-19
     type: build-log
     status: current
