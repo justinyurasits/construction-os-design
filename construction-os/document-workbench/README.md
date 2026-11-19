@@ -22,8 +22,8 @@ The PCO slice drafts and prices end to end: the pricing engine, cost history, LL
 | [spec.md](spec.md) | Points to the corpus spec for the domain; requirements not yet written. |
 | [design.md](design.md) | The workbench's scope and boundaries, what isn't designed yet, and the workbench decision log. Decisions are recorded once, there. |
 | [pco-design.md](pco-design.md) | The build design for the first vertical slice: components, the PCO definition, the pricing engine, structured drafts and Word rendering, retrieval, acceptance tests, stack and build order. |
-| [plan.md](plan.md) | The work: the PCO slice's build steps, status and open work. Tracks work only. |
-| [build-log.md](build-log.md) | The story of the workbench build. Its first steps (28, 29 and 34) are told in the [corpus build log](../corpus/build-log.md); the steps from Nov 8 on are not yet written. |
+| [plan.md](plan.md) | The workbench work still ahead: milestones, each with an exit criterion, starting with the PM revision loop (step 5b). Bugs and small tasks are GitHub issues. |
+| [build-log.md](build-log.md) | The story of the workbench build. Its first steps (28, 29 and 34) are told in the [corpus build log](../corpus/build-log.md); the steps from Nov 8 on are told here. |
 
 `README.md` and `spec.md` are written in this repo. The other four are synced from Claude Docs; `sync-manifest.yaml` records the source doc and revision for each. Edit the Claude Doc, not these files.
 

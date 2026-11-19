@@ -18,14 +18,14 @@ docs:
   - file: plan.md
     title: "Workbench Plan"
     source: https://claude.ai/artifact/XLGhnNkJU17qqeLQThboPP
-    rev: 3
-    synced: 2026-11-17
+    rev: 34
+    synced: 2026-11-19
     type: plan
     status: current
   - file: build-log.md
     title: "Workbench Build Log"
     source: https://claude.ai/artifact/NftJYcF7HYKyDsLxmv2pjp
-    rev: 2
+    rev: 20
     synced: 2026-11-19
     type: build-log
     status: current
