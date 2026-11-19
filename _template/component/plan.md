@@ -3,7 +3,7 @@ type: plan
 status: draft
 ---
 
-# Component name — Plan
+# Project name — Component name Plan
 
 *Work only, and only work still ahead. Finished milestones move to build-log.md with
 what they taught; decisions go to design.md; bugs and small tasks go to GitHub issues.

@@ -16,6 +16,7 @@ What it checks
   - relative links between files resolve
   - the root README links every project
   - every project and component README has the sections its template's README has
+  - a synced doc's top heading matches its manifest title; other docs use the title pattern
 
 What it can't check: whether a Claude Doc has moved ahead of its synced snapshot.
 That needs Claude Docs access, so it belongs to the sync and roll-up steps, not CI.
@@ -97,6 +98,11 @@ def load_manifest(folder):
     return out
 
 
+def top_heading(text):
+    m = re.search(r"^# (.+)$", text, re.M)
+    return m.group(1).strip() if m else None
+
+
 def check_markdown(folder, manifest):
     for name in sorted(os.listdir(folder)):
         p = os.path.join(folder, name)
@@ -114,6 +120,9 @@ def check_markdown(folder, manifest):
             elif int(m.group(1)) != int(entry.get("rev", -1)) or m.group(2) != str(entry.get("synced")):
                 err(rel(p), f"sync header says rev {m.group(1)} / {m.group(2)}, "
                             f"manifest says rev {entry.get('rev')} / {entry.get('synced')}")
+            h1 = top_heading(text)
+            if entry.get("title") and h1 != entry["title"]:
+                err(rel(p), f"top heading '{h1}' doesn't match its manifest title '{entry['title']}'")
         else:
             if manifest and name in manifest:
                 err(rel(p), "is in sync-manifest.yaml but has no sync header")
@@ -125,6 +134,8 @@ def check_markdown(folder, manifest):
                     err(rel(p), "front matter has no type")
                 if fm.get("status") not in STATUSES:
                     err(rel(p), f"front matter status {fm.get('status')!r}; use draft, current or superseded")
+            if name != "README.md" and " — " not in (top_heading(text) or ""):
+                err(rel(p), "top heading should read '<Project> — <Component> <doc type>' (STANDARD.md, Claude Doc titles)")
 
 
 def check_links(path):

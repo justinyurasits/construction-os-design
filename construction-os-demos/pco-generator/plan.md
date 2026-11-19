@@ -3,7 +3,7 @@ type: plan
 status: draft
 ---
 
-# PCO Generator — Plan
+# Construction OS Demos — PCO Generator Plan
 
 **Draft.** No code work is scheduled: the live app stays as it is. The milestones
 below are what it would take to build the decided design

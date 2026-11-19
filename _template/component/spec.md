@@ -3,7 +3,7 @@ type: spec
 status: draft
 ---
 
-# Component name — Spec
+# Project name — Component name Spec
 
 *What the component must do, and how anyone can check that it does. Behavior, not
 implementation. If the domain is defined elsewhere (a corpus, a standard), point to it

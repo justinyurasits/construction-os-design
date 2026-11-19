@@ -3,7 +3,7 @@ type: brief
 status: current
 ---
 
-# Fieldscope — product concept
+# Construction OS Demos — Fieldscope Brief
 *Working name. Sub safety compliance, scoped and verified — not a binder of boilerplate.*
 
 ## Positioning

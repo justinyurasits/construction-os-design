@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Design — Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 58 · synced 2026-11-19
+> Source: [Design — Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 61 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -16,7 +16,7 @@ Every component has the same files from the day it is created. A file with nothi
 | File | Its one job |
 | --- | --- |
 | `README.md` | Index, plus the short public version: what this is, why it exists, the two or three decisions worth knowing, and what is designed vs. built vs. validated |
-| `brief.md` | Who it's for, the painful moment, what it replaces, what's out of scope |
+| `brief.md` | Who it's for, the painful moment, what it replaces, what's out of scope. Never requirements, decisions or design; those have their own files |
 | `spec.md` | The domain, named and bounded. A pointer if the domain lives elsewhere. |
 | `design.md` | Architecture, boundaries, and the decision log |
 | `plan.md` | Work still ahead: milestones, each with an exit criterion. Finished work moves to the build log; bugs and small tasks are GitHub issues. |
@@ -35,12 +35,12 @@ As at the project level, a new optional type is added to this table when a real 
 
 ## Rules
 
-- **One decision, one source.** Decisions live in that component's `design.md` log. A plan or build log may reference a decision; neither records one.
+- **One decision, one source.** Decisions live in that component's `design.md` log. Product-level decisions, which span components, live in the project's `architecture.md` decision log. A plan or build log may reference a decision; neither records one.
 - **One document, one job.** If a file matches two rows above, it is two files.
 - **Front matter: `type` and `status`** (`draft | current | superseded`) on every `.md`. For a **synced** file those two values live in the manifest beside `source` and `rev`, and the file carries the two-line sync header instead of front matter — a block added by hand is wiped the next time that file syncs. For a **repo-authored** file, the READMEs included, the front matter is written in the file itself.
 - Filenames are lowercase-kebab `.md`. No version numbers in filenames.
 - **Claude Doc or repo-authored.** A doc is a Claude Doc when Justin writes it with Claude in chat. It is repo-authored when Claude Code writes it through pull requests, when it is still a placeholder, or when it is a README. A placeholder moves to a Claude Doc the first time real content is written in it.
-- **Claude Doc titles** follow `<Project> — <Component> <doc type>`, with the doc type taken from the file name: "Construction OS — Corpus Design", "Construction OS — Intake Router Classifier Prompt". Project-level docs drop the component ("Construction OS — Brief"); docs for this repository itself use "Design" as the project ("Design — Document Standard"). The manifest's `title` matches the Claude Doc's title.
+- **Claude Doc titles** follow `<Project> — <Component> <doc type>`, with the doc type taken from the file name: "Construction OS — Corpus Design", "Construction OS — Intake Router Classifier Prompt". Project-level docs drop the component ("Construction OS — Brief"); docs for this repository itself use "Design" as the project ("Design — Document Standard"). The manifest's `title` matches the Claude Doc's title, and so does the doc's top heading. Repo-authored docs title their top heading the same way.
 - Restructuring happens in the Claude Docs first. The repo follows via sync; synced files are never hand-edited.
 - A new component is this file set, not a decision about which files to make.
 
@@ -117,6 +117,7 @@ It does two jobs at once. It is the list of every synced working document, so no
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | A brief holds no requirements, decisions or design. Product-level decisions live in the project's architecture decision log. A doc's top heading matches its title. After the Construction OS brief was found carrying the product spec's capabilities, a decision and a findings log, and most headings still carried their original names. |
 | 2026-11-19 | The roll-up also proposes lessons that generalize for the project's principles, after the agents repo's rule that every pull request adds its learnings was lost when its docs moved here and nothing fed the principles anymore. |
 | 2026-11-19 | A product spec is needed once a project's components make up one product, not once it has two components. A project that groups independent builds (agents, the demos) keeps only its brief, after the old rule would have required a product spec for two unrelated demos. |
 | 2026-11-19 | Added which docs are Claude Docs (written with Claude in chat) and which are repo-authored (written by Claude Code, placeholders, READMEs), and a title pattern for Claude Docs, after DOCS.md showed fourteen titles in six styles and no rule for which docs were synced. |

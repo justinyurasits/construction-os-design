@@ -3,7 +3,7 @@ type: spec
 status: current
 ---
 
-# Corpus — Spec
+# Construction OS — Corpus Spec
 
 The corpus is a company's **governed document library**: its policies, procedures, controls, contracts, forms and the structured data that drives generation. The library lives in [`construction-os-corpus`](https://github.com/justinyurasits/construction-os-corpus). Today that repository is Beacon Hill Interiors' package, and it's the starting point every later company copy will be forked from. The [document workbench](../document-workbench/) and any other part that needs the company's knowledge read it through its published package.
 

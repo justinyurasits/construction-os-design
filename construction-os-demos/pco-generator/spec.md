@@ -3,7 +3,7 @@ type: spec
 status: draft
 ---
 
-# PCO Generator — Spec
+# Construction OS Demos — PCO Generator Spec
 
 **Draft.** Every requirement says whether the live code (v3, June 19, 2026) meets it.
 Where it doesn't, the requirement is the decided design

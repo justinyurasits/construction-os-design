@@ -3,7 +3,7 @@ type: brief
 status: draft
 ---
 
-# PCO Generator — Brief
+# Construction OS Demos — PCO Generator Brief
 
 **Draft.** The audience and the purpose of the demo are still open (below and in the
 [demos brief](../brief.md)).

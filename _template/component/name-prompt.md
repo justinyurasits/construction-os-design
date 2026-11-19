@@ -3,7 +3,7 @@ type: prompt
 status: draft
 ---
 
-# Component name — <Name> Prompt
+# Project name — Component name <Name> Prompt
 
 *Optional. One file per prompt the component sends to a model; name it
 `<name>-prompt.md`. This is the reviewed design of the prompt. The code repository holds

@@ -3,7 +3,7 @@ type: build-log
 status: current
 ---
 
-# job-evaluator — Build log
+# Agents — Job Evaluator Build Log
 
 Dated working log. What I did, what broke, what I learned. Entries come from the Build notes in agents pull requests, through roll-ups.
 

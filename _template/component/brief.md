@@ -3,7 +3,7 @@ type: brief
 status: draft
 ---
 
-# Component name — Brief
+# Project name — Component name Brief
 
 *Only what narrows or adds to the product brief for this component. If the product
 brief already says it, link to it instead of repeating it.*

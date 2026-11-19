@@ -3,7 +3,7 @@ type: brief
 status: draft
 ---
 
-# Corpus — Brief
+# Construction OS — Corpus Brief
 
 Only what narrows or adds to the [Product Brief](../brief.md) for the corpus. The customer, the painful moment and the wedge are there.
 

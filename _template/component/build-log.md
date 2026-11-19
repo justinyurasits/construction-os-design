@@ -3,7 +3,7 @@ type: build-log
 status: draft
 ---
 
-# Component name — Build Log
+# Project name — Component name Build Log
 
 *What happened, in order, and what each finding changed. Write it the day it happens.
 Record meaningful findings, not activity: GitHub already has the commits and pull

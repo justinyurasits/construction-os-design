@@ -1,7 +1,7 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Construction OS — Corpus Build Log](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) · doc revision 34 · synced 2026-11-19
+> Source: [Construction OS — Corpus Build Log](https://claude.ai/artifact/16iv5fjzH4Nvqsgx3aYbo8) · doc revision 35 · synced 2026-11-19
 
-# Construction OS Corpus Audit — Build Log
+# Construction OS — Corpus Build Log
 
 Oct 31, 2026 · @Justin
 

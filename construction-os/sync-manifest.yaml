@@ -10,8 +10,8 @@ docs:
   - file: brief.md
     title: "Construction OS — Brief"
     source: https://claude.ai/artifact/Jq4zbLUWWcKNfSZaS5XuyP
-    rev: 22
-    synced: 2026-11-08
+    rev: 23
+    synced: 2026-11-19
     type: brief
     status: current
   - file: architecture.md

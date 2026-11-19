@@ -3,7 +3,7 @@ type: brief
 status: draft
 ---
 
-# Construction OS demos — Brief
+# Construction OS Demos — Brief
 
 **Draft.**
 

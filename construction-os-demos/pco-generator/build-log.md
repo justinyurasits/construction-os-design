@@ -3,7 +3,7 @@ type: build-log
 status: current
 ---
 
-# PCO Generator — Build Log
+# Construction OS Demos — PCO Generator Build Log
 
 What happened, in order, and what each finding changed. The 2026-06-19 entries were
 reconstructed from the commit history on 2026-11-19.

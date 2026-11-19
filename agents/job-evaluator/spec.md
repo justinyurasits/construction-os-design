@@ -3,7 +3,7 @@ type: spec
 status: draft
 ---
 
-# Job evaluator — Spec
+# Agents — Job Evaluator Spec
 
 **Draft. Not written yet.** What the agent must do, requirement by requirement, with
 acceptance criteria. Until it's written, the requirements live in two places:
