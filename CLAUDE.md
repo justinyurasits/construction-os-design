@@ -12,6 +12,7 @@ Design docs for several projects, one folder per project.
 - Roll-ups arrive from code-repository sessions as suggestions in the Claude Docs (synced files) or as pull requests (repo-authored files). A roll-up adds decisions to the component's `design.md` log and findings to `build-log.md`, and ends with a `Roll-up: <repo> #<first>–#<last>` line. Nothing goes in without Justin's approval.
 - `_template/` is repo-authored and edited by hand. When STANDARD.md changes, update `_template/` in the same pull request as the sync.
 - Within a project, product-level docs sit at the top of its folder and each component gets a subfolder with its own README and `sync-manifest.yaml`.
+- Run `python tools/validate.py` before opening a pull request. It checks the structure against STANDARD.md and runs in CI on every pull request; an ERROR fails the check.
 - Don't rewrite git history.
 - No secrets, ever.
 - The document model — component file set, naming, front matter — is in `STANDARD.md`, synced from a Claude Doc. Read it before creating or restructuring any document.
