@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 44 · synced 2026-11-19
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 46 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -85,7 +85,7 @@ Every project works the same way.
 - **Design leads, code follows.** A change to what the product does, to a requirement or to the architecture is made in the design docs first, and the code pull request cites it. Code pull requests never edit design docs.
 - **The issue is the plan.** An approved GitHub issue authorizes the work; the spec and design constrain how it is done. If they conflict, or the work needs a change the design doesn't cover, stop and say so.
 - **Pull requests capture the small stuff.** Decisions made while coding and what the work taught go in the pull request under the template's *Decisions (proposed)* and *Build notes* headings. Merging the pull request approves its decisions.
-- **Roll-up.** Claude Code asks "Roll up to design?" when a pull request it opened is merged, when an issue or milestone is done, and about every ten turns of work since it last asked. On yes, it gathers Decisions and Build notes from pull requests merged since the last roll-up and proposes them: decisions for the component's `design.md` log, findings for `build-log.md`. For synced files they go in as suggestions in the Claude Doc; for repo-authored files, as a pull request here. Nothing enters the record until Justin approves it. The build log notes each roll-up ("Roll-up: construction-os-workbench #16–#22"), which marks where the next one starts.
+- **Roll-up.** Claude Code asks "Roll up to design?" when a pull request it opened is merged, when an issue or milestone is done, and about every ten turns of work since it last asked. On yes, it gathers Decisions and Build notes from pull requests merged since the last roll-up and proposes them: decisions for the component's `design.md` log, findings for `build-log.md`. For synced files they go in as suggestions in the Claude Doc; for repo-authored files, as a pull request here. Nothing enters the record until Justin approves it. The roll-up also checks for drift: for each synced file in the component and its project, it compares the revision in the manifest with the Claude Doc's current revision, and offers a sync pull request for any doc that has moved ahead. A session without Claude Docs access lists those docs from DOCS.md and asks Justin to check them. The build log notes each roll-up ("Roll-up: construction-os-workbench #16–#22"), which marks where the next one starts.
 - **Tests can read design docs.** A code repository's tests may read its design docs to check the code against them. Those files are then sync-sensitive: their headings and formats are part of the contract, so renaming a heading or reshaping a table needs a matching code pull request. Take extra care with a synced file, because a sync can rename a heading.
 - **Finding the design repo.** `../design` means next to the repository's main checkout. A session working in a git worktree finds it from the main checkout, or from a `DESIGN_DIR` override, not from the worktree's own folder.
 
@@ -115,6 +115,7 @@ It does two jobs at once. It is the list of every working document, so no bookma
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | The roll-up also checks for drift between each Claude Doc and its synced snapshot, and offers a sync for any that moved ahead, after two build logs were found a revision behind with nothing to flag it. |
 | 2026-11-19 | Components get a table of named optional types, like projects: `<slice>-design.md` moved there and `<name>-prompt.md` added, after the intake router's classifier prompt had no legal home. `plan.md`'s job now says it holds only work still ahead, a rule the template already had. |
 | 2026-11-19 | Added `tools/validate.py`, run on every pull request, and corrected the front matter rule to match practice: synced files carry the sync header, not front matter, with type and status in the manifest. |
 | 2026-11-19 | Added two rules to How design and code work together, after moving the agents docs: design docs that a repository's tests read are sync-sensitive, and `../design` resolves from the main checkout, because a git worktree has no sibling design folder. |
