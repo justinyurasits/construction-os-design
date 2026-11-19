@@ -1,5 +1,5 @@
 > **Synced from Claude Docs. Edit there, not here.**
-> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 52 · synced 2026-11-19
+> Source: [Document Standard](https://claude.ai/artifact/XH2r6ocKxZXUpUdyndiDWN) · doc revision 54 · synced 2026-11-19
 
 # Design — Document Standard
 
@@ -109,12 +109,13 @@ It is **generated from the sync manifests and never hand-written** — its first
 
 It is regenerated in the same pull request as any manifest change, which is the only moment it can go wrong.
 
-It does two jobs at once. It is the list of every working document, so no bookmarks are needed — open the repo, open the index, follow a link. And because it carries each snapshot's rev beside its source, it is the staleness check: a rev behind the live doc means that file in the repo is out of date, visible at a glance instead of by opening four manifests.
+It does two jobs at once. It is the list of every synced working document, so no bookmarks are needed — open the repo, open the index, follow a link. And because it carries each snapshot's rev beside its source, it is the staleness check: a rev behind the live doc means that file in the repo is out of date, visible at a glance instead of by opening four manifests.
 
 ## Change history
 
 | Date | Change |
 | --- | --- |
+| 2026-11-19 | DOCS.md described as the list of every synced working document, not every working document, to match the index's own scope. |
 | 2026-11-19 | Opening reworded so it reads correctly from the repo copy: the Claude Doc is the editable source, STANDARD.md its reviewed snapshot. Pull requests capture the small stuff now bounds what merging a code pull request approves: implementation choices inside an approved issue, never a change to a requirement, the architecture, a security boundary or documented behavior, after a review found the line between the two left room for an agent to slip an architecture decision into a code pull request. |
 | 2026-11-19 | Every design doc lives here, with visual design in brand-system as the one exception. Design leads, code follows now says Claude and Claude Code do make design changes, once approved, in the Claude Doc or a design pull request, never inside a code pull request, after the old wording read as a ban on using Claude for design docs at all. |
 | 2026-11-19 | The roll-up also checks for drift between each Claude Doc and its synced snapshot, and offers a sync for any that moved ahead, after two build logs were found a revision behind with nothing to flag it. |
